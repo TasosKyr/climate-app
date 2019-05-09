@@ -1,0 +1,79 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --dark-green: #0e402d;
+  --med-green: #295135;
+  --ebony: #5a6650;
+  --yellow-green: #9fcc2e;
+}
+
+//fix burger icon on resize
+.navbar-main {
+  background-color: var(--black);
+  position: fixed;
+  width: 100vw;
+}
+
+.nav-color {
+  color: var(--yellow-green) !important;
+}
+
+.header-container {
+  background-image: url("../src/images/601229-unsplash.jpg");
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  font-family: Helvetica, sans-serif;
+  color: var(--white);
+}
+
+.heading h1 {
+  font-size: 82px;
+  font-weight: lighter;
+  line-height: 2;
+  letter-spacing: 0.5rem;
+}
+
+.heading p {
+  font-size: 24px;
+  letter-spacing: 0.3rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  margin: 5% 2% 5%;
+  width: 18rem;
+}
+
+.footer-container {
+  background-color: var(--black);
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-container h2 {
+  font-family: Helvetica, sans-serif;
+  color: var(--white);
+  font-weight: lighter;
+}
