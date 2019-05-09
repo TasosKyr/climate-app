@@ -3,10 +3,14 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const User = require("../../models/User");
+const uploader = require("../../configs/cloudinary");
+
 
 router.post("/signup", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  const imgPath = req.body.imgPath
+  console.log('File:', req.body.imgPath)
 
   if (!username || !password) {
     return res
@@ -30,7 +34,8 @@ router.post("/signup", (req, res) => {
 
       return User.create({
         username: username,
-        password: hash
+        password: hash,
+        imgPath
       });
     })
     .then(newUser => {

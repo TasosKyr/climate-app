@@ -49,7 +49,6 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -77,5 +76,8 @@ app.use("/api", auth);
 
 const events = require("./routes/events");
 app.use("/", events);
+
+const upload = require("./routes/upload")
+app.use("/api", upload)
 
 module.exports = app;

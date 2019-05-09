@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema(
   {
     username: String,
-    password: String
+    password: String,
+    imgPath: String
   },
   {
     timestamps: true
@@ -12,4 +13,5 @@ const userSchema = new Schema(
 );
 
 const User = mongoose.model("User", userSchema);
+
 module.exports = User;
