@@ -14,6 +14,7 @@ export default class Events extends Component {
     this.setState({ events: eventsBerlin.data })
   }
 
+
   componentDidMount() {
     this.getEvent()
   }
@@ -25,7 +26,7 @@ export default class Events extends Component {
 
         {this.state.events.map(event => {
           return (
-            <div className="card events-card" key={event.id}>
+            <div className="card events-card" key={event.id ? event.id : event._id}>
               <div className="card-body">
                 <h3 className="card-title events-cart-title">{event.name}</h3>
                 <p className="card-text">Date: {event.local_date}</p>
@@ -39,7 +40,7 @@ export default class Events extends Component {
             </div>
           )
         })}
-        <EventForm />
+        <EventForm getEvent={this.getEvent} />
       </div>
     )
   }

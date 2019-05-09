@@ -24,7 +24,7 @@ export default class DropDown extends Component {
       <div>
 
         <Button className='modal-button' onClick={this.handleShow}>
-          Check out more Events Here
+          {this.props.title}
         </Button>
 
         <Modal
@@ -35,45 +35,14 @@ export default class DropDown extends Component {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-              Check out These Climate Events
+              {this.props.title}
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h3>Event Name</h3>
-            <p>
-              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae
-              unde commodi aspernatur enim, consectetur. Cumque deleniti
-            </p>
-            <button className='link-button'>Here is link to more info</button>
+
+            {this.props.children}
             <hr></hr>
-            <h3>Event Name</h3>
-            <p>
-              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae
-              unde commodi aspernatur enim, consectetur. Cumque deleniti
-            </p>
-            <button className='link-button'>Here is link to more info</button>
-            <hr></hr>
-            <h3>Event Name</h3>
-            <p>
-              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae
-              unde commodi aspernatur enim, consectetur. Cumque deleniti
-            </p>
-            <button className='link-button'>Here is link to more info</button>
-            <hr></hr>
-            <h3>Event Name</h3>
-            <p>
-              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae
-              unde commodi aspernatur enim, consectetur. Cumque deleniti
-            </p>
-            <button className='link-button'>Here is link to more info</button>
-            <hr></hr>
-            <h3>Event Name</h3>
-            <p>
-              Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae
-              unde commodi aspernatur enim, consectetur. Cumque deleniti
-            </p>
-            <button className='link-button'>Here is link to more info</button>
-            <hr></hr>
+
           </Modal.Body>
         </Modal>
 

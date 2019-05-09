@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 export default class EventForm extends Component {
 
@@ -8,11 +9,15 @@ export default class EventForm extends Component {
     time: '',
     venue: '',
     address: '',
+    city: '',
+    description: '',
     link: ''
+
   }
 
   handleChange = event => {
-    const name = event.target.name;
+
+    const name = event.target.name
     const value = event.target.value;
 
     this.setState({
@@ -23,27 +28,26 @@ export default class EventForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    // axios
-    //   .post(
-    //     "http://localhost:5000/XXXXXX",
-    //     {
-    //       name: this.state.name,
-    //       date: this.state.date,
-    //       time: this.state.time, 
-    //       venue: this.state.venue,
-    //       address: this.state.address,
-    //       link: this.state.link      
-    //     }    
-    //   )
-    //   .then(() => {
-    //     this.props.getData();
-    //     this.setState({ name: '',
-    //                     date: '',
-    //                     time: '',
-    //                     venue: '',
-    //                     address: '',
-    //                     link: '' });
-    // //   });
+    axios
+      .post(
+        "http://localhost:3000/events",
+        {
+          ...this.state
+        }
+      )
+      .then(() => {
+        this.props.getEvent()
+        this.setState({
+          name: '',
+          date: '',
+          time: '',
+          venue: '',
+          address: '',
+          city: '',
+          description: '',
+          link: ''
+        });
+      });
   };
 
   render() {
@@ -51,6 +55,7 @@ export default class EventForm extends Component {
       <div>
 
         <h2>Add Your own event</h2>
+        <p>You can do this only if you are a logged in user</p>
         <div className='form'>
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
@@ -71,7 +76,7 @@ export default class EventForm extends Component {
                 value={this.state.date}
                 onChange={this.handleChange}
                 name='date'
-                type="text" />
+                type="date" />
             </div>
 
             <div className="form-group">
@@ -88,7 +93,7 @@ export default class EventForm extends Component {
               <label>Venue/Place: </label>
               <input
                 className='form-control'
-                value={this.state.time}
+                value={this.state.venue}
                 onChange={this.handleChange}
                 type="text"
                 name="venue" />
@@ -102,6 +107,16 @@ export default class EventForm extends Component {
                 onChange={this.handleChange}
                 type="text"
                 name='address' />
+            </div>
+
+            <div className="form-group">
+              <label>Description: </label>
+              <input
+                className='form-control'
+                value={this.state.description}
+                onChange={this.handleChange}
+                type="text"
+                name='description' />
             </div>
 
             <div className="form-group">

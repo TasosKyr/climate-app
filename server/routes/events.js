@@ -39,8 +39,16 @@ router.get('/events', async (req, res, next) => {
       }
       return Event.findOneAndUpdate({ id: event.id }, eventObject, { upsert: true, new: true })
     })
+  await Promise.all(eventCreationPromises)
+  const allEventsInDB = await Event.find({})
 
-  res.json(await Promise.all(eventCreationPromises));
+  res.json(allEventsInDB);
 });
+
+router.post('/events', async (req, res, next) => {
+  const newEvent = await Event.create(req.body)
+  res.json(newEvent)
+})
+
 
 module.exports = router;
