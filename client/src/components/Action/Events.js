@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import { Link } from "react-router-dom";
+import EventForm from './EventForm'
+
 
 
 export default class Events extends Component {
@@ -22,16 +25,23 @@ export default class Events extends Component {
 
     return (
       <div>
-        <h1>Climate Events in Berlin</h1>
+
         {this.state.data.events.map(event => {
           return (
-            <div key={event.id}>
-              <h3>{event.name}</h3>
-
+            <div className="card events-card" key={event.id}>
+              <div className="card-body">
+                <h3 className="card-title events-cart-title">{event.name}</h3>
+                <p className="card-text">Date: {event.local_date}</p>
+                <p className="card-text">Time: {event.local_time}</p>
+                <p className="card-text">Place:</p>
+                <div>
+                  <Link to={event.link} style={{ textDecoration: "none" }}>More Information Here</Link>
+                </div>
+              </div>
             </div>
           )
         })}
-
+      <EventForm />
       </div>
     )
   }
