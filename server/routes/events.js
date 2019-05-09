@@ -20,11 +20,27 @@ const upcomingEvents = () => {
     })
 }
 
-
 /* GET event page, axios return promise so using async-await so that function on row 25 is not called before data is returned from axios call */
 router.get('/events', async (req, res, next) => {
   const eventsBerlin = await upcomingEvents();
-  res.json(eventsBerlin);
+
+  const eventCreationPromises =
+    eventsBerlin.events.map(event => {
+      const eventObject = {
+        id: event.id,
+        name: event.name,
+        link: event.link,
+        local_date: event.local_date,
+        local_time: event.local_time,
+        city: event.venue && event.venue.city,
+        address: event.venue && event.venue.address_1,
+        description: event.description,
+        venue: event.venue && event.venue.name
+      }
+      return Event.findOneAndUpdate({ id: event.id }, eventObject, { upsert: true, new: true })
+    })
+
+  res.json(await Promise.all(eventCreationPromises));
 });
 
 module.exports = router;

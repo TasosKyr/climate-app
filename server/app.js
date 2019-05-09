@@ -63,8 +63,8 @@ app.use('/', index);
 const events = require("./routes/events");
 app.use("/", events);
 
-const action = require('./routes/action')
-app.use('/', action)
+// const action = require('./routes/action')
+// app.use('/', action)
 
 
 module.exports = app;

@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import { Link } from "react-router-dom";
 import EventForm from './EventForm'
-
-
 
 export default class Events extends Component {
 
@@ -33,15 +30,17 @@ export default class Events extends Component {
                 <h3 className="card-title events-cart-title">{event.name}</h3>
                 <p className="card-text">Date: {event.local_date}</p>
                 <p className="card-text">Time: {event.local_time}</p>
-                <p className="card-text">Place:</p>
+                {typeof event.venue !== 'undefined' &&
+                  <p className="card-text">Place: {event.venue.name}</p>
+                }
                 <div>
-                  <Link to={event.link} style={{ textDecoration: "none" }}>More Information Here</Link>
+                  <a href={event.link}>More Information Here</a>
                 </div>
               </div>
             </div>
           )
         })}
-      <EventForm />
+        <EventForm />
       </div>
     )
   }
