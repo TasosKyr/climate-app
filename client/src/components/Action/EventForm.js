@@ -5,8 +5,8 @@ export default class EventForm extends Component {
 
   state = {
     name: '',
-    date: '',
-    time: '',
+    local_date: '',
+    local_time: '',
     venue: '',
     address: '',
     city: '',
@@ -39,8 +39,8 @@ export default class EventForm extends Component {
         this.props.getEvent()
         this.setState({
           name: '',
-          date: '',
-          time: '',
+          local_date: '',
+          local_time: '',
           venue: '',
           address: '',
           city: '',
@@ -66,27 +66,30 @@ export default class EventForm extends Component {
                 value={this.state.name}
                 onChange={this.handleChange}
                 name='name'
-                type="text" />
+                type="text"
+                required />
             </div>
 
             <div className="form-group">
               <label>Date: </label>
               <input
                 className='form-control'
-                value={this.state.date}
+                value={this.state.local_date}
                 onChange={this.handleChange}
-                name='date'
-                type="date" />
+                name='local_date'
+                type="date"
+                required />
             </div>
 
             <div className="form-group">
               <label>Start Time:</label>
               <input
                 className='form-control'
-                value={this.state.time}
+                value={this.state.local_time}
                 onChange={this.handleChange}
                 type="time"
-                name="time" />
+                name="local_time"
+                required />
             </div>
 
             <div className="form-group">
@@ -96,7 +99,8 @@ export default class EventForm extends Component {
                 value={this.state.venue}
                 onChange={this.handleChange}
                 type="text"
-                name="venue" />
+                name="venue"
+                required />
             </div>
 
             <div className="form-group">
@@ -126,7 +130,8 @@ export default class EventForm extends Component {
                 value={this.state.link}
                 onChange={this.handleChange}
                 type="text"
-                name='link' />
+                name='link'
+                required />
             </div>
 
             <input
