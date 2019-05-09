@@ -1,6 +1,6 @@
 import React from "react"
 import "./App.css"
-import Events from './components/Events'
+import Events from './components/Action/Events'
 
 function App() {
   return (
