@@ -55,25 +55,17 @@ class App extends React.Component {
             )}
           /> */}
           <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
-          {/* <Route path="/" component={Home} /> */}
+
+          <Navbar />
+          {/* <Switch> */}
+          <Route path="/" component={Home} />
           {/* <Route path="/politics" component={Politics} /> */}
-          {/* <Route path="/action" component={Action} /> */}
+          <Route path="/action" component={Action} />
           {/* <Route path="/data" component={Data} /> */}
+
           {/* <Events /> */}
         </Switch>
-
-        <Navbar />
-        {/* <Switch> */}
-        <Route path="/" component={Home} />
-        {/* <Route path="/politics" component={Politics} /> */}
-        <Route path="/action" component={Action} />
-        {/* <Route path="/data" component={Data} /> */}
-
-        {/* <Events /> */}
-        {/* </Switch> */}
         <Footer />
-
-        {/* </Switch> */}
 
         {/* <Footer /> */}
       </div>
