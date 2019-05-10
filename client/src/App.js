@@ -5,8 +5,13 @@ import Signup from "./components/Auth/Signup";
 import Login from "./components/Auth/Login";
 import { loggedin } from "./services/auth";
 import Events from "./components/Action/Events"
+
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./components/Profile"
+
+import { Switch, Route, Redirect } from "react-router-dom";
+import Action from './components/Action/Action'
+
 
 import "./App.css"
 
@@ -34,6 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+ 
         <Navbar setUser={this.setUser} loggedIn={this.state.loggedIn} />
         <Switch>
           <Route
@@ -68,8 +74,17 @@ class App extends React.Component {
           {/* <Route path="/data" component={Data} /> */}
           {/* <Events /> */}
         </Switch>
+
+        <Navbar />
+        {/* <Switch> */}
+        {/* <Route path="/" component={Home} /> */}
+        {/* <Route path="/politics" component={Politics} /> */}
+        <Route path="/action" component={Action} />
+        {/* <Route path="/data" component={Data} /> */}
+        {/* </Switch> */}
+
         {/* <Footer /> */}
-      </div>
+      </div >
     )
   }
 }

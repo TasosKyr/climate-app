@@ -10,8 +10,8 @@ const eventSchema = new Schema(
     local_time: String,
     city: String,
     address: String,
-    company: String,
-    visibility: String
+    description: String,
+    venue: String
   }
 )
 
