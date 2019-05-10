@@ -7,28 +7,24 @@
   }
 }
 
-
 .App {
   text-align: center;
 }
-=======
 
 .profile-page {
   display: flex;
   flex-direction: column;
   background-color: #295135;
+}
 
 .link-button {
   background-color: seagreen;
-  color: bisque; 
-  border-radius: 5px; 
-  
+  color: bisque;
+  border-radius: 5px;
 }
 
 .modal-button {
   background-color: seagreen;
-  color: bisque; 
-  border-radius: 5px; 
-  
+  color: bisque;
+  border-radius: 5px;
 }
-
