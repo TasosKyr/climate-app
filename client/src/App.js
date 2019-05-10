@@ -8,6 +8,7 @@ import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
 import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
+import Data from './components/Data/Data'
 
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile"
@@ -58,7 +59,7 @@ class App extends React.Component {
           {/* <Route path="/" component={Home} /> */}
           {/* <Route path="/politics" component={Politics} /> */}
           {/* <Route path="/action" component={Action} /> */}
-          {/* <Route path="/data" component={Data} /> */}
+          <Route path="/data" component={Data} />
           {/* <Events /> */}
         </Switch>
 
