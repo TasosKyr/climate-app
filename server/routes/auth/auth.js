@@ -10,7 +10,7 @@ router.post("/signup", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const imgPath = req.body.imgPath
-  console.log('File:', req.body.imgPath)
+  console.log('File:', imgPath)
 
   if (!username || !password) {
     return res

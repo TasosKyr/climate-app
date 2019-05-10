@@ -29,7 +29,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='profile-page'>
         <form onSubmit={this.handleSubmit}>
           {console.log(this.state.imgPath)}
           <img src={this.state.imgPath} alt="profilePic" />
