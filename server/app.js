@@ -77,6 +77,8 @@ app.use("/api", auth);
 const events = require("./routes/events");
 app.use("/", events);
 
+const data = require("./routes/data");
+app.use("/", data);
 
 const upload = require("./routes/upload")
 app.use("/api", upload)
