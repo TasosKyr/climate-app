@@ -32,6 +32,12 @@
   }
 }
 
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #295135;
+
 .link-button {
   background-color: seagreen;
   color: bisque; 

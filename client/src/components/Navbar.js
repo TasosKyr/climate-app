@@ -5,7 +5,7 @@ class Navbar extends React.Component {
   state = {}
   render() {
     return (
-      <nav class="nav-bar">
+      <nav className="nav-bar">
         <Link to="/politics" style={{}}>
           Politics
         </Link>

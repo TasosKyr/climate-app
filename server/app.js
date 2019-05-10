@@ -9,7 +9,10 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 const cors = require("cors");
+const session = require("express-session");
+const passport = require("passport");
 
+require("./configs/passport");
 
 mongoose
   .connect('mongodb://localhost/server', { useNewUrlParser: true })
@@ -27,7 +30,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5000",
+    origin: "http://localhost:3000",
     credentials: true
   })
 );
@@ -46,13 +49,21 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+app.use(
+  session({
+    secret: "this is a secret key",
+    resave: true,
+    saveUninitialized: true
+  })
+);
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
@@ -60,8 +71,15 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const index = require('./routes/index');
 app.use('/', index);
 
+const auth = require("./routes/auth/auth");
+app.use("/api", auth);
+
 const events = require("./routes/events");
 app.use("/", events);
+
+
+const upload = require("./routes/upload")
+app.use("/api", upload)
 
 // const action = require('./routes/action')
 // app.use('/', action)
