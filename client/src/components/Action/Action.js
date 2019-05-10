@@ -28,7 +28,7 @@ class Action extends Component {
 
         <DropDown title='Check out These Petitions'>
           <Petitions />
-        </DropDown>
+        </DropDown> 
 
         <hr />
 

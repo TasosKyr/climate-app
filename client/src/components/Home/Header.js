@@ -1,20 +1,16 @@
 import React from "react"
-import TitleCard from "./TitleCard"
+
 
 function Header() {
   return (
     <>
       <div className="header-container">
         <div className="heading">
-          <h1>Climate Change</h1>
-          <p>Take political action!</p>
+          <h1>ClimAct</h1>
+          <p>Take Political Action to fight Climate Change!</p>
         </div>
       </div>
-      <div className="card-container">
-        <TitleCard />
-        <TitleCard />
-        <TitleCard />
-      </div>
+
     </>
   )
 }
