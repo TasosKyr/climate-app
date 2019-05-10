@@ -5,6 +5,7 @@ class Navbar extends React.Component {
   state = {}
   render() {
     return (
+
       <nav className="navbar navbar-expand-md navbar-light navbar-main">
         <Link className="navbar-brand nav-color" to="/">
           LOGO

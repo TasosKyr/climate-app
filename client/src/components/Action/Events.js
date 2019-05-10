@@ -1,15 +1,19 @@
-import React, { Component } from "react"
-import axios from "axios"
+
+import React, { Component } from 'react'
+import axios from "axios";
+import EventForm from './EventForm'
+
 
 export default class Events extends Component {
   state = {
-    data: { events: [] }
+    events: []
   }
 
   /**because await, no then */
   getEvent = async () => {
-    const eventsBerlin = await axios.get("http://localhost:3000/events")
-    this.setState({ data: eventsBerlin.data })
+
+    const eventsBerlin = await axios.get('http://localhost:3000/events');
+    this.setState({ events: eventsBerlin.data })
   }
 
   componentDidMount() {
@@ -19,14 +23,24 @@ export default class Events extends Component {
   render() {
     return (
       <div>
-        <h1>Climate Events in Berlin</h1>
-        {this.state.data.events.map(event => {
+
+        {this.state.events.map(event => {
           return (
-            <div key={event.id}>
-              <h3>{event.name}</h3>
+            <div className="card events-card" key={event.id ? event.id : event._id}>
+              <div className="card-body">
+                <h3 className="card-title events-cart-title">{event.name}</h3>
+                <p className="card-text">Date: {event.local_date}</p>
+                <p className="card-text">Time: {event.local_time}</p>
+                <p className="card-text">Place: {event.venue}</p>
+
+                <div>
+                  <a href={event.link}>More Information Here</a>
+                </div>
+              </div>
             </div>
           )
         })}
+        <EventForm getEvent={this.getEvent} />
       </div>
     )
   }
