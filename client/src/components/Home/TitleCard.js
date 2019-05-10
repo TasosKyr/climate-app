@@ -1,20 +1,25 @@
-import React from "react"
 
-function TitleCard() {
-  return (
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap" />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
+import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+
+
+class TitleCard extends Component {
+  render() {
+    return (
+      <div className="card" >
+        <img className="card-img-top" src="..." alt="Card image cap" />
+        <div className="card-body">
+          <h5 className="card-title">{this.props.title}</h5>
+          <p className="card-text">
+          {this.props.description}
         </p>
-        <a href="#" class="btn btn-primary">
-          Go somewhere
-        </a>
+          <Link to={this.props.link} className="btn btn-primary">
+            Learn More!
+        </Link>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default TitleCard

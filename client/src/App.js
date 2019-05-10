@@ -62,14 +62,13 @@ class App extends React.Component {
           {/* <Events /> */}
         </Switch>
 
-        <Navbar />
-        {/* <Switch> */}
-        <Route path="/" component={Home} />
-        {/* <Route path="/politics" component={Politics} /> */}
-        <Route path="/action" component={Action} />
-        {/* <Route path="/data" component={Data} /> */}
 
-        {/* <Events /> */}
+        {/* <Switch> */}
+        <Route path="/" exact component={Home} />
+        {/* <Route path="/politics" exact component={Politics} /> */}
+        <Route path="/action" exact component={Action} />
+        {/* <Route path="/data" exact component={Data} /> */}
+
         {/* </Switch> */}
         <Footer />
 
