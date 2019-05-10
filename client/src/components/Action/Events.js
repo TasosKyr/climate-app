@@ -1,26 +1,26 @@
+
 import React, { Component } from 'react'
 import axios from "axios";
 import EventForm from './EventForm'
 
-export default class Events extends Component {
 
+export default class Events extends Component {
   state = {
     events: []
   }
 
   /**because await, no then */
   getEvent = async () => {
+
     const eventsBerlin = await axios.get('http://localhost:3000/events');
     this.setState({ events: eventsBerlin.data })
   }
-
 
   componentDidMount() {
     this.getEvent()
   }
 
   render() {
-
     return (
       <div>
 
