@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 class Navbar extends React.Component {
   state = {}
@@ -7,9 +7,9 @@ class Navbar extends React.Component {
     return (
 
       <nav className="navbar navbar-expand-md navbar-light navbar-main">
-        <Link className="navbar-brand nav-color" to="/">
-          LOGO
-        </Link>
+        <NavLink className="navbar-brand nav-color" to="/">
+          ClimAct
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,29 +25,29 @@ class Navbar extends React.Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link nav-color" to="/politics">
+              <NavLink className="nav-link nav-color" to="/politics">
                 Politics <span className="sr-only">(current)</span>
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-color" to="/action">
+              <NavLink className="nav-link nav-color" to="/action">
                 Action
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-color" to="/data">
+              <NavLink className="nav-link nav-color" to="/data">
                 Data
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-color" to="/signup">
+              <NavLink className="nav-link nav-color" to="/signup">
                 Signup
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-color" to="/login">
+              <NavLink className="nav-link nav-color" to="/login">
                 Login
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
