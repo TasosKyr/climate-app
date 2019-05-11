@@ -39,10 +39,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getUser()
-    axios.get("http://localhost:3000/politics").then(res => {
-      console.log(res.data)
-      console.log("hi")
-    })
   }
 
   render() {

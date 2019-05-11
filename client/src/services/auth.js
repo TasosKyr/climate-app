@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const service = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "http://localhost:5000/api",
   withCredentials: true
 })
 
@@ -25,9 +25,4 @@ const upload = data => {
   return service.post("/upload", data).then(response => response.data)
 }
 
-const getTweets = () => {
-  console.log("hello from api")
-  return service.get("/politics").then(response => response.data)
-}
-
-export { signup, login, logout, loggedin, upload, getTweets }
+export { signup, login, logout, loggedin, upload }

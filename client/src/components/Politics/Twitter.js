@@ -1,6 +1,5 @@
 import React, { Component } from "react"
-import { getTweets } from "../../services/auth"
-import axios from "axios"
+import { getTweets } from "../../services/twitter"
 
 class Twitter extends Component {
   state = {
@@ -15,10 +14,7 @@ class Twitter extends Component {
 
   render() {
     const { data } = this.state
-    // axios.get("http://localhost:3000/politics").then(res => {
-    //   console.log(res.data)
-    //   console.log("hi")
-    // })
+
     console.log(data)
     return (
       <div>
