@@ -77,12 +77,11 @@ app.use("/api", auth);
 const events = require("./routes/events");
 app.use("/", events);
 
-
 const upload = require("./routes/upload")
 app.use("/api", upload)
 
-// const action = require('./routes/action')
-// app.use('/', action)
+const petitions = require('./routes/petitions')
+app.use('/', petitions)
 
 
 module.exports = app;

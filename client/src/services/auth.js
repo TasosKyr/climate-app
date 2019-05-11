@@ -1,7 +1,9 @@
 import axios from "axios";
 
+const backEndPort = process.env.BACKEND_PORT || '5000'
+
 const service = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: `http://localhost:${backEndPort}/api`,
   withCredentials: true
 });
 

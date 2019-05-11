@@ -1,4 +1,6 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700');
+//font-family: 'Eczar', serif;
 
 * {
   margin: 0;
@@ -35,16 +37,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .heading {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Karla', sans-serif;
   color: var(--white);
 }
 
 .heading h1 {
-  font-size: 82px;
-  font-weight: lighter;
+  font-size: 7rem;
+  font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
 }

@@ -20,7 +20,7 @@ const upcomingEvents = () => {
     })
 }
 
-/* GET event page, axios return promise so using async-await so that function on row 25 is not called before data is returned from axios call */
+/* GET event page, axios return promise so using async-await so that the function is not called before data is returned from axios call */
 router.get('/events', async (req, res, next) => {
   const eventsBerlin = await upcomingEvents();
 
