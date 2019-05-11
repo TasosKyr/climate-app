@@ -30,7 +30,7 @@ const app = express()
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3001",
     credentials: true
   })
 )
@@ -83,7 +83,8 @@ const upload = require("./routes/upload")
 app.use("/api", upload)
 
 const politics = require("./routes/politics")
-app.use("/politics", politics)
+app.use("/api", politics)
+
 // const action = require('./routes/action')
 // app.use('/', action)
 

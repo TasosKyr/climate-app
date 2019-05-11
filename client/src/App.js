@@ -8,12 +8,14 @@ import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
 import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
+import Twitter from "./components/Politics/Twitter"
 
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile"
 
 import { Switch, Route, Redirect } from "react-router-dom"
 import Action from "./components/Action/Action"
+import axios from "axios"
 
 import "./App.css"
 import "./customBootstrap.scss"
@@ -37,6 +39,10 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getUser()
+    axios.get("http://localhost:3000/politics").then(res => {
+      console.log(res.data)
+      console.log("hi")
+    })
   }
 
   render() {
@@ -47,6 +53,11 @@ class App extends React.Component {
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
 
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
+          <Route
+            exact
+            path="/politics"
+            render={props => <Twitter setUser={this.setUser} {...props} />}
+          />
           {/* <Route
             exact
             path="/profile"
