@@ -8,14 +8,13 @@ import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
 import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
-import Twitter from "./components/Politics/Twitter"
+import Politics from "./components/Politics/Politics"
 
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile"
 
 import { Switch, Route, Redirect } from "react-router-dom"
 import Action from "./components/Action/Action"
-import axios from "axios"
 
 import "./App.css"
 import "./customBootstrap.scss"
@@ -47,13 +46,8 @@ class App extends React.Component {
         <Navbar setUser={this.setUser} loggedIn={this.state.loggedIn} />
         <Switch>
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
-
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
-          <Route
-            exact
-            path="/politics"
-            render={props => <Twitter setUser={this.setUser} {...props} />}
-          />
+          <Route exact path="/politics" component={Politics} />} />
           {/* <Route
             exact
             path="/profile"
@@ -62,14 +56,11 @@ class App extends React.Component {
             )}
           /> */}
           <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
-
-          <Navbar />
           {/* <Switch> */}
           <Route path="/" component={Home} />
           {/* <Route path="/politics" component={Politics} /> */}
           <Route path="/action" component={Action} />
           {/* <Route path="/data" component={Data} /> */}
-
           {/* <Events /> */}
         </Switch>
         <Footer />

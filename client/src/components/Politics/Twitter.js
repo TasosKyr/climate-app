@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { TwitterTweetEmbed } from "react-twitter-embed"
 import { getTweets } from "../../services/twitter"
 
 class Twitter extends Component {
@@ -14,13 +15,15 @@ class Twitter extends Component {
 
   render() {
     const { data } = this.state
-
-    console.log(data)
+    const tweetIdStr = data && data.statuses && data.statuses[0] && data.statuses[0].id_str
+    console.log(data && data.statuses && data.statuses)
     return (
-      <div>
-        <h2>Tweets</h2>
-        {data && data.statuses && data.statuses.map(el => <li>{el.favorite_count}</li>)}
-      </div>
+      <>
+        <div>
+          <h2>Tweets</h2>
+          {tweetIdStr && <TwitterTweetEmbed tweetId={tweetIdStr} />}
+        </div>
+      </>
     )
   }
 }

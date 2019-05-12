@@ -6,7 +6,6 @@ const service = axios.create({
 })
 
 const getTweets = () => {
-  console.log("hello from api/twitter")
   return service.get("/politics").then(response => response.data)
 }
 
