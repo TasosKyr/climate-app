@@ -6,7 +6,7 @@ export default class Data extends Component {
   render() {
     return (
       <div>
-        <UserSelection />
+        <UserSelection /* userChoices={} */ />
         <DataCard />
       </div>
     )
