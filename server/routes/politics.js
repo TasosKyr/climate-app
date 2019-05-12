@@ -19,3 +19,18 @@ router.get("/politics", (req, res) => {
 })
 
 module.exports = router
+
+//   client.get("search/tweets", { q: "climatechange" }).then(responseOne => {
+//     client
+//       .get("search/tweets", { q: "globalwarming" })
+//       .then(responseTwo => {
+//         const response = {
+//           ...responseOne,
+//           ...responseTwo
+//         }
+//         res.json(response.data)
+//         console.log(response.data)
+//       })
+//       .catch(err => console.error(err))
+//   })
+// })
