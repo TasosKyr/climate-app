@@ -12,7 +12,7 @@ export default class Events extends Component {
   /**because await, no then */
   getEvent = async () => {
 
-    const eventsBerlin = await axios.get('http://localhost:3000/events');
+    const eventsBerlin = await axios.get('http://localhost:5000/events');
     this.setState({ events: eventsBerlin.data })
   }
 
