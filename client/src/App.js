@@ -55,18 +55,18 @@ class App extends React.Component {
             )}
           /> */}
           <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
-          {/* <Route path="/" component={Home} /> */}
-          {/* <Route path="/politics" component={Politics} /> */}
-          {/* <Route path="/action" component={Action} /> */}
-          {/* <Route path="/data" component={Data} /> */}
-          {/* <Events /> */}
+
         </Switch>
 
 
         {/* <Switch> */}
         <Route path="/" exact component={Home} />
         {/* <Route path="/politics" exact component={Politics} /> */}
-        <Route path="/action" exact component={Action} />
+        <Route exact path="/action"
+          render={props => (
+            <Action {...props} user={this.state.loggedIn} />
+          )}
+        />
         {/* <Route path="/data" exact component={Data} /> */}
 
         {/* </Switch> */}
@@ -74,7 +74,6 @@ class App extends React.Component {
 
         {/* </Switch> */}
 
-        {/* <Footer /> */}
       </div>
     )
   }

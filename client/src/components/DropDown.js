@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 export default class DropDown extends Component {
 
@@ -11,7 +11,15 @@ export default class DropDown extends Component {
     };
 
     this.handleShow = () => {
-      this.setState({ show: true });
+
+      if (this.props.protected) {
+        console.log('jotain')
+        this.setState({ show: this.props.user !== null })
+      } else {
+        console.log('bar')
+        this.setState({ show: true })
+
+      }
     };
 
     this.handleHide = () => {
@@ -19,13 +27,39 @@ export default class DropDown extends Component {
     };
   }
 
+  button = () => (
+    <Button className='modal-button' onClick={this.handleShow}>
+      {this.props.title}
+    </Button>
+  );
+
+  tooltip = (
+    <Tooltip id={`tooltip-'bottom'`}>
+      You Need To Be a Logged-in User to Add Events!
+</Tooltip>
+  );
+
+  overlayTrigger = (
+    <OverlayTrigger
+      key={'bottom'}
+      placement={'bottom'}
+      overlay={this.tooltip}
+    >
+      {this.button()}
+    </OverlayTrigger>
+  );
+
   render() {
+
+    let showButton = this.button()
+    if (this.props.protected && this.props.user === null) {
+      showButton = this.overlayTrigger
+    }
+
     return (
       <div>
 
-        <Button className='modal-button' onClick={this.handleShow}>
-          {this.props.title}
-        </Button>
+        {showButton}
 
         <Modal
           show={this.state.show}

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import axios from "axios";
-import EventForm from './EventForm'
+
 
 
 export default class Events extends Component {
@@ -40,7 +40,7 @@ export default class Events extends Component {
             </div>
           )
         })}
-        <EventForm getEvent={this.getEvent} />
+
       </div>
     )
   }

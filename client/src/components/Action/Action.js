@@ -5,6 +5,7 @@ import DropDown from '../DropDown'
 import Petitions from './Petitions'
 import Letters from './Letters'
 import ActionHeader from './ActionHeader'
+import EventForm from './EventForm'
 
 
 class Action extends Component {
@@ -21,6 +22,11 @@ class Action extends Component {
 
         <DropDown title='Check out These Climate Events'>
           <Events />
+        </DropDown>
+        <br />
+
+        <DropDown title='Add Your Own Climate Event' user={this.props.user} protected>
+          <EventForm />
         </DropDown>
 
         <hr />
