@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import DataCard from "./DataCard"
+import UserSelection from "./UserSelection"
 
 export default class Data extends Component {
   render() {
     return (
       <div>
-        <h1>This is the data page:</h1>
+        <UserSelection />
         <DataCard />
       </div>
     )

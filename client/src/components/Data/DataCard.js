@@ -8,14 +8,14 @@ export default class DataCard extends Component {
   }
 
   componentDidMount() {
-    let startYear = "2010"
+    let startYear = "2000"
     let endYear = "2018"
-
     let data = {
       years: `${startYear}:${endYear}`,
-      type: "heat_wave_incidents",
-      city: 12
+      type: "extreme_cold_events",
+      city: 3
     }
+
     getData(data).then(res => {
       this.setState({
         incidentInfo: res
@@ -26,26 +26,33 @@ export default class DataCard extends Component {
   handleSubmit() {
     getData()
   }
+
   render() {
     let city;
     let cityName;
+    let incidentDescription;
+    let incidentType;
     let citiesObject = {
       1: "New York",
       2: "Los Angeles",
       3: "Chicago",
-      12: "San Diego"
+      12: "San Diego",
+      17: "San Francisco",
+      18: "Austin"
     }
 
     if (this.state.incidentInfo) {
-
       city = this.state.incidentInfo.city.id
       cityName = citiesObject[city]
+      incidentType = this.state.incidentInfo.indicator.label
+      incidentDescription = this.state.incidentInfo.indicator.description
     }
 
     return (
       <div>
-        <p>Here comes information</p>
-        <p>Cityname: {cityName}</p>
+        <p>Selected city: {cityName}</p>
+        <p>Extreme weather incident type: {incidentType}</p>
+        <p>Description: {incidentDescription}</p>
       </div>
     )
   }
