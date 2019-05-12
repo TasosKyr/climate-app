@@ -13,10 +13,8 @@ export default class DropDown extends Component {
     this.handleShow = () => {
 
       if (this.props.protected) {
-        console.log('jotain')
         this.setState({ show: this.props.user !== null })
       } else {
-        console.log('bar')
         this.setState({ show: true })
 
       }

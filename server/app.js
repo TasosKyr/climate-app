@@ -83,5 +83,9 @@ app.use("/api", upload)
 const petitions = require('./routes/petitions')
 app.use('/', petitions)
 
+const profile = require('./routes/profile')
+app.use('/', profile)
+
+
 
 module.exports = app;

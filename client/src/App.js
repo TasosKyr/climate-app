@@ -10,7 +10,7 @@ import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
 
 import ProtectedRoute from "./components/ProtectedRoute"
-import Profile from "./components/Profile"
+import Profile from "./components/Profile/Profile"
 
 import { Switch, Route, Redirect } from "react-router-dom"
 import Action from "./components/Action/Action"
@@ -47,13 +47,6 @@ class App extends React.Component {
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
 
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
-          {/* <Route
-            exact
-            path="/profile"
-            render={props => (
-              <Profile {...props} user={this.state.loggedIn} />
-            )}
-          /> */}
           <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
 
         </Switch>

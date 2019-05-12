@@ -37,6 +37,8 @@ class Action extends Component {
           <Petitions />
         </DropDown>
 
+        <hr />
+
         <h1>Get your Climate Action Opinion Published</h1>
         <p> A letter to the editor can foster conversations about climate change</p>
 

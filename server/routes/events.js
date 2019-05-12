@@ -60,6 +60,9 @@ router.post('/events', authenticationCheck, async (req, res, next) => {
 })
 
 
+router.post('/events/star', (req, res, next) => {
+  res.status(200).end()
+})
 
 
 module.exports = router;
