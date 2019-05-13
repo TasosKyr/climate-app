@@ -75,6 +75,14 @@ body {
 }
 
 //bouncing arrow in header 
+
+.header-container a {
+  color: var(--white); 
+}
+.header-container a:hover {
+  color: var(--yellow-green); 
+}
+
 .arrow {
   text-align: center;
   margin: 8% 0;

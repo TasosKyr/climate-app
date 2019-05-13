@@ -10,7 +10,7 @@ class Home extends Component {
     return (
       <div>
         <Header />
-        <div className="container page-container">
+        <div id='content' className="container page-container">
 
           <div className='intro-text-container'>
             <p>Welcome to ClimAct – This is a page where we want to help You get more engaged in fighting climate change.
