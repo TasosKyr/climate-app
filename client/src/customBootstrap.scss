@@ -1,4 +1,6 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700');
+//font-family: 'Eczar', serif;
 
 * {
   margin: 0;
@@ -37,19 +39,48 @@
   justify-content: center;
 }
 
+.header-container-action {
+  background-image: url("../src/images/action.jpeg");
+  color: black;
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .heading {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Karla', sans-serif;
   color: var(--white);
 }
 
+.heading-action  {
+  font-family: 'Karla', sans-serif;
+  color: var(--black);
+}
+
 .heading h1 {
-  font-size: 82px;
-  font-weight: lighter;
+  font-size: 7rem;
+  font-weight: bold;
+  line-height: 2;
+  letter-spacing: 0.5rem;
+}
+
+.heading-action h1 {
+  font-size: 7rem;
+  font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
 }
 
 .heading p {
+  font-size: 24px;
+  letter-spacing: 0.3rem;
+}
+
+.heading-action p {
   font-size: 24px;
   letter-spacing: 0.3rem;
 }

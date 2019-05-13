@@ -3,7 +3,8 @@ import Events from "./Events"
 import { Link } from "react-router-dom";
 import DropDown from '../DropDown'
 import Petitions from './Petitions'
-
+import Letters from './Letters'
+import ActionHeader from './ActionHeader'
 
 
 class Action extends Component {
@@ -11,10 +12,10 @@ class Action extends Component {
     return (
       <div>
 
-        <h1>Take Action!</h1>
-
+        <ActionHeader />
         <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the events near you and sign petitions</p>
         <hr />
+
         <h1>Climate Events</h1>
         <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
 
@@ -28,7 +29,14 @@ class Action extends Component {
 
         <DropDown title='Check out These Petitions'>
           <Petitions />
-        </DropDown> 
+        </DropDown>
+
+        <h1>Get your Climate Action Opinion Published</h1>
+        <p> A letter to the editor can foster conversations about climate change</p>
+
+        <DropDown title='Get your climate action opinion published'>
+          <Letters />
+        </DropDown>
 
         <hr />
 
