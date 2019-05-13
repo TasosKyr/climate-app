@@ -15,7 +15,7 @@ class Action extends Component {
         <ActionHeader />
         <div className="container page-container">
 
-          <h1></h1>
+          <h1>Action!</h1>
 
           <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the events near you and sign petitions</p>
           <hr />
