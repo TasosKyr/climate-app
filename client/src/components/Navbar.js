@@ -1,6 +1,7 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { logout } from "../services/auth"
+
 
 class Navbar extends React.Component {
   state = {
@@ -23,6 +24,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md navbar-light navbar-main">
+
         {this.state.loggedIn ? (
           <>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -54,7 +56,7 @@ class Navbar extends React.Component {
         ) : (
           <>
             <Link className="navbar-brand nav-color" to="/">
-              LOGO
+              ClimAct
             </Link>
             <button
               className="navbar-toggler"
@@ -98,6 +100,7 @@ class Navbar extends React.Component {
             </div>
           </>
         )}
+
       </nav>
     )
   }
