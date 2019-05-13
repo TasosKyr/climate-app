@@ -12,11 +12,25 @@
 //'white' 
 
 
-* {
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: 'Work Sans', sans-serif;
   margin: 0;
   padding: 0;
+}
+
+html {
+  height: 100%;
   box-sizing: border-box;
-  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 
 :root {
@@ -113,11 +127,13 @@ body {
 .footer-container {
   background-color: var(--black);
   height: 12vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute; 
   width: 100vw;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+   text-align: center;
 }
 
 .footer-content{
@@ -157,7 +173,6 @@ body {
 .profile-page {
   display: flex;
   flex-direction: column;
-  background-color: #295135;
 }
 
 .link-button {
