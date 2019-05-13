@@ -76,6 +76,10 @@ app.use("/", index)
 const auth = require("./routes/auth/auth")
 app.use("/api", auth)
 
+
+const data = require("./routes/data");
+app.use("/", data);
+
 const events = require("./routes/events")
 app.use("/", events)
 
