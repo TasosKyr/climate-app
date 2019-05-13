@@ -1,12 +1,19 @@
-import React, { Component } from 'react'
+
+import React, { Component } from "react"
+import Twitter from "./Twitter"
 import PoliticsHeader from './PoliticsHeader'
 
-export default class Politics extends Component {
+class Politics extends Component {
   render() {
     return (
       <div>
+
+        <Twitter />
         <PoliticsHeader />
+
       </div>
     )
   }
 }
+
+export default Politics

@@ -8,6 +8,7 @@ import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
 import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
+import Politics from "./components/Politics/Politics"
 
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile/Profile"
@@ -45,27 +46,22 @@ class App extends React.Component {
         <Navbar setUser={this.setUser} loggedIn={this.state.loggedIn} />
         <Switch>
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
-
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
-          <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
-
-        </Switch>
-
-
-        {/* <Switch> */}
-        <Route path="/" exact component={Home} />
-        {/* <Route path="/politics" exact component={Politics} /> */}
-        <Route exact path="/action"
+          <Route exact path="/politics" component={Politics} />} />
+    
+         <Route path="/" exact component={Home} />
+        
+          <Route exact path="/action"
           render={props => (
             <Action {...props} user={this.state.loggedIn} />
           )}
         />
-        {/* <Route path="/data" exact component={Data} /> */}
-
-        {/* </Switch> */}
+      <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
+         
+        </Switch>
         <Footer />
-
-        {/* </Switch> */}
+        </Switch>
+        <Footer />
 
       </div>
     )
