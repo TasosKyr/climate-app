@@ -6,12 +6,15 @@ import PoliticsHeader from './PoliticsHeader'
 class Politics extends Component {
   render() {
     return (
-      <div>
-
-        <Twitter />
+      <>
         <PoliticsHeader />
+        <div className="container page-container">
 
-      </div>
+          <Twitter />
+
+
+        </div>
+      </>
     )
   }
 }

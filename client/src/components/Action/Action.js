@@ -11,44 +11,46 @@ import EventForm from './EventForm'
 class Action extends Component {
   render() {
     return (
-      <div>
-
+      <>
         <ActionHeader />
-        <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the events near you and sign petitions</p>
-        <hr />
+        <div className="container page-container">
 
-        <h1>Climate Events</h1>
-        <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
+          <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the events near you and sign petitions</p>
+          <hr />
 
-        <DropDown title='Check out These Climate Events'>
-          <Events />
-        </DropDown>
-        <br />
+          <h1>Climate Events</h1>
+          <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
 
-        <DropDown title='Add Your Own Climate Event' user={this.props.user} protected>
-          <EventForm />
-        </DropDown>
+          <DropDown title='Check out These Climate Events'>
+            <Events />
+          </DropDown>
+          <br />
 
-        <hr />
-        <h1>Climate Petitions</h1>
-        <p>Getting your voice heard can be tough, but together we can make the decision makers listen – sign a petition and let the politicians know you demand change!</p>
+          <DropDown title='Add Your Own Climate Event' user={this.props.user} protected>
+            <EventForm />
+          </DropDown>
 
-        <DropDown title='Check out These Petitions'>
-          <Petitions />
-        </DropDown>
+          <hr />
+          <h1>Climate Petitions</h1>
+          <p>Getting your voice heard can be tough, but together we can make the decision makers listen – sign a petition and let the politicians know you demand change!</p>
 
-        <hr />
+          <DropDown title='Check out These Petitions'>
+            <Petitions />
+          </DropDown>
 
-        <h1>Get your Climate Action Opinion Published</h1>
-        <p> A letter to the editor can foster conversations about climate change</p>
+          <hr />
 
-        <DropDown title='Get your climate action opinion published'>
-          <Letters />
-        </DropDown>
+          <h1>Get your Climate Action Opinion Published</h1>
+          <p> A letter to the editor can foster conversations about climate change</p>
 
-        <hr />
+          <DropDown title='Get your climate action opinion published'>
+            <Letters />
+          </DropDown>
 
-      </div>
+          <hr />
+
+        </div>
+      </>
     )
   }
 }

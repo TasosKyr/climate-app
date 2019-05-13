@@ -3,7 +3,7 @@ import axios from "axios"
 const backEndPort = process.env.BACKEND_PORT || "5000"
 
 const service = axios.create({
-  baseURL: process.env.REACT_APP_SERVER_URL + "/api",
+  baseURL: process.env.REACT_APP_SERVER_URL,
   withCredentials: true
 })
 

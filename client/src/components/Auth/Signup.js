@@ -40,9 +40,9 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="user-selection-form">
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="inp">
             <label>Username:</label>
             <input
               value={this.state.username}
@@ -51,7 +51,7 @@ class Signup extends React.Component {
               name="username"
             />
           </div>
-          <div>
+          <div className="inp">
             <label>Password:</label>
             <input
               value={this.state.password}
@@ -60,11 +60,13 @@ class Signup extends React.Component {
               name="password"
             />
           </div>
-
-          <div><label>Photo</label>
-            <input type="file" name="photo" onChange={this.handleUpload} />
+          <br />
+          <label>Photo</label>
+          <div>
+            <input className='button1' type="file" name="photo" onChange={this.handleUpload} />
           </div>
-          <input type="submit" value="Signup" />
+          <br />
+          <div><input className='button1' type="submit" value="Signup" /> </div>
         </form>
       </div>
     );
