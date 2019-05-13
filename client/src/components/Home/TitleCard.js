@@ -9,7 +9,7 @@ class TitleCard extends Component {
       <div className="card" >
         <img className="card-img-top" src={this.props.image} alt="Card image cap" />
         <div className="card-body">
-          <h5 className="card-title">{this.props.title}</h5>
+          <h4 className="card-title" style={{ fontWeight: 'bold' }}>{this.props.title}</h4>
           <p className="card-text">
             {this.props.description}
           </p>
@@ -17,7 +17,7 @@ class TitleCard extends Component {
             Learn More!
         </Link>
         </div>
-      </div>
+      </div >
     )
   }
 }

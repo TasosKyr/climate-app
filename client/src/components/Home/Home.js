@@ -28,7 +28,7 @@ class Home extends Component {
               image={image1} />
 
             <TitleCard
-              title='Take Climate Action'
+              title='Climate Action'
               description='Here you can find events & petitions to sign'
               link='/action'
               image={image2} />

@@ -54,52 +54,52 @@ class Navbar extends React.Component {
             </div>
           </>
         ) : (
-          <>
-            <Link className="navbar-brand nav-color" to="/">
-              ClimAct
+            <>
+              <Link className="navbar-brand nav-color" to="/" className='logoFont'>
+                ClimAct
             </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <Link className="nav-link nav-color" to="/politics">
-                    Politics <span className="sr-only">(current)</span>
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
+              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                  <li className="nav-item active">
+                    <Link className="nav-link nav-color" to="/politics">
+                      Politics <span className="sr-only">(current)</span>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link nav-color" to="/action">
+                      Action
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link nav-color" to="/action">
-                    Action
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link nav-color" to="/data">
+                      Data
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link nav-color" to="/data">
-                    Data
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link nav-color" to="/signup">
+                      Signup
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link nav-color" to="/signup">
-                    Signup
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link nav-color" to="/login">
+                      Login
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link nav-color" to="/login">
-                    Login
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </>
-        )}
+                  </li>
+                </ul>
+              </div>
+            </>
+          )}
 
       </nav>
     )

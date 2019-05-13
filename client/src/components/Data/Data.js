@@ -7,6 +7,7 @@ export default class Data extends Component {
     return (
       <>
         <div className="container page-container">
+          <h1>Climate Data</h1>
           <UserSelection /* userChoices={} */ />
           <DataCard />
         </div>

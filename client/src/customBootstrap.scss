@@ -58,10 +58,26 @@ body {
   width: 100vw;
 }
 
-.nav-color {
-  color: var(--yellow-green) !important;
+//left corner logo 
+.logoFont{
+  font-family: 'Aguafina Script', cursive;
+  font-size: 1.5rem; 
+  padding-right: 5px; 
+  color: var(--white); 
 }
 
+.logoFont:hover{
+  color: var(--yellow-green);
+  text-decoration: none; 
+}
+
+.nav-color {
+  color: var(--white) !important;
+}
+
+.nav-color a:hover{
+  color: var(--yellow-green) !important;
+}
 
 .header-container {
   background-image: url("../src/images/601229-unsplash.jpg");
@@ -105,9 +121,11 @@ body {
   }
 }
 
+//sub-page headers
+
 .header-container-action {
   background-image: url("../src/images/action.jpeg");
-  color: black;
+  color: var(--black);
   height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -127,10 +145,11 @@ body {
 }
 
 .heading h1 {
-  font-size: 7rem;
+  font-size: 8rem;
   font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
+  font-family: 'Aguafina Script', cursive;
 }
 
 .heading-action h1 {
