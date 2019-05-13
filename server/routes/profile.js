@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 
-router.get("/profile, (req, res) => {
+router.get("/profile", (req, res) => {
   User.findOne(req.user.id)
     .then(user => {
       res.json(user);
@@ -31,5 +31,6 @@ router.delete("/profile", (req, res) => {
       res.json(error);
     });
 });
+
 
 module.exports = router;

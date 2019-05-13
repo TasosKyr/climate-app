@@ -45,9 +45,23 @@ router.get('/events', async (req, res, next) => {
   res.json(allEventsInDB);
 });
 
-router.post('/events', async (req, res, next) => {
+const authenticationCheck = (req, res, next) => {
+  console.log('is this working,no?')
+  if (req.isAuthenticated()) {
+    next();
+  } else {
+    res.status(401).end()
+  }
+};
+
+router.post('/events', authenticationCheck, async (req, res, next) => {
   const newEvent = await Event.create(req.body)
   res.json(newEvent)
+})
+
+
+router.post('/events/star', (req, res, next) => {
+  res.status(200).end()
 })
 
 

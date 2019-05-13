@@ -30,13 +30,13 @@ export default class EventForm extends Component {
 
     axios
       .post(
-        "http://localhost:3000/events",
+        "http://localhost:5000/events",
         {
           ...this.state
-        }
+        },
+        { withCredentials: true }
       )
       .then(() => {
-        this.props.getEvent()
         this.setState({
           name: '',
           local_date: '',
@@ -46,7 +46,10 @@ export default class EventForm extends Component {
           city: '',
           description: '',
           link: ''
-        });
+        })
+      })
+      .catch(err => {
+        console.log(err)
       });
   };
 
@@ -139,12 +142,8 @@ export default class EventForm extends Component {
               type="submit"
               value="Add Event"
             />
-
           </form>
         </div>
-
-
-
       </div>
     )
   }
