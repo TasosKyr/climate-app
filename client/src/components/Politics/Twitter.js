@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { TwitterTweetEmbed } from "react-twitter-embed"
-import { getTweets } from "../../services/twitter"
 import { Carousel } from "react-bootstrap"
+import { getTweets } from "../../services/politics"
 
 class Twitter extends Component {
   state = {
@@ -19,7 +19,7 @@ class Twitter extends Component {
     const tweetIdStr = data && data.statuses && data.statuses[0] && data.statuses[0].id_str
     const tweetIdStr1 = data && data.statuses && data.statuses[1] && data.statuses[1].id_str
     const tweetIdStr2 = data && data.statuses && data.statuses[2] && data.statuses[2].id_str
-    console.log(data && data.statuses && data.statuses[0])
+    // console.log(data && data.statuses && data.statuses[0])
     return (
       <Carousel>
         <Carousel.Item>

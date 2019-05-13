@@ -90,8 +90,11 @@ app.use("/", events)
 const upload = require("./routes/upload")
 app.use("/api", upload)
 
-const politics = require("./routes/politics")
-app.use("/api", politics)
+const twit = require("./routes/twit")
+app.use("/api", twit)
+
+const policies = require("./routes/policies")
+app.use("/api", policies)
 
 const petitions = require("./routes/petitions")
 app.use("/", petitions)
