@@ -30,12 +30,19 @@
 }
 
 /* Data page - user selection general styling */
+.data-page {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  margin: 2vh
+}
+
 .user-selection-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin: 2vh
-}
+} 
 
 
 /* Data page - select function styling */

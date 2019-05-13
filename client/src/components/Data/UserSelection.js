@@ -2,32 +2,18 @@ import React, { Component } from 'react'
 
 export default class UserSelection extends Component {
 
-  state = {
-    incidentType: "",
-    city: "",
-    startYear: "",
-    endYear: ""
-  };
-
-  handleChange = event => {
-    const name = event.target.name;
-    const value = event.target.value;
-
-    this.setState({ [name]: value });
-  }
-
   handleSubmit = event => {
-    console.log(this.state.incidentType, this.state.city, this.state.startYear, this.state.endYear);
     event.preventDefault();
   }
 
   render() {
     return (
       <div className="user-selection-form">
+        {console.log(this.props)}
         <h4>Our interface lets you experiment with different models and scenarios for universally-recognized temperature and precipitation indicators. </h4>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <select value={this.state.incidentType} onChange={this.handleChange} className="select" name="incidentType">
+            <select value={this.props.incidentType} onChange={(e) => this.props.changed(e)} className="select" name="incidentType">
               <option value="">Choose an extreme weather incident</option>
               <option value="heat_wave_incidents">Heat Wave Incidents</option>
               <option value="extreme_cold_events">Extreme Cold Events</option>
@@ -37,7 +23,7 @@ export default class UserSelection extends Component {
 
             <br />
 
-            <select value={this.state.city} onChange={this.handleChange} className="select" name="city">
+            <select value={this.props.city} onChange={(e) => this.props.changed(e)} className="select" name="city">
               <option value="">Choose a city</option>
               <option value="1">New York</option>
               <option value="2">Los Angeles</option>
@@ -50,19 +36,19 @@ export default class UserSelection extends Component {
           <br />
           <div>
             <label /* for="inp" */ className="inp">
-              <input value={this.state.startYear} type="text" id="inp" name='startYear' onChange={this.handleChange} />
+              <input value={this.props.startYear} type="text" id="inp" name='startYear' onChange={(e) => this.props.changed(e)} />
               <span className="label">Start year</span>
               <span className="border"></span>
             </label>
           </div>
           <br />
           <div><label /* for="inp" */ className="inp">
-            <input value={this.state.endYear} onChange={this.handleChange} type="text" id="inp" name='endYear' />
+            <input value={this.props.endYear} onChange={(e) => this.props.changed(e)} type="text" id="inp" name='endYear' />
             <span className="label">End year</span>
             <span className="border"></span>
           </label></div>
           <br />
-          <input className='button1' type="submit" value="Search" />
+
         </form>
       </div>
     )
