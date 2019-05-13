@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Twitter = require("twit")
+const CKAN = require("ckan")
 
 router.get("/politics", (req, res) => {
   let client = new Twitter({
@@ -18,8 +19,6 @@ router.get("/politics", (req, res) => {
     .catch(err => console.error(err))
 })
 
-module.exports = router
-
 //   client.get("search/tweets", { q: "climatechange" }).then(responseOne => {
 //     client
 //       .get("search/tweets", { q: "globalwarming" })
@@ -34,3 +33,14 @@ module.exports = router
 //       .catch(err => console.error(err))
 //   })
 // })
+
+//CKAN
+// let client = new CKAN.Client("http://data.europa.eu/euodp/data/api/3/action/package_list")
+
+// You can also provide an API key (for operations that require one)
+// let client = new CKAN.Client("http://data.europa.eu/euodp/data/api/3/action/package_list", "my-api-key")
+
+// If your portal disallows POST requests (note: limited support in browser module)
+// client.requestType = "GET"
+
+module.exports = router
