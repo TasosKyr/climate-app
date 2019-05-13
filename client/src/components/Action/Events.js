@@ -1,9 +1,6 @@
-
-import React, { Component } from 'react'
-import axios from "axios";
-import Event from './Event'
-
-
+import React, { Component } from "react"
+import axios from "axios"
+import Event from "./Event"
 
 export default class Events extends Component {
   state = {
@@ -12,8 +9,7 @@ export default class Events extends Component {
 
   /**because await, no then */
   getEvent = async () => {
-
-    const eventsBerlin = await axios.get('http://localhost:5000/events');
+    const eventsBerlin = await axios.get(process.env.REACT_APP_SERVER_URL + "/events")
     this.setState({ events: eventsBerlin.data })
   }
 
@@ -21,18 +17,12 @@ export default class Events extends Component {
     this.getEvent()
   }
 
-
-
   render() {
     return (
       <div>
-
         {this.state.events.map(event => {
-          return (
-            <Event event={event} />
-          )
+          return <Event event={event} />
         })}
-
       </div>
     )
   }

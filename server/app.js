@@ -14,8 +14,13 @@ const passport = require("passport")
 
 require("./configs/passport")
 
+const mongoDBURL =
+  process.env.NODE_ENV === "DEV" ? process.env.MONGODB_DEV_URL : process.env.MONGODB_PROD_URL
+
 mongoose
-  .connect("mongodb://localhost/climact", { useNewUrlParser: true })
+  .connect(mongoDBURL, {
+    useNewUrlParser: true
+  })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -93,5 +98,9 @@ app.use("/", petitions)
 
 const profile = require("./routes/profile")
 app.use("/", profile)
+
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html")
+})
 
 module.exports = app

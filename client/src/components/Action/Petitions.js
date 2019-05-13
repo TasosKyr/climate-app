@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-import axios from "axios";
-
+import React, { Component } from "react"
+import axios from "axios"
 
 export default class Petitions extends Component {
-
   state = {
     petitions: []
   }
 
   getEvent = async () => {
-
-    const newPetitions = await axios.get('http://localhost:5000/petitions');
+    const newPetitions = await axios.get(process.env.REACT_APP_SERVER_URL + "/petitions")
     this.setState({ petitions: newPetitions.data })
   }
 
@@ -33,9 +30,7 @@ export default class Petitions extends Component {
             </div>
           )
         })}
-
-
       </div>
     )
   }
-} 
+}
