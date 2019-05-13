@@ -15,7 +15,7 @@ const passport = require("passport")
 require("./configs/passport")
 
 mongoose
-  .connect("mongodb://localhost/server", { useNewUrlParser: true })
+  .connect("mongodb://localhost/climact", { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -76,9 +76,8 @@ app.use("/", index)
 const auth = require("./routes/auth/auth")
 app.use("/api", auth)
 
-
-const data = require("./routes/data");
-app.use("/", data);
+const data = require("./routes/data")
+app.use("/", data)
 
 const events = require("./routes/events")
 app.use("/", events)
@@ -89,10 +88,10 @@ app.use("/api", upload)
 const politics = require("./routes/politics")
 app.use("/api", politics)
 
-const petitions = require('./routes/petitions')
-app.use('/', petitions)
+const petitions = require("./routes/petitions")
+app.use("/", petitions)
 
-const profile = require('./routes/profile')
-app.use('/', profile)
+const profile = require("./routes/profile")
+app.use("/", profile)
 
 module.exports = app
