@@ -9,7 +9,8 @@ class Profile extends React.Component {
   state = {
     username: this.props.user.username,
     password: "",
-    imgPath: this.props.user.imgPath
+    imgPath: this.props.user.imgPath,
+    events: []
   }
 
   handleChange = event => {
@@ -43,6 +44,23 @@ class Profile extends React.Component {
       })
   }
 
+  getCollectionData = () => {
+    axios
+      .get(
+        process.env.REACT_APP_SERVER_URL + "/profile",
+        { withCredentials: true }
+      )
+      .then((res) => {
+        this.setState({
+          events: res.data.events
+        })
+      })
+  }
+
+  componentDidMount = () => {
+    this.getCollectionData();
+  }
+
   render() {
     return (
       <div className="profile-page">
@@ -51,6 +69,13 @@ class Profile extends React.Component {
 
         <h1>My ClimActions:</h1>
         <MyActions />
+
+        {this.state.events.map(event => {
+          return (
+            <div>{event.name}</div>
+          )
+        })
+        }
 
         <DropDown title="Change your Username & Password">
           <UserUpdate

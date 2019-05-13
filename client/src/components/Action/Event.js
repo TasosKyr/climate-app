@@ -12,7 +12,7 @@ export default class Event extends Component {
 
     axios
       .post(
-        process.env.REACT_APP_SERVER_URL + "/api/events/star",
+        process.env.REACT_APP_SERVER_URL + "/events/star",
         {
           id: id
         },
@@ -28,10 +28,8 @@ export default class Event extends Component {
       })
   }
 
-  star = <FontAwesomeIcon icon="faStar" style={{ color: "grey" }} />
-  starChosen = <FontAwesomeIcon icon="faStar" style={{ color: "green" }} />
-
-
+  star = <FontAwesomeIcon icon="star" style={{ color: "lightGrey" }} />
+  starChosen = <FontAwesomeIcon icon="star" style={{ color: "lightGreen" }} />
 
   render() {
     let starred
@@ -44,7 +42,7 @@ export default class Event extends Component {
     return (
       <div
         className="card events-card"
-        key={this.props.event.id ? this.props.event.id : this.props.event._id}
+        key={this.props.event._id}
       >
         <div className="card-body">
           <h3 className="card-title events-cart-title">{this.props.event.name}</h3>
@@ -55,11 +53,9 @@ export default class Event extends Component {
             <a href={this.props.event.link}>More Information Here</a>
           </div>
           <div>
-            {" "}
-            <a href="" onClick={this.handleStarClick.bind(null, this.props.event._id)}>
-              {" "}
+            <h2><a href="#" onClick={this.handleStarClick.bind(null, this.props.event._id)}>
               {starred}
-            </a>
+            </a></h2>
           </div>
         </div>
       </div>
