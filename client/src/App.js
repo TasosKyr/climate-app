@@ -8,10 +8,12 @@ import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
 import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
+
 import Data from './components/Data/Data'
+import Politics from "./components/Politics/Politics"
 
 import ProtectedRoute from "./components/ProtectedRoute"
-import Profile from "./components/Profile"
+import Profile from "./components/Profile/Profile"
 
 import { Switch, Route, Redirect } from "react-router-dom"
 import Action from "./components/Action/Action"
@@ -46,35 +48,24 @@ class App extends React.Component {
         <Navbar setUser={this.setUser} loggedIn={this.state.loggedIn} />
         <Switch>
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
-
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
-          {/* <Route
-            exact
-            path="/profile"
-            render={props => (
-              <Profile {...props} user={this.state.loggedIn} />
-            )}
-          /> */}
-          <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
-          {/* <Route path="/" component={Home} /> */}
-          {/* <Route path="/politics" component={Politics} /> */}
-          {/* <Route path="/action" component={Action} /> */}
-          <Route path="/data" component={Data} />
-          {/* <Events /> */}
+
+          <Route exact path="/politics" component={Politics} />} />
+     <Route path="/data" component={Data} />
+         <Route path="/" exact component={Home} />
+        
+          <Route exact path="/action"
+          render={props => (
+            <Action {...props} user={this.state.loggedIn} />
+          )}
+        />
+      <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
+         
         </Switch>
-
-
-        {/* <Switch> */}
-        <Route path="/" exact component={Home} />
-        {/* <Route path="/politics" exact component={Politics} /> */}
-        <Route path="/action" exact component={Action} />
-
-        {/* </Switch> */}
         <Footer />
+    
+    
 
-        {/* </Switch> */}
-
-        {/* <Footer /> */}
       </div>
     )
   }
