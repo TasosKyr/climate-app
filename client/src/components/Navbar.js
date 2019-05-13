@@ -21,14 +21,13 @@ class Navbar extends React.Component {
   }
 
   render() {
-    console.log("loggedin", this.state.loggedIn)
     return (
       <nav className="navbar navbar-expand-md navbar-light navbar-main">
         {this.state.loggedIn ? (
           <>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item">Welcome {this.state.loggedIn.username} !</li>
+                <li className="nav-link nav-color">Welcome {this.state.loggedIn.username} !</li>
                 <li className="nav-item active">
                   <Link className="nav-link nav-color" to="/politics">
                     Politics <span className="sr-only">(current)</span>
