@@ -112,10 +112,27 @@ body {
 
 .footer-container {
   background-color: var(--black);
-  height: 20vh;
+  height: 12vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute; 
+  width: 100vw;
+}
+
+.footer-content{
+  color: var(--white);
+  margin-top: 5px; 
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.footer-content a {
+  color: var(--white)
+}
+
+.footer-content a:hover {
+  color: var(--yellow-green)
 }
 
 .footer-container h2 {
