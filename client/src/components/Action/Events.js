@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react'
 import axios from "axios";
-import EventForm from './EventForm'
+import Event from './Event'
+
 
 
 export default class Events extends Component {
@@ -20,27 +21,18 @@ export default class Events extends Component {
     this.getEvent()
   }
 
+
+
   render() {
     return (
       <div>
 
         {this.state.events.map(event => {
           return (
-            <div className="card events-card" key={event.id ? event.id : event._id}>
-              <div className="card-body">
-                <h3 className="card-title events-cart-title">{event.name}</h3>
-                <p className="card-text">Date: {event.local_date}</p>
-                <p className="card-text">Time: {event.local_time}</p>
-                <p className="card-text">Place: {event.venue}</p>
-
-                <div>
-                  <a href={event.link}>More Information Here</a>
-                </div>
-              </div>
-            </div>
+            <Event event={event} />
           )
         })}
-        <EventForm getEvent={this.getEvent} />
+
       </div>
     )
   }

@@ -76,6 +76,10 @@ app.use("/", index)
 const auth = require("./routes/auth/auth")
 app.use("/api", auth)
 
+
+const data = require("./routes/data");
+app.use("/", data);
+
 const events = require("./routes/events")
 app.use("/", events)
 
@@ -85,7 +89,10 @@ app.use("/api", upload)
 const politics = require("./routes/politics")
 app.use("/api", politics)
 
-// const action = require('./routes/action')
-// app.use('/', action)
+const petitions = require('./routes/petitions')
+app.use('/', petitions)
+
+const profile = require('./routes/profile')
+app.use('/', profile)
 
 module.exports = app

@@ -32,4 +32,7 @@ router.delete("/profile", (req, res) => {
     })
 })
 
-module.exports = router
+
+
+module.exports = router;
+
