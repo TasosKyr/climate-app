@@ -26,7 +26,7 @@ export default class DropDown extends Component {
   }
 
   button = () => (
-    <Button className='modal-button' onClick={this.handleShow}>
+    <Button className='modal-button modal-style' onClick={this.handleShow} style={{ backgroundColor: '#295135' }}>
       {this.props.title}
     </Button>
   );
