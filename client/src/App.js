@@ -6,16 +6,15 @@ import Navbar from "./components/Navbar"
 import Signup from "./components/Auth/Signup"
 import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
-import Events from "./components/Action/Events"
 import Footer from "./components/Footer"
 
-import Data from './components/Data/Data'
+import Data from "./components/Data/Data"
 import Politics from "./components/Politics/Politics"
 
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile/Profile"
 
-import { Switch, Route, Redirect } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import Action from "./components/Action/Action"
 
 import "./App.css"
@@ -54,7 +53,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
-
           <Route exact path="/politics" component={Politics} />} />
      <Route path="/data" component={Data} />
           <Route path="/" exact component={Home} />

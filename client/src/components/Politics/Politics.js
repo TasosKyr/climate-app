@@ -1,6 +1,7 @@
-
 import React, { Component } from "react"
 import Twitter from "./Twitter"
+import EUOpenData from "./EUOpenData"
+import MEPs from "./MEPs"
 
 class Politics extends Component {
   render() {
@@ -11,8 +12,11 @@ class Politics extends Component {
 
           <h1>Climate Politics</h1>
 
-          <Twitter />
-
+          <div>
+            <Twitter />
+            <EUOpenData />
+            <MEPs />
+          </div>
 
         </div>
       </>
