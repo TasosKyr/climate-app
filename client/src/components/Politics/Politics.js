@@ -6,11 +6,17 @@ import MEPs from "./MEPs"
 class Politics extends Component {
   render() {
     return (
-      <div>
-        <Twitter />
-        <EUOpenData />
-        <MEPs />
-      </div>
+      <>
+        <div className="container page-container">
+          <h1>Climate Politics</h1>
+
+          <div>
+            <Twitter />
+            <EUOpenData />
+            <MEPs />
+          </div>
+        </div>
+      </>
     )
   }
 }
