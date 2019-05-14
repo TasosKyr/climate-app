@@ -5,10 +5,13 @@ import UserSelection from "./UserSelection"
 export default class Data extends Component {
   render() {
     return (
-      <div>
-        <UserSelection /* userChoices={} */ />
-        <DataCard />
-      </div>
+      <>
+        <div className="container page-container">
+          <h1>Climate Data</h1>
+          <UserSelection /* userChoices={} */ />
+          <DataCard />
+        </div>
+      </>
     )
   }
 }

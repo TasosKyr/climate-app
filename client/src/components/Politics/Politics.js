@@ -1,17 +1,21 @@
 
 import React, { Component } from "react"
 import Twitter from "./Twitter"
-import PoliticsHeader from './PoliticsHeader'
 
 class Politics extends Component {
   render() {
     return (
-      <div>
+      <>
 
-        <Twitter />
-        <PoliticsHeader />
+        <div className="container page-container">
 
-      </div>
+          <h1>Climate Politics</h1>
+
+          <Twitter />
+
+
+        </div>
+      </>
     )
   }
 }

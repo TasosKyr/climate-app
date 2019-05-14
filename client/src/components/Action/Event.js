@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Event extends Component {
   state = {
@@ -27,8 +28,10 @@ export default class Event extends Component {
       })
   }
 
-  star = <i class="fas fa-star" />
-  starChosen = <i style={{ color: "yellow" }} class="fas fa-star" />
+  star = <FontAwesomeIcon icon="faStar" style={{ color: "grey" }} />
+  starChosen = <FontAwesomeIcon icon="faStar" style={{ color: "green" }} />
+
+
 
   render() {
     let starred
