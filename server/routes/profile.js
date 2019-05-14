@@ -26,8 +26,6 @@ const getPetitions = function (myCollection) {
 
 router.get("/profile", (req, res) => {
   if (!req.user || !req.user.myCollection) return res.json({ events: [] })
-  console.log('!req.user', !req.user)
-  console.log('req.user', req.user)
   const queryEvents = getEvents(req.user.myCollection);
   const queryPetitions = getPetitions(req.user.myCollection)
   Promise.all([queryEvents, queryPetitions])

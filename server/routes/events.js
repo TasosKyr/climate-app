@@ -61,7 +61,6 @@ router.post('/events', authenticationCheck, async (req, res, next) => {
 
 
 router.post('/events/star', (req, res, next) => {
-  // console.log(req.body)
   const user = req.user
   if (typeof user.myCollection === 'undefined') {
     const myCollection = {
@@ -71,7 +70,11 @@ router.post('/events/star', (req, res, next) => {
     }
     user.myCollection = myCollection
   }
+  if (user.myCollection.events.includes(req.body.id)) {
+    return res.status(200).end()
+  }
   user.myCollection.events.push(req.body.id)
+
   user.save()
     .then(() => {
       res.status(200).end()
@@ -81,15 +84,14 @@ router.post('/events/star', (req, res, next) => {
     })
 })
 
-router.post('events/delete', (req, res, next) => {
+router.post('/events/delete', (req, res, next) => {
   const user = req.user
 
-  let indexToDeleted = user.myCollection.indexOf(req.body.resourceId)
-  user.myCollection.splice(indexToDeleted, 1)
+  let indexToDeleted = user.myCollection.events.indexOf(req.body.id)
+  user.myCollection.events.splice(indexToDeleted, 1)
   user.save()
-    .then((res) => {
-      console.log(res)
-      res.json(res)
+    .then(() => {
+      res.status(200).end()
     })
     .catch(err => {
       console.error('failed to save user collection', err)
