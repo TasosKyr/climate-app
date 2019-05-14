@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Event extends Component {
   state = {
-    starred: false
+    starred: this.props.starred || false
   }
 
   handleStarClick = (id, event) => {

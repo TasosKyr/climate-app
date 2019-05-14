@@ -4,7 +4,9 @@ import Event from "./Event"
 
 export default class Events extends Component {
   state = {
-    events: []
+    events: [],
+    userEvents: this.props.userEvents || []
+
   }
 
   getEvent = async () => {
@@ -20,7 +22,7 @@ export default class Events extends Component {
     return (
       <div>
         {this.state.events.map(event => {
-          return <Event event={event} />
+          return <Event event={event} starred={this.state.userEvents.includes(event._id)} />
         })}
       </div>
     )
