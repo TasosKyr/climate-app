@@ -1,5 +1,4 @@
 import React from "react"
-import MyActions from "./MyActions"
 import DropDown from "../DropDown"
 import UserUpdate from "./UserUpdate"
 import axios from "axios"
@@ -63,30 +62,40 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div className="profile-page">
-        <h1>Welcome {this.state.username}!</h1>
-        <img src={this.state.imgPath} alt="profilePic" />
+      <>
+        <div className="container page-container ">
+          <h1>Welcome {this.state.username}!</h1>
+          <img src={this.state.imgPath} alt="profilePic" />
 
-        <h1>My ClimActions:</h1>
-        <MyActions />
 
-        {this.state.events.map(event => {
-          return (
-            <div>{event.name}</div>
-          )
-        })
-        }
+          <h1>My ClimActions:</h1>
+          <p>Here are all the ClimAction you have saved – go get active!</p>
 
-        <DropDown title="Change your Username & Password">
-          <UserUpdate
-            username={this.state.username}
-            password={this.state.password}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-        </DropDown>
-        <br />
-      </div>
+          {this.state.events.map(event => {
+            return (
+              <div className='actionContainer'>
+                <div className="card myActionsBox" >
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">{event.name} <br /> <button className='button1'>
+                      <a href="{event.link}">More Info</a></button></li>
+                  </ul>
+                </div>
+              </div>
+            )
+          })
+          }
+          <br />
+          <DropDown title="Change your Username & Password">
+            <UserUpdate
+              username={this.state.username}
+              password={this.state.password}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
+          </DropDown>
+          <br />
+        </div>
+      </>
     )
   }
 }
