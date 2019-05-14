@@ -7,7 +7,6 @@ export default class Events extends Component {
     events: []
   }
 
-  /**because await, no then */
   getEvent = async () => {
     const eventsBerlin = await axios.get(process.env.REACT_APP_SERVER_URL + "/events")
     this.setState({ events: eventsBerlin.data })

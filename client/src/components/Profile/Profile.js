@@ -10,7 +10,8 @@ class Profile extends React.Component {
     username: this.props.user.username,
     password: "",
     imgPath: this.props.user.imgPath,
-    events: []
+    events: [],
+    petition: []
   }
 
   handleChange = event => {
@@ -52,7 +53,8 @@ class Profile extends React.Component {
       )
       .then((res) => {
         this.setState({
-          events: res.data.events
+          events: res.data.events,
+          petitions: res.data.petitions
         })
       })
   }
@@ -72,6 +74,8 @@ class Profile extends React.Component {
           <h1>My ClimActions:</h1>
           <p>Here are all the ClimAction you have saved – go get active!</p>
 
+
+          <h2>Your Climate Events </h2>
           {this.state.events.map(event => {
             return (
               <div className='actionContainer'>
@@ -87,6 +91,22 @@ class Profile extends React.Component {
             )
           })
           }
+          <h2>Your Climate Petitions</h2>
+          {this.state.petitions && this.state.petitions.map(petition => {
+            return (
+              <div className='actionContainer'>
+                <div className="card myActionsBox" >
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">{petition.title} <br /> <button className='button1'>
+                      <a href={petition.url}>More Info</a></button>
+                      <button className='button1'><FontAwesomeIcon icon="trash-alt" /></button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )
+          })}
+
           <br />
           <DropDown title="Change your Username & Password">
             <UserUpdate

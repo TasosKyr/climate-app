@@ -31,8 +31,8 @@ router.get("/profile", (req, res) => {
   const queryEvents = getEvents(req.user.myCollection);
   const queryPetitions = getPetitions(req.user.myCollection)
   Promise.all([queryEvents, queryPetitions])
-    .then(([events]) => {
-      res.json({ events })
+    .then(([events, petitions]) => {
+      res.json({ events, petitions })
     })
 })
 
