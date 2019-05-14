@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Petitions extends Component {
   state = {
-    petitions: []
+    petitions: [],
+    starred: false
   }
 
   getEvent = async () => {
@@ -15,7 +17,38 @@ export default class Petitions extends Component {
     this.getEvent()
   }
 
+  handleStarClick = (id, event) => {
+    event.preventDefault()
+
+    axios
+      .post(
+        process.env.REACT_APP_SERVER_URL + "/petitions/star",
+        {
+          id: id
+        },
+        { withCredentials: true }
+      )
+      .then(() => {
+        this.setState({
+          starred: true
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+  star = <FontAwesomeIcon icon="star" style={{ color: "lightGrey" }} />
+  starChosen = <FontAwesomeIcon icon="star" style={{ color: "lightGreen" }} />
+
   render() {
+
+    let starred
+    if (this.state.starred) {
+      starred = this.starChosen
+    } else {
+      starred = this.star
+    }
+
     return (
       <div>
 
@@ -27,6 +60,7 @@ export default class Petitions extends Component {
                 <div>
                   <a href={petition.url}>More Information Here</a>
                 </div>
+                {starred}
               </div>
             </div>
           )

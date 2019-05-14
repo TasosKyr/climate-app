@@ -3,6 +3,7 @@ import DropDown from "../DropDown"
 import UserUpdate from "./UserUpdate"
 import axios from "axios"
 import bcrypt from "bcryptjs"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Profile extends React.Component {
   state = {
@@ -77,7 +78,10 @@ class Profile extends React.Component {
                 <div className="card myActionsBox" >
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">{event.name} <br /> <button className='button1'>
-                      <a href="{event.link}">More Info</a></button></li>
+                      <a href="{event.link}">More Info</a></button>
+                      <button className='button1'><FontAwesomeIcon icon="trash-alt" /></button>
+
+                    </li>
                   </ul>
                 </div>
               </div>

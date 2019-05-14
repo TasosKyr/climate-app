@@ -21,6 +21,27 @@ router.get('/petitions', (req, res, next) => {
     });
 });
 
+router.post('/petitions/star', (req, res, next) => {
+  console.log(req.body)
+  const user = req.user
+  if (typeof user.myCollection === 'undefined') {
+    const myCollection = {
+      events: [],
+      petitions: [],
+      politics: []
+    }
+    user.myCollection = myCollection
+  }
+  user.myCollection.events.push(req.body.id)
+  user.save()
+    .then(() => {
+      res.status(200).end()
+    })
+    .catch(err => {
+      console.error('failed to save myCollection')
+    })
+})
+
 
 
 

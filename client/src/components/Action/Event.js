@@ -40,6 +40,7 @@ export default class Event extends Component {
     }
 
     return (
+
       <div
         className="card events-card"
         key={this.props.event._id}
