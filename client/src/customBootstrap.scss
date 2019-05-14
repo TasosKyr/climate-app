@@ -387,9 +387,29 @@ select {
   background-color:var(--med-green); 
   }
 
+  .button1 a:hover {
+    color: var(--yellow-green);
+    text-decoration: none; 
+  }
+
    @media all and (max-width:30em){
    .button1 {
   display: block;
   margin: 0.4em auto;
   }
 }
+
+//profile page styling 
+
+.actionContainer {
+  display:flex; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+}
+.myActionsBox {
+  width: 50vw;
+  border: var(--black);
+  margin: 1rem;
+  padding: 0px; 
+}
+
