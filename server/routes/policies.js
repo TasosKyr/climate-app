@@ -29,5 +29,3 @@ router.get("/politics/meps", (req, res) => {
 })
 
 module.exports = router
-
-// data_climate-change-mitigation-policies-and-measures-3
