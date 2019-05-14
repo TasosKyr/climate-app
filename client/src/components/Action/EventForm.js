@@ -53,11 +53,9 @@ export default class EventForm extends Component {
   render() {
     return (
       <div>
-        <h2>Add Your own event</h2>
-        <p>You can do this only if you are a logged in user</p>
-        <div className="form">
+        <div className="user-selection-form">
           <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
+            <div className="inp">
               <label>Event Name: </label>
               <input
                 className="form-control"
@@ -69,7 +67,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="inp">
               <label>Date: </label>
               <input
                 className="form-control"
@@ -81,7 +79,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="inp">
               <label>Start Time:</label>
               <input
                 className="form-control"
@@ -93,7 +91,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="inp">
               <label>Venue/Place: </label>
               <input
                 className="form-control"
@@ -105,7 +103,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="inp">
               <label>Address: </label>
               <input
                 className="form-control"
@@ -116,7 +114,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="inp">
               <label>Description: </label>
               <input
                 className="form-control"
@@ -127,7 +125,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <div className="form-group">
+            <div className="inp">
               <label>Link to Event: </label>
               <input
                 className="form-control"
@@ -139,7 +137,7 @@ export default class EventForm extends Component {
               />
             </div>
 
-            <input className="btn btn-primary" type="submit" value="Add Event" />
+            <input className='button1' type="submit" value="Add Event" />
           </form>
         </div>
       </div>
