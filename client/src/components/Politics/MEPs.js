@@ -8,13 +8,23 @@ class MEPs extends Component {
 
   componentDidMount = () => {
     getJSON().then(data => {
+      console.log("MEPs", data)
       this.setState({ data: data })
     })
   }
   render() {
     const { data } = this.state
-    console.log("MEPs", data)
-    return <div>{data && data.meps && data.meps[0] && data.meps[0].Name && data.meps[0].Name.full}</div>
+    return (
+      <div>
+        {data &&
+          data.meps &&
+          data.meps.map(el => (
+            <div className="shaded-box">
+              {el.Name.full} {el.Groups[0].Organization}
+            </div>
+          ))}
+      </div>
+    )
   }
 }
 

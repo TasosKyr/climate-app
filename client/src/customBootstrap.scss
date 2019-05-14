@@ -1,7 +1,7 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700');
+@import url("https://fonts.googleapis.com/css?family=Karla:400,400i,700");
 //font-family: 'Eczar', serif;
-@import url('https://fonts.googleapis.com/css?family=Aguafina+Script|Work+Sans:300,700,900');
+@import url("https://fonts.googleapis.com/css?family=Aguafina+Script|Work+Sans:300,700,900");
 //font-family: 'Aguafina Script', cursive;
 //font-family: 'Work Sans', sans-serif;
 
@@ -9,14 +9,13 @@
 // Dark green: #1d2d21 / rgb(29,45,33)
 //Middle green: #306318 (forest green) rgb(48,99,24)
 //light green: #5c8c13
-//'white' 
-
+//'white'
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -34,8 +33,8 @@ body {
   min-height: 100%;
 }
 
-.page-container{
-  margin: 1.5rem; 
+.page-container {
+  margin: 1.5rem;
 }
 
 :root {
@@ -48,7 +47,7 @@ body {
 }
 
 body {
-  margin: 10px; 
+  margin: 10px;
 }
 
 //fix burger icon on resize
@@ -58,24 +57,24 @@ body {
   width: 100vw;
 }
 
-//left corner logo 
-.logoFont{
-  font-family: 'Aguafina Script', cursive;
-  font-size: 1.5rem; 
-  padding-right: 5px; 
-  color: var(--white); 
+//left corner logo
+.logoFont {
+  font-family: "Aguafina Script", cursive;
+  font-size: 1.5rem;
+  padding-right: 5px;
+  color: var(--white);
 }
 
-.logoFont:hover{
+.logoFont:hover {
   color: var(--yellow-green);
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .nav-color {
   color: var(--white) !important;
 }
 
-.nav-color a:hover{
+.nav-color a:hover {
   color: var(--yellow-green) !important;
 }
 
@@ -90,13 +89,13 @@ body {
   justify-content: center;
 }
 
-//bouncing arrow in header 
+//bouncing arrow in header
 
 .header-container a {
-  color: var(--white); 
+  color: var(--white);
 }
 .header-container a:hover {
-  color: var(--yellow-green); 
+  color: var(--yellow-green);
 }
 
 .arrow {
@@ -110,7 +109,11 @@ body {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
@@ -136,11 +139,11 @@ body {
 }
 
 .heading {
-  font-family: 'Aguafina Script', cursive;
+  font-family: "Aguafina Script", cursive;
   color: var(--white);
 }
 
-.heading-action  {
+.heading-action {
   color: var(--black);
 }
 
@@ -149,7 +152,7 @@ body {
   font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
-  font-family: 'Aguafina Script', cursive;
+  font-family: "Aguafina Script", cursive;
 }
 
 .heading-action h1 {
@@ -188,22 +191,22 @@ body {
   bottom: 0;
   left: 0;
   padding: 1rem;
-   text-align: center;
+  text-align: center;
 }
 
-.footer-content{
+.footer-content {
   color: var(--white);
-  margin-top: 5px; 
+  margin-top: 5px;
   font-size: 0.8rem;
   line-height: 1;
 }
 
 .footer-content a {
-  color: var(--white)
+  color: var(--white);
 }
 
 .footer-content a:hover {
-  color: var(--yellow-green)
+  color: var(--yellow-green);
 }
 
 .footer-container h2 {
@@ -247,9 +250,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2vh
+  margin: 2vh;
 }
-
 
 /* Data page - select function styling */
 select {
@@ -260,7 +262,7 @@ select {
   outline: 0;
   box-shadow: none;
   /* border: 0 !important; */
-  background:#295135;
+  background: #295135;
   background-image: none;
 }
 
@@ -276,17 +278,17 @@ select::-ms-expand {
   line-height: 3;
   background: #295135;
   overflow: hidden;
-  border-radius: .25em;
+  border-radius: 0.25em;
 }
 select {
   flex: 1;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   color: #fff;
   cursor: pointer;
 }
 
 .select::after {
-  content: '\25BC';
+  content: "\25BC";
   position: absolute;
   top: 0;
   right: 0;
@@ -294,9 +296,9 @@ select {
   background: #34495e;
   cursor: pointer;
   pointer-events: none;
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
 }
 
 .select:hover::after {
@@ -347,7 +349,7 @@ select {
   transition: all 0.15s ease;
 }
 .inp input:hover {
-  background: rgba(34,50,84,0.03);
+  background: rgba(34, 50, 84, 0.03);
 }
 .inp input:not(:placeholder-shown) + span {
   color: #8f9b91;
@@ -368,48 +370,85 @@ select {
 /* Data page - button styling */
 .button1 {
   display: inline-block;
-  padding:0.35em 1.2em;
-  border:0.1em solid #FFFFFF;
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.5em;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.5em;
   box-sizing: border-box;
-  text-decoration:none;
-  font-family:'Roboto',sans-serif;
-  font-weight:300;
-  color: var(--black); 
-  text-align:center;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: var(--black);
+  text-align: center;
   transition: all 0.2s;
-  background-color: rgba(34,50,84,0.03)
-  }
+  background-color: rgba(34, 50, 84, 0.03);
+}
 
-  .button1:hover {
-  color:#FFFFFF;
-  background-color:var(--med-green); 
-  }
+.button1:hover {
+  color: #ffffff;
+  background-color: var(--med-green);
+}
 
-  .button1 a:hover {
-    color: var(--yellow-green);
-    text-decoration: none; 
-  }
+.button1 a:hover {
+  color: var(--yellow-green);
+  text-decoration: none;
+}
 
-   @media all and (max-width:30em){
+@media all and (max-width: 30em) {
    .button1 {
-  display: block;
-  margin: 0.4em auto;
+    display: block;
+    margin: 0.4em auto;
   }
 }
 
-//profile page styling 
+//profile page styling
 
 .actionContainer {
-  display:flex; 
-  justify-content: center; 
-  flex-wrap: wrap; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .myActionsBox {
   width: 50vw;
   border: var(--black);
   margin: 1rem;
-  padding: 0px; 
+  padding: 0px;
 }
 
+.header-container-politics {
+  background-image: url("../src/images/euro-flag.jpeg");
+  height: 60vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.groups-container {
+  display: flex;
+  justify-content: center;
+}
+
+.shaded-box {
+  box-shadow: 3px 3px 5px 6px #ccc;
+  margin: 2rem 5rem 2rem;
+  padding: 0.5rem;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.shaded-box img {
+  height: 3rem;
+  padding-left: 5rem;
+}
+
+.shaded-box h3 {
+  margin: 0;
+  padding-right: 3rem;
+}

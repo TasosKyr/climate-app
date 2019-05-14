@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { TwitterTweetEmbed } from "react-twitter-embed"
 import { Carousel } from "react-bootstrap"
 import { getTweets } from "../../services/politics"
+// import { get } from "lodash"
 
 class Twitter extends Component {
   state = {

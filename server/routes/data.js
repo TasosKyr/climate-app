@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const axios = require('axios')
+const express = require("express")
+const router = express.Router()
+const axios = require("axios")
 
 const extremeIncident = (city, type, years) => {
   const BASE_URL = `https://app.climate.azavea.com/api/climate-data/`
@@ -20,15 +20,15 @@ const extremeIncident = (city, type, years) => {
     })
 }
 
-router.post('/data', async (req, res, next) => {
+router.post("/data", async (req, res, next) => {
   const { city, type, years } = req.body
-  const incident = await extremeIncident(city, type, years);
-  res.json(incident);
-  console.log('Here is the incident', incident)
-});
+  const incident = await extremeIncident(city, type, years)
+  res.json(incident)
+  // console.log('Here is the incident', incident)
+})
 
-router.get('/data', async (req, res, next) => {
+router.get("/data", async (req, res, next) => {
   res.json({ message: "you're in the wrong route... I think" })
-});
+})
 
-module.exports = router;
+module.exports = router
