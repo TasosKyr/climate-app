@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class UserSelection extends Component {
+export default class EmissionsUserSelection extends Component {
   state = {
     incidentInfo: null
   }
