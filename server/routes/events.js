@@ -61,7 +61,7 @@ router.post('/events', authenticationCheck, async (req, res, next) => {
 
 
 router.post('/events/star', (req, res, next) => {
-  console.log(req.body)
+  // console.log(req.body)
   const user = req.user
   if (typeof user.myCollection === 'undefined') {
     const myCollection = {
@@ -77,8 +77,12 @@ router.post('/events/star', (req, res, next) => {
       res.status(200).end()
     })
     .catch(err => {
-      console.error('failed to save myCollection')
+      console.error('failed to save myCollection', err)
     })
+})
+
+router.post('events/delete', (req, res, next) => {
+  const user = req.user
 })
 
 

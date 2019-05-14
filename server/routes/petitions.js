@@ -32,13 +32,13 @@ router.post('/petitions/star', (req, res, next) => {
     }
     user.myCollection = myCollection
   }
-  user.myCollection.events.push(req.body.id)
+  user.myCollection.petitions.push(req.body.id)
   user.save()
     .then(() => {
       res.status(200).end()
     })
     .catch(err => {
-      console.error('failed to save myCollection')
+      console.error('failed to save myCollection', err)
     })
 })
 

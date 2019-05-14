@@ -3,6 +3,7 @@ const router = express.Router()
 const User = require("../models/User")
 const mongoose = require('mongoose')
 const Event = require('../models/Event')
+const Petition = require('../models/Petition')
 
 
 const getEvents = function (myCollection) {
@@ -14,12 +15,22 @@ const getEvents = function (myCollection) {
   return query
 }
 
+const getPetitions = function (myCollection) {
+  const petitionIds = myCollection.petitions
+  const objectIds = petitionIds.map(id => {
+    if (id) return mongoose.Types.ObjectId(id)
+  })
+  const query = Petition.where('_id').in(objectIds)
+  return query
+}
+
 router.get("/profile", (req, res) => {
   if (!req.user || !req.user.myCollection) return res.json({ events: [] })
   console.log('!req.user', !req.user)
   console.log('req.user', req.user)
   const queryEvents = getEvents(req.user.myCollection);
-  Promise.all([queryEvents])
+  const queryPetitions = getPetitions(req.user.myCollection)
+  Promise.all([queryEvents, queryPetitions])
     .then(([events]) => {
       res.json({ events })
     })
@@ -44,8 +55,6 @@ router.delete("/profile", (req, res) => {
       res.json(error)
     })
 })
-
-
 
 module.exports = router;
 

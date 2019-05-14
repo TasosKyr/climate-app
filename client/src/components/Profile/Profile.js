@@ -78,9 +78,8 @@ class Profile extends React.Component {
                 <div className="card myActionsBox" >
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">{event.name} <br /> <button className='button1'>
-                      <a href="{event.link}">More Info</a></button>
+                      <a href={event.link}>More Info</a></button>
                       <button className='button1'><FontAwesomeIcon icon="trash-alt" /></button>
-
                     </li>
                   </ul>
                 </div>

@@ -38,7 +38,7 @@ export default class Petitions extends Component {
       })
   }
   star = <FontAwesomeIcon icon="star" style={{ color: "lightGrey" }} />
-  starChosen = <FontAwesomeIcon icon="star" style={{ color: "lightGreen" }} />
+  starChosen = <FontAwesomeIcon icon="star" style={{ color: "#295135" }} />
 
   render() {
 
@@ -54,13 +54,15 @@ export default class Petitions extends Component {
 
         {this.state.petitions.map(petition => {
           return (
-            <div className="card events-card" key={petition.id ? petition.id : petition._id}>
+            <div className="card events-card" key={petition._id}>
               <div className="card-body">
                 <h3 className="card-title events-cart-title">{petition.title}</h3>
                 <div>
                   <a href={petition.url}>More Information Here</a>
                 </div>
-                {starred}
+                <h2><a href="#" onClick={this.handleStarClick.bind(null, petition._id)}>
+                  {starred}
+                </a></h2>
               </div>
             </div>
           )

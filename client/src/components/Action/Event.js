@@ -29,7 +29,7 @@ export default class Event extends Component {
   }
 
   star = <FontAwesomeIcon icon="star" style={{ color: "lightGrey" }} />
-  starChosen = <FontAwesomeIcon icon="star" style={{ color: "lightGreen" }} />
+  starChosen = <FontAwesomeIcon icon="star" style={{ color: "#295135" }} />
 
   render() {
     let starred
