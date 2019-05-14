@@ -11,7 +11,8 @@ class Profile extends React.Component {
     password: "",
     imgPath: this.props.user.imgPath,
     events: [],
-    petition: []
+    petition: [],
+    eventDeleted: false
   }
 
   handleChange = event => {
@@ -59,6 +60,27 @@ class Profile extends React.Component {
       })
   }
 
+  handleEventTrashClick = (id, event) => {
+    event.preventDefault()
+
+    axios
+      .post(
+        process.env.REACT_APP_SERVER_URL + "/events/delete",
+        {
+          id: id,
+        },
+        { withCredentials: true }
+      )
+      .then(() => {
+        this.setState({
+          eventDeleted: true
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   componentDidMount = () => {
     this.getCollectionData();
   }
@@ -78,12 +100,12 @@ class Profile extends React.Component {
           <h2>Your Climate Events </h2>
           {this.state.events.map(event => {
             return (
-              <div className='actionContainer'>
+              <div className='actionContainer' key={this.props.event._id}>
                 <div className="card myActionsBox" >
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">{event.name} <br /> <button className='button1'>
                       <a href={event.link}>More Info</a></button>
-                      <button className='button1'><FontAwesomeIcon icon="trash-alt" /></button>
+                      <button className='button1' onClick={this.handleEventTrashClick.bind(null, this.props.event._id)}><FontAwesomeIcon icon="trash-alt" /></button>
                     </li>
                   </ul>
                 </div>

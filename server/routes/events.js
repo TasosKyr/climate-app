@@ -83,6 +83,17 @@ router.post('/events/star', (req, res, next) => {
 
 router.post('events/delete', (req, res, next) => {
   const user = req.user
+
+  let indexToDeleted = user.myCollection.indexOf(req.body.resourceId)
+  user.myCollection.splice(indexToDeleted, 1)
+  user.save()
+    .then((res) => {
+      console.log(res)
+      res.json(res)
+    })
+    .catch(err => {
+      console.error('failed to save user collection', err)
+    })
 })
 
 
