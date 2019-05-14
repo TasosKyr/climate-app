@@ -10,26 +10,35 @@ class Home extends Component {
     return (
       <div>
         <Header />
+        <div id='content' className="container page-container">
 
-        <div className="card-container">
+          <div className='intro-text-container'>
+            <p>Welcome to ClimAct – This is a page where we want to help You get more engaged in fighting climate change.
+              We have created three categories for you to explore – Politics, Action & Data.
+              On the politics section you will find relevant climate change legislation. ON the action page you can find ways to get more engaged in your community or politically. The data page is there for you to explore and understand climate change better.</p>
+          </div>
+          <hr />
 
-          <TitleCard 
-          title='Climate Politics' 
-          description='Here you can find climate change realted legislation' 
-          link='/politics'
-          image={image1}/>
+          <div className="card-container">
 
-          <TitleCard 
-          title='Take Climate Action' 
-          description='Here you can find events & petitions to sign'
-          link='/action'
-          image={image2} />
+            <TitleCard
+              title='Climate Politics'
+              description='Here you can find climate change realted legislation'
+              link='/politics'
+              image={image1} />
 
-          <TitleCard 
-          title='Climate Data' 
-          description='Here You can see some Climate Change data visulaized'
-          link='/data' 
-          image={image3}/>
+            <TitleCard
+              title='Climate Action'
+              description='Here you can find events & petitions to sign'
+              link='/action'
+              image={image2} />
+
+            <TitleCard
+              title='Climate Data'
+              description='Here You can see some Climate Change data visulaized'
+              link='/data'
+              image={image3} />
+          </div>
         </div>
       </div>
     )

@@ -18,6 +18,7 @@ export default class Petitions extends Component {
   render() {
     return (
       <div>
+
         {this.state.petitions.map(petition => {
           return (
             <div className="card events-card" key={petition.id ? petition.id : petition._id}>

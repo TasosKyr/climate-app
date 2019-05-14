@@ -1,11 +1,18 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+const myCollectionSchema = new Schema({
+  events: Array,
+  petitions: Array,
+  politics: Array
+})
+
 const userSchema = new Schema(
   {
     username: String,
     password: String,
-    imgPath: String
+    imgPath: String,
+    myCollection: myCollectionSchema,
   },
   {
     timestamps: true
