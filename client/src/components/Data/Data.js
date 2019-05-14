@@ -19,12 +19,18 @@ export default class Data extends Component {
 
   render() {
     return (
+
+       <>
+        <div className="container page-container">
+      <h1>Climate Data</h1>
       <div className='data-page'>
         <UserSelection changed=
           {this.handleChange}
           {...this.state} />
         <DataCard {...this.state} />
       </div>
+      </div>
+      </>
     )
   }
 }

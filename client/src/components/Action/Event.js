@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from "react"
+import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Event extends Component {
-
   state = {
     starred: false
   }
 
   handleStarClick = (id, event) => {
-    event.preventDefault();
+    event.preventDefault()
 
     axios
       .post(
-        "http://localhost:5000/events/star",
+        process.env.REACT_APP_SERVER_URL + "/events/star",
         {
           id: id
         },
@@ -25,15 +25,14 @@ export default class Event extends Component {
       })
       .catch(err => {
         console.log(err)
-      });
-  };
+      })
+  }
 
-
-  star = (<i class="fas fa-star"></i>)
-  starChosen = (<i style={{ color: 'yellow' }} class="fas fa-star" ></i >)
+  star = <FontAwesomeIcon icon="star" style={{ color: "lightGrey" }} />
+  starChosen = <FontAwesomeIcon icon="star" style={{ color: "lightGreen" }} />
 
   render() {
-    let starred;
+    let starred
     if (this.state.starred) {
       starred = this.starChosen
     } else {
@@ -41,8 +40,10 @@ export default class Event extends Component {
     }
 
     return (
-
-      <div className="card events-card" key={this.props.event.id ? this.props.event.id : this.props.event._id}>
+      <div
+        className="card events-card"
+        key={this.props.event._id}
+      >
         <div className="card-body">
           <h3 className="card-title events-cart-title">{this.props.event.name}</h3>
           <p className="card-text">Date: {this.props.event.local_date}</p>
@@ -51,12 +52,13 @@ export default class Event extends Component {
           <div>
             <a href={this.props.event.link}>More Information Here</a>
           </div>
-          <div> <a href='' onClick={this.handleStarClick.bind(null, this.props.event._id)}> {starred}</a></div>
+          <div>
+            <h2><a href="#" onClick={this.handleStarClick.bind(null, this.props.event._id)}>
+              {starred}
+            </a></h2>
+          </div>
         </div>
-
       </div>
-
-
     )
   }
 }

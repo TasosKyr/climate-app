@@ -14,8 +14,13 @@ const passport = require("passport")
 
 require("./configs/passport")
 
+const mongoDBURL =
+  process.env.NODE_ENV === "DEV" ? process.env.MONGODB_DEV_URL : process.env.MONGODB_PROD_URL
+
 mongoose
-  .connect("mongodb://localhost/server", { useNewUrlParser: true })
+  .connect(mongoDBURL, {
+    useNewUrlParser: true
+  })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -76,9 +81,8 @@ app.use("/", index)
 const auth = require("./routes/auth/auth")
 app.use("/api", auth)
 
-
-const data = require("./routes/data");
-app.use("/", data);
+const data = require("./routes/data")
+app.use("/", data)
 
 const events = require("./routes/events")
 app.use("/", events)
@@ -89,10 +93,14 @@ app.use("/api", upload)
 const politics = require("./routes/politics")
 app.use("/api", politics)
 
-const petitions = require('./routes/petitions')
-app.use('/', petitions)
+const petitions = require("./routes/petitions")
+app.use("/", petitions)
 
-const profile = require('./routes/profile')
-app.use('/', profile)
+const profile = require("./routes/profile")
+app.use("/", profile)
+
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html")
+})
 
 module.exports = app

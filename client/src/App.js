@@ -21,6 +21,11 @@ import Action from "./components/Action/Action"
 import "./App.css"
 import "./customBootstrap.scss"
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown, faStar } from '@fortawesome/free-solid-svg-icons'
+library.add(faArrowDown, faStar)
+
 class App extends React.Component {
   state = { loggedIn: null }
 
@@ -52,19 +57,19 @@ class App extends React.Component {
 
           <Route exact path="/politics" component={Politics} />} />
      <Route path="/data" component={Data} />
-         <Route path="/" exact component={Home} />
-        
+          <Route path="/" exact component={Home} />
+
           <Route exact path="/action"
-          render={props => (
-            <Action {...props} user={this.state.loggedIn} />
-          )}
-        />
-      <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
-         
+            render={props => (
+              <Action {...props} user={this.state.loggedIn} />
+            )}
+          />
+          <ProtectedRoute user={this.state.loggedIn} component={Profile} exact={true} path="/profile" />
+
         </Switch>
         <Footer />
-    
-    
+
+
 
       </div>
     )
