@@ -4,6 +4,7 @@ import UserSelection from "./UserSelection"
 import DataPopUp from "./DataPopUp";
 import { getData } from "../../services/data";
 import EmissionsDataCard from "./EmissionsDataCard"
+import EmissionsUserSelection from "./EmissionsUserSelection"
 
 
 export default class Data extends Component {
@@ -13,6 +14,10 @@ export default class Data extends Component {
     startYear: "",
     endYear: "",
     incidentInfo: null,
+    country: "",
+    /* userSelectionEU: null, */
+    startYearEU: "",
+    endYearEU: ""
   };
 
   handleClick = () => {
@@ -21,6 +26,9 @@ export default class Data extends Component {
     let type = this.state.incidentType
     let city = this.state.city
     let years = `${startYear}:${endYear}`
+    let country = this.state.country
+    let startYearEU = this.state.startYearEU
+    let endYearEU = this.state.endYearEU
     let data = {
       type,
       city,
@@ -37,7 +45,6 @@ export default class Data extends Component {
   handleChange = event => {
     const name = event.target.name;
     const value = event.target.value;
-
     this.setState({ [name]: value });
   }
 
@@ -50,10 +57,14 @@ export default class Data extends Component {
             <UserSelection changed=
               {this.handleChange}
               {...this.state} />
-            <DataPopUp title='Extreme climate incidents' >
+            <DataPopUp title='Extreme climate incidents in US' >
               <DataCard {...this.state} clicked={this.handleClick} />
             </DataPopUp>
-            <EmissionsDataCard />
+            <EmissionsUserSelection changed={this.handleChange} />
+            {/* <DataPopUp title='Gas emission in EU' > 
+            {...this.state} /> */}
+            <EmissionsDataCard {...this.state} clicked={this.handleClick} />
+            {/* </DataPopUp> */}
           </div>
         </div>
       </>
