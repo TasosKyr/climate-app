@@ -1,24 +1,19 @@
 import React from "react"
-
 import Home from "./components/Home/Home"
-
 import Navbar from "./components/Navbar"
 import Signup from "./components/Auth/Signup"
 import Login from "./components/Auth/Login"
 import { loggedin } from "./services/auth"
 import Footer from "./components/Footer"
-
 import Data from "./components/Data/Data"
-
 import Politics from "./components/Politics/Politics"
 import MEPs from "./components/Politics/MEPs"
 import Member from "./components/Politics/Member"
-
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile/Profile"
-
 import { Switch, Route } from "react-router-dom"
 import Action from "./components/Action/Action"
+import About from './components/About'
 
 import "./App.css"
 import "./customBootstrap.scss"
@@ -54,6 +49,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar setUser={this.setUser} loggedIn={this.state.loggedIn} />
         <Switch>
+          <Route exact path="/about" component={About} />} />
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
           <Route exact path="/politics" component={Politics} />} />

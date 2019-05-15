@@ -67,6 +67,10 @@ body {
   width: 100vw;
 }
 
+.nav-item a:hover {
+  color: var(--yellow-green)
+}
+
 //left corner logo
 .logoFont {
   font-family: "Aguafina Script", cursive;
@@ -80,12 +84,8 @@ body {
   text-decoration: none;
 }
 
-.nav-color {
-  color: var(--white) !important;
-}
-
-.nav-color a:hover {
-  color: var(--yellow-green) !important;
+.nav-item {
+  color: var(--white);
 }
 
 .header-container {
@@ -404,12 +404,13 @@ select {
 .myAction{
   display: flex; 
   flex-direction: row; 
+  margin: 0px; 
   
 }
 
 .action-list{
   width: 40vw;
-  margin: 0rem; 
+  margin: 0px; 
   align-self: flex-start;
 }
 

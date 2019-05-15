@@ -23,20 +23,31 @@ class Navbar extends React.Component {
   }
 
   logo = (<Link className="navbar-brand nav-color" to="/" className='logoFont'> ClimAct</Link>)
-  subPages = (<> <li className="nav-item active"><Link className="nav-link nav-color" to="/politics">
-    Politics <span className="sr-only">(current)</span>
-  </Link>
-  </li>
-    <li className="nav-item">
-      <Link className="nav-link nav-color" to="/action">
-        Action
-</Link>
-    </li>
-    <li className="nav-item">
-      <Link className="nav-link nav-color" to="/data">
-        Data
-</Link>
-    </li></>)
+
+  subPages = (
+    <>
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/about">
+          About
+      </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/politics">
+          Politics
+      </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/action">
+          Action </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/data">
+          Data </Link>
+      </li>
+    </>)
 
   signupLogin = (<> <li className="nav-item">
     <Link className="nav-link nav-color" to="/signup">
@@ -50,7 +61,7 @@ class Navbar extends React.Component {
     </li> </>)
 
 
-  welcomeUser = () =>  (
+  welcomeUser = () => (
     <>
       <Dropdown>
         <Dropdown.Toggle className='' variant="link" id="dropdown-basic" style={{ color: 'white' }}>
@@ -71,7 +82,7 @@ class Navbar extends React.Component {
       {this.logo}
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          
+
           {this.subPages}
 
           {this.welcomeUser()}
