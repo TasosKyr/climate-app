@@ -44,6 +44,15 @@ export default class EmissionsDataCard extends Component {
        return this.state.dataEUavgArr
      } */
 
+    console.log(getDataArray(), this.state.dataEUavgArr)
+
+    const maxScale = Math.ceil(Math.max(
+      Math.max(...getDataArray()),
+      Math.max(...this.state.dataEUavgArr)
+    ))
+
+
+    console.log(maxScale)
     let graph2Data = {
       labels: getYearArray(),
       datasets: [{
@@ -97,15 +106,27 @@ export default class EmissionsDataCard extends Component {
             display: true,
             position: 'left',
             id: 'y-axis-1',
+            ticks: {
+              beginAtZero: true,
+              max: maxScale,
+              min: 0,
+              stepSize: 1,
+            },
             gridLines: {
-              display: false
+              display: true
             }
           },
           {
             type: 'linear',
-            display: true,
+            display: false,
             position: 'right',
             id: 'y-axis-2',
+            ticks: {
+              beginAtZero: true,
+              max: maxScale,
+              min: 0,
+              stepSize: 1,
+            },
             gridLines: {
               display: false
             }
@@ -117,11 +138,10 @@ export default class EmissionsDataCard extends Component {
     return (
       <div>
         <h1>Emissions graph</h1>
-        <div>
+        <div className="mb-3">
           <label>
             Display EU average
-          <input
-              name="EUaverage"
+            <input
               type="checkbox"
               checked={this.state.checked} onChange={this.handleChange} />
           </label>

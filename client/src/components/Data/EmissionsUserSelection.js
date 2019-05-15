@@ -17,12 +17,12 @@ export default class EmissionsUserSelection extends Component {
         <br />
         <div>
           <select value={this.props.startYearEU} onChange={(e) => this.props.changed(e)} className="select" name="startYearEU">
-            <option>Choose a start year</option>
+            <option>Choose start year</option>
             {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
           </select>
           <br />
           <select value={this.props.endYearEU} onChange={(e) => this.props.changed(e)} className="select" name="endYearEU">
-            <option>Choose an end year</option>
+            <option>Choose end year</option>
             {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
           </select>
         </div>
