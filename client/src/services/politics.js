@@ -21,4 +21,4 @@ const getMEP = mepID => {
   return service.get(`/politics/mep/${mepID}`).then(response => response.data)
 }
 
-export { getTweets, getPolicies, getMEP, getParty }
+export { getTweets, getPolicies, getParty, getMEP }
