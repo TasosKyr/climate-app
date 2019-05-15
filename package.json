@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "npm run build && npm run copy",
     "start": "cd server; NODE_ENV=PROD node ./bin/www; cd -",
-    "install": "cd server; npm install &; cd -",
+    "install": "cd server; npm install &",
     "postinstall": "cd client; npm install; cd -",
     "build": "cd client; npm run build; cd -",
     "copy": "cp -r client/build/* server/public/"
