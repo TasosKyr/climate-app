@@ -13,7 +13,9 @@ export default class UserSelection extends Component {
     return (
       <div >
         {console.log(this.props)}
-        <h4>Our interface lets you experiment with different models and scenarios for universally-recognized temperature and precipitation indicators. </h4>
+        <h5>Extreme weather incidents in US cities</h5>
+        <p>Use our interface to experiment with different models and scenarios for universally-recognized temperature and precipitation indicators. Source: Azavea Climate API</p>
+
         <form onSubmit={this.handleSubmit}>
           <div className="user-input">
             <select value={this.props.incidentType} onChange={(e) => this.props.changed(e)} className="select" name="incidentType">
