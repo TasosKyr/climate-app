@@ -15,9 +15,8 @@ export default class Data extends Component {
     endYear: "",
     incidentInfo: null,
     country: "",
-    /* userSelectionEU: null, */
-    startYearEU: "",
-    endYearEU: ""
+    startYearEU: "Choose a year",
+    endYearEU: null
   };
 
   handleClick = () => {
@@ -60,11 +59,10 @@ export default class Data extends Component {
             <DataPopUp title='Extreme climate incidents in US' >
               <DataCard {...this.state} clicked={this.handleClick} />
             </DataPopUp>
-            <EmissionsUserSelection changed={this.handleChange} />
-            {/* <DataPopUp title='Gas emission in EU' > 
-            {...this.state} /> */}
-            <EmissionsDataCard {...this.state} clicked={this.handleClick} />
-            {/* </DataPopUp> */}
+            <EmissionsUserSelection {...this.state} changed={this.handleChange} />
+            <DataPopUp title='Gas emission in EU' >
+              <EmissionsDataCard {...this.state} clicked={this.handleClick} />
+            </DataPopUp>
           </div>
         </div>
       </>
