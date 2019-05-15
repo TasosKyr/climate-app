@@ -11,6 +11,22 @@ const path = require("path")
 const cors = require("cors")
 const session = require("express-session")
 const passport = require("passport")
+var CronJob = require('cron').CronJob;
+const { scrapeChangeOrg } = require('./routes/scraping')
+const Petition = require('./models/Petition')
+
+const scraping = async () => {
+  const petitions = await scrapeChangeOrg()
+  await Promise.all(
+    petitions.map(element => {
+      return Petition.findOneAndUpdate({ url: element.url }, element, { upsert: true, new: true })
+    })
+  );
+}
+
+new CronJob('0 30 * * * *', scraping
+  , null, true, 'Europe/Berlin');
+scraping();
 
 require("./configs/passport")
 

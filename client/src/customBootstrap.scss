@@ -427,12 +427,11 @@ select {
 
 //profile page styling
 
-.myAction{
+.my-actions{
   display: flex; 
   flex-direction: row; 
   margin: 0px; 
-  flex-wrap: wrap; 
-  
+  flex-wrap: wrap;   
 }
 
 .action-list{
