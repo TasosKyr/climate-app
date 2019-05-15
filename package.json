@@ -8,9 +8,12 @@
     "install": "cd server; npm install; cd -",
     "prebuild": "cd client; npm install; cd -",
     "build": "cd client; npm run build; cd -",
-    "postbuild": "cd client; rm -rf node_modules; cd -",
     "copy": "cp -r client/build/* server/public/"
   },
+  "cacheDirectories": [
+    "client/node_modules",
+    "server/node_modules"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amrwski/climate-app.git"
