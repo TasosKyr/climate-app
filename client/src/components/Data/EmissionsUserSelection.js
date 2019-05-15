@@ -5,17 +5,17 @@ export default class EmissionsUserSelection extends Component {
 
   render() {
     return (
-      <div className="user-selection-form2">
+      <div >
         <h4>Greenhouse gas emissions per EU capita</h4>
 
-        <div>
+        <div className="card-body-data">
           <select value={this.props.country} onChange={(e) => this.props.changed(e)} className="select" name="country">
             <option>Choose a country</option>
             {Object.keys(jsonfile).map(el => <option value={el}>{el}</option>)}
           </select>
-        </div>
-        <br />
-        <div>
+
+          <br />
+
           <select value={this.props.startYearEU} onChange={(e) => this.props.changed(e)} className="select" name="startYearEU">
             <option>Choose start year</option>
             {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
@@ -26,7 +26,7 @@ export default class EmissionsUserSelection extends Component {
             {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
           </select>
         </div>
-
+        <br />
       </div >
     )
   }
