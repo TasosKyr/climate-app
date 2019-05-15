@@ -71,7 +71,7 @@ class Profile extends React.Component {
     return (
       <>
         <div className="container page-container ">
-          <div>
+          <div className="profile-details">
             <h1>Welcome {this.state.username}!</h1>
             <img src={this.state.imgPath} alt="profilePic" />
 

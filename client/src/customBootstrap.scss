@@ -415,7 +415,10 @@ select {
 }
 
 //profile page styling
-
+.profile-details img {
+  max-width: 20%;
+    height: auto;
+}
 .myAction{
   display: flex; 
   flex-direction: row; 
