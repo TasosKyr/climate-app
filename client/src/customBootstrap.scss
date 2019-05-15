@@ -443,6 +443,18 @@ select {
   text-decoration: none;
 }
 
+.party.logo {
+  width: 30%;
+  justify-content: center;
+  background-color: lightgray;
+}
+
+.party-name {
+  width: 70%;
+  justify-content: center;
+  background-color: lightgrey;
+}
+
 .shaded-box img {
   height: 3rem;
   padding-left: 5rem;

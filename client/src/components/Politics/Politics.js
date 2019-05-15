@@ -12,10 +12,9 @@ class Politics extends Component {
         <h1>Climate Politics</h1>
 
         <div>
-          {/* <Twitter />
-            <EUOpenData /> */}
+          {/* <Twitter /> */}
+          {/* <EUOpenData /> */}
           <Groups />
-          <MEPs />
         </div>
       </>
     )

@@ -9,7 +9,10 @@ import { loggedin } from "./services/auth"
 import Footer from "./components/Footer"
 
 import Data from "./components/Data/Data"
+
 import Politics from "./components/Politics/Politics"
+import MEPs from "./components/Politics/MEPs"
+import Member from "./components/Politics/Member"
 
 import ProtectedRoute from "./components/ProtectedRoute"
 import Profile from "./components/Profile/Profile"
@@ -54,7 +57,8 @@ class App extends React.Component {
           <Route exact path="/signup" render={props => <Signup setUser={this.setUser} {...props} />} />
           <Route exact path="/login" render={props => <Login setUser={this.setUser} {...props} />} />
           <Route exact path="/politics" component={Politics} />} />
-          <Route exact path="/politics/:id" component={Politics} />} />
+          <Route exact path="/politics/:id" render={props => <MEPs {...props} />} />
+          <Route exact path="/politics/{party}/:mep" render={props => <Member {...props} />} />
           <Route path="/data" component={Data} />
           <Route path="/" exact component={Home} />
           <Route
