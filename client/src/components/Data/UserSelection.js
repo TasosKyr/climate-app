@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
 export default class UserSelection extends Component {
+  state = {
+    incidentInfo: null
+  }
 
   handleSubmit = event => {
     event.preventDefault();
