@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Events from "./Events"
-import { Link } from "react-router-dom";
 import DropDown from '../DropDown'
 import Petitions from './Petitions'
 import Letters from './Letters'
@@ -22,7 +21,7 @@ class Action extends Component {
 
           <h1>Action!</h1>
 
-          <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the events near you and sign petitions</p>
+          <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the climate events in Berlin and sign petitions.</p>
           <hr />
 
           <h1>Climate Events</h1>

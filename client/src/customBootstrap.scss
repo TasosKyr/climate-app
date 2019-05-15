@@ -11,6 +11,16 @@
 //light green: #5c8c13
 //'white'
 
+//settings for mobile responsiveness
+
+@media screen and (max-width: 1020px) {
+  #container, #header, #content, #footer {
+    float: none;
+    width: auto;
+  }
+}
+
+//general page settings 
 *,
 *:before,
 *:after {
@@ -233,18 +243,6 @@ body {
   flex-direction: column;
 }
 
-.link-button {
-  background-color: seagreen;
-  color: bisque;
-  border-radius: 5px;
-}
-
-.modal-button {
-  background-color: seagreen;
-  color: bisque;
-  border-radius: 5px;
-}
-
 /* Data page - user selection general styling */
 .user-selection-form {
   display: flex;
@@ -403,17 +401,41 @@ select {
 
 //profile page styling
 
-.actionContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.myAction{
+  display: flex; 
+  flex-direction: row; 
+  
 }
-.myActionsBox {
+
+.action-list{
   width: 40vw;
-  border: var(--black);
-  margin: 1rem;
-  padding: 0px;
+  margin: 0rem; 
+  align-self: flex-start;
 }
+
+.my-card-container {
+  margin: 1rem; 
+  align-self: center;
+  max-width: 40vw;
+  border: var(--black);
+  box-shadow: 3px 3px 5px 6px #ccc;
+  padding: 0.2rem;
+  list-style: none; 
+  border-radius: 5px; 
+}
+
+.my-card {
+  list-style: none; 
+  padding: 0.7rem; 
+}
+
+.my-item {
+  padding: 1px; 
+  line-height: 30px; 
+}
+
+
+//politics styling
 
 .header-container-politics {
   background-image: url("../src/images/euro-flag.jpeg");
