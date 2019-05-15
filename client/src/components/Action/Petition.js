@@ -15,7 +15,7 @@ export default class Petition extends Component {
       .post(
         process.env.REACT_APP_SERVER_URL + "/petitions/star",
         {
-          id: id
+          id: id 
         },
         { withCredentials: true }
       )

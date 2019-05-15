@@ -193,7 +193,9 @@ body {
 
 .card {
   margin: 5% 2% 5%;
-  width: 18rem;
+  min-width: 18rem;
+  max-width: 30vw;
+  text-align: center; 
 }
 
 .footer-container {
