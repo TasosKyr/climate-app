@@ -2,13 +2,6 @@ import React, { Component } from 'react'
 import jsonfile from '../../DataFiles/emissions_EU.json'
 
 export default class EmissionsUserSelection extends Component {
-  /* state = {
-    userSelectionEU: null
-  } */
-
-  /* handleSubmit = event => {
-    event.preventDefault();
-  } */
 
   render() {
     return (
@@ -32,16 +25,6 @@ export default class EmissionsUserSelection extends Component {
             <option>Choose an end year</option>
             {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
           </select>
-        </div>
-        <div>
-          <label>
-            Display EU average
-          <input
-              name="EUaverage"
-              type="checkbox"
-                /* checked={this.state.EUaverage}
-                onChange={this.handleInputChange} */ />
-          </label>
         </div>
 
       </div >

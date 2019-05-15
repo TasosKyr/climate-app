@@ -4,39 +4,55 @@ import jsonfile from '../../DataFiles/emissions_EU.json'
 
 export default class EmissionsDataCard extends Component {
 
-  render() {
-    console.log(this.props)
-    const startYear1 = this.props.startYearEU
-    const endYear1 = this.props.endYearEU
+  state = {
+    startYear1: this.props.startYearEU,
+    endYear1: this.props.endYearEU,
+    dataEUavgArr: [],
+    checked: false
+  }
 
-    /* if (this.props.country) {
-      console.log('here', Object.values(jsonfile[this.props.country]))
-    } */
-    // 
+  handleChange = () => {
+    let values;
+
+    this.props.country && (values = Object.values(jsonfile.EU28).slice(this.state.startYear1 - 2000, this.state.endYear1 - 1999))
+
+
+    this.setState({
+      checked: !this.state.checked,
+      dataEUavgArr: values
+    })
+  }
+
+  render() {
+
     const getDataArray = () => {
       let dataArr = []
-      this.props.country && (dataArr = Object.values(jsonfile[this.props.country]).slice(startYear1 - 2000, endYear1 - 1999))
-      console.log(dataArr)
+      this.props.country && (dataArr = Object.values(jsonfile[this.props.country]).slice(this.state.startYear1 - 2000, this.state.endYear1 - 1999))
       return dataArr
     }
 
     const getYearArray = () => {
       const yearArr = []
-      for (let i = startYear1; i <= endYear1; i++) {
+      for (let i = this.state.startYear1; i <= this.state.endYear1; i++) {
         yearArr.push(Number(i))
       }
       return yearArr.filter(el => el !== 0)
     }
 
+    /*  const getEuArray = () => {
+       console.log(this.state.dataEUavgArr, "EuArray")
+       return this.state.dataEUavgArr
+     } */
+
     let graph2Data = {
       labels: getYearArray(),
       datasets: [{
-        label: 'EU average',
+        label: this.state.checked ? 'EU average' : '',
         type: 'line',
-        data: [51, 65, 40, 49, 60, 37, 40],
+        data: this.state.checked ? this.state.dataEUavgArr : [],
         fill: false,
-        borderColor: '#EC932F',
-        backgroundColor: '#EC932F',
+        borderColor: this.state.checked ? '#EC932F' : "#FFFFFF",
+        backgroundColor: this.state.checked ? '#EC932F' : "#FFFFFF",
         pointBorderColor: '#EC932F',
         pointBackgroundColor: '#EC932F',
         pointHoverBackgroundColor: '#EC932F',
@@ -98,19 +114,21 @@ export default class EmissionsDataCard extends Component {
       }
     };
 
-    let plugins = [{
-      afterDraw: (chartInstance, easing) => {
-        const ctx = chartInstance.chart.ctx;
-        ctx.fillText("This text drawn by a plugin", 100, 100);
-      }
-    }];
-
     return (
       <div>
         <h1>Emissions graph</h1>
+        <div>
+          <label>
+            Display EU average
+          <input
+              name="EUaverage"
+              type="checkbox"
+              checked={this.state.checked} onChange={this.handleChange} />
+          </label>
+        </div>
         <div id='graph' className='chart2'>
           <Bar data={graph2Data} options={options}
-            plugins={plugins} />
+          />
         </div>
       </div>
     )
