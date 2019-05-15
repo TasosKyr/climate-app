@@ -64,7 +64,7 @@ class Groups extends Component {
           <Link to={`/politics/NA`}>
             <div className="shaded-box">
               <img src="../../../logos/logo.png" alt="Placeholder" />
-              <h3> Non-Inscrits </h3>
+              <h3> Non-Attached Members </h3>
             </div>
           </Link>
         </div>

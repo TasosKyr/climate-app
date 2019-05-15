@@ -23,9 +23,21 @@ router.get("/politics/policies", async (req, res) => {
   return res.json(climatePolicies)
 })
 
-// MEPs
-router.get("/politics/meps", (req, res) => {
-  res.json(mepJSON)
+// Parties
+router.get("/politics/party/:partyID", (req, res) => {
+  let match = undefined
+  if (req.params.partyID === "GUENGL") {
+    match = "GUE/NGL"
+  } else if (req.params.partyID === "VALE") {
+    match = "Verts/ALE"
+  } else match = req.params.partyID
+
+  res.json(mepJSON.meps.filter(el => el.Groups[0].groupid === match))
+})
+
+//MEPs
+router.get("/politics/mep/:mepID", (req, res) => {
+  res.json(mepJSON.meps.find(el => el.UserID === Number(req.params.mepID)))
 })
 
 module.exports = router
