@@ -6,7 +6,9 @@
     "prestart": "npm run build && npm run copy",
     "start": "cd server; NODE_ENV=PROD node ./bin/www; cd -",
     "install": "cd server; npm install; cd -",
+    "prebuild": "cd client; npm install; cd -",
     "build": "cd client; npm run build; cd -",
+    "postbuild": "cd client; rm -rf node_modules; cd -",
     "copy": "cp -r client/build/* server/public/"
   },
   "repository": {
