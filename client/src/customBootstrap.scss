@@ -255,15 +255,24 @@ body {
   flex-direction: column;
 }
 
-/* Data page - user selection general styling */
-.user-selection-form {
+/* Data page - general styling */
+.data-page {
+  display: flex;
+  justify-content: space-around; 
+}
+
+.card-body-data {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 2vh;
+  justify-content: center;
 }
 
 /* Data page - select function styling */
+.user-input {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -271,7 +280,7 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  /* border: 0 !important; */
+  border: 0 !important; 
   background: #295135;
   background-image: none;
 }
@@ -283,7 +292,7 @@ select::-ms-expand {
 .select {
   position: relative;
   display: flex;
-  width: 20em;
+  width: auto;
   height: 3em;
   line-height: 3;
   background: #295135;
@@ -292,7 +301,7 @@ select::-ms-expand {
 }
 select {
   flex: 1;
-  padding: 0 0.5em;
+  padding: 0 1em;
   color: #fff;
   cursor: pointer;
 }

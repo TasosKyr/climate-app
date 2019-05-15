@@ -16,7 +16,6 @@ export default class EmissionsDataCard extends Component {
 
     this.props.country && (values = Object.values(jsonfile.EU28).slice(this.state.startYear1 - 2000, this.state.endYear1 - 1999))
 
-
     this.setState({
       checked: !this.state.checked,
       dataEUavgArr: values
@@ -39,20 +38,11 @@ export default class EmissionsDataCard extends Component {
       return yearArr.filter(el => el !== 0)
     }
 
-    /*  const getEuArray = () => {
-       console.log(this.state.dataEUavgArr, "EuArray")
-       return this.state.dataEUavgArr
-     } */
-
-    console.log(getDataArray(), this.state.dataEUavgArr)
-
     const maxScale = Math.ceil(Math.max(
       Math.max(...getDataArray()),
       Math.max(...this.state.dataEUavgArr)
     ))
 
-
-    console.log(maxScale)
     let graph2Data = {
       labels: getYearArray(),
       datasets: [{
@@ -136,9 +126,9 @@ export default class EmissionsDataCard extends Component {
     };
 
     return (
-      <div>
+      <div >
         <h1>Emissions graph</h1>
-        <div className="mb-3">
+        <div>
           <label>
             Display EU average
             <input
@@ -146,11 +136,11 @@ export default class EmissionsDataCard extends Component {
               checked={this.state.checked} onChange={this.handleChange} />
           </label>
         </div>
-        <div id='graph' className='chart2'>
+        <div >
           <Bar data={graph2Data} options={options}
           />
         </div>
-      </div>
+      </div >
     )
   }
 }

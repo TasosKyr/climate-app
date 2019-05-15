@@ -53,16 +53,27 @@ export default class Data extends Component {
         <div className="container page-container">
           <h1>Climate Data</h1>
           <div className='data-page'>
-            <UserSelection changed=
-              {this.handleChange}
-              {...this.state} />
-            <DataPopUp title='Extreme climate incidents in US' >
-              <DataCard {...this.state} clicked={this.handleClick} />
-            </DataPopUp>
-            <EmissionsUserSelection {...this.state} changed={this.handleChange} />
-            <DataPopUp title='Gas emission in EU' >
-              <EmissionsDataCard {...this.state} clicked={this.handleClick} />
-            </DataPopUp>
+
+            <div class="card">
+              <div class="card-body card-body-data">
+                <UserSelection changed=
+                  {this.handleChange}
+                  {...this.state} />
+                <DataPopUp title='Extreme climate incidents in US' >
+                  <DataCard {...this.state} clicked={this.handleClick} />
+                </DataPopUp>
+              </div>
+            </div>
+
+
+            <div class="card">
+              <div class="card-body ">
+                <EmissionsUserSelection {...this.state} changed={this.handleChange} />
+                <DataPopUp title='Gas emission in EU' >
+                  <EmissionsDataCard {...this.state} clicked={this.handleClick} />
+                </DataPopUp>
+              </div>
+            </div>
           </div>
         </div>
       </>
