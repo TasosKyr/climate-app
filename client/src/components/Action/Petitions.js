@@ -6,6 +6,7 @@ import Petition from './Petition'
 export default class Petitions extends Component {
   state = {
     petitions: [],
+    userPetitions: this.props.userPetitions || []
   }
 
   getEvent = async () => {
@@ -22,7 +23,7 @@ export default class Petitions extends Component {
     return (
       <div>
         {this.state.petitions.map(petition => {
-          return <Petition petition={petition} />
+          return <Petition petition={petition} starred={this.state.userPetitions.includes(petition._id)} />
         })}
 
       </div>
