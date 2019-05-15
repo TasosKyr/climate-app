@@ -25,7 +25,12 @@ export default class Petitions extends Component {
 
     return (
       <div>
-        {this.state.loading ? <PacmanLoader /> :
+        {this.state.loading ? <PacmanLoader
+
+          sizeUnit={"px"}
+          size={20}
+          color={'#295135'}
+        /> :
           this.state.petitions.map(petition => {
             return <Petition petition={petition} starred={this.state.userPetitions.includes(petition._id)} />
           })}
