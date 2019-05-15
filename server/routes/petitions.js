@@ -15,7 +15,6 @@ router.get('/petitions', (req, res, next) => {
 });
 
 router.post('/petitions/star', (req, res, next) => {
-  console.log(req.body)
   const user = req.user
   if (typeof user.myCollection === 'undefined') {
     const myCollection = {
