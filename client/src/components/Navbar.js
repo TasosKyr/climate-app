@@ -23,20 +23,31 @@ class Navbar extends React.Component {
   }
 
   logo = (<Link className="navbar-brand nav-color" to="/" className='logoFont'> ClimAct</Link>)
-  subPages = (<> <li className="nav-item active"><Link className="nav-link nav-color" to="/politics">
-    Politics <span className="sr-only">(current)</span>
-  </Link>
-  </li>
-    <li className="nav-item">
-      <Link className="nav-link nav-color" to="/action">
-        Action
-</Link>
-    </li>
-    <li className="nav-item">
-      <Link className="nav-link nav-color" to="/data">
-        Data
-</Link>
-    </li></>)
+
+  subPages = (
+    <>
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/about" style={{ color: 'white' }}>
+          About
+      </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/politics" style={{ color: 'white' }}>
+          Politics
+      </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/action">
+          Action </Link>
+      </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/data">
+          Data </Link>
+      </li>
+    </>)
 
   signupLogin = (<> <li className="nav-item">
     <Link className="nav-link nav-color" to="/signup">
@@ -50,15 +61,15 @@ class Navbar extends React.Component {
     </li> </>)
 
 
-  welcomeUser = () =>  (
+  welcomeUser = () => (
     <>
       <Dropdown>
-        <Dropdown.Toggle className='' variant="link" id="dropdown-basic" style={{ color: 'white' }}>
+        <Dropdown.Toggle className='' variant="link" id="dropdown-basic" style={{ color: 'white', textDecoration: 'none' }}>
           Hi {this.state.loggedIn && this.state.loggedIn.username}!
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item><Link to="/profile">My Profile </Link> </Dropdown.Item>
-          <Dropdown.Item onClick={this.handleLogout} >Log Out</Dropdown.Item>
+          <Dropdown.Item style={{backgroundColor: '#0d1313'}}><Link to="/profile">My Profile </Link> </Dropdown.Item>
+          <Dropdown.Item style={{backgroundColor: '#0d1313', color:'white'}}onClick={this.handleLogout} >Log Out</Dropdown.Item>
 
         </Dropdown.Menu>
       </Dropdown>;
@@ -71,7 +82,7 @@ class Navbar extends React.Component {
       {this.logo}
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          
+
           {this.subPages}
 
           {this.welcomeUser()}

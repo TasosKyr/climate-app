@@ -27,19 +27,17 @@ export default class MyPetitions extends Component {
   render() {
 
     return (
-      <div>
+      <>
 
-        <div className='actionContainer'>
-          <div className="card myActionsBox" >
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">{this.props.petition.title} <br /> <button className='button1'>
-                <a href={this.props.petition.url}>More Info</a></button>
-                <button className='button1' onClick={this.handleTrashClick.bind(null, this.props.petition._id)}><FontAwesomeIcon icon="trash-alt" /></button>
-              </li>
-            </ul>
-          </div>
+        <div className="my-card-container" >
+          <ul className="my-card">
+            <li className="my-item">{this.props.petition.title} <br /> <button className='button1'>
+              <a href={this.props.petition.url}>More Info</a></button>
+              <button className='button1' onClick={this.handleTrashClick.bind(null, this.props.petition._id)}><FontAwesomeIcon icon="trash-alt" /></button>
+            </li>
+          </ul>
         </div>
-      </div>
+      </>
     )
   }
 }

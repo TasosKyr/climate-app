@@ -32,7 +32,7 @@ class Login extends React.Component {
 
     return (
       <>
-        <div className="container page-container">
+        <div className="container page-container" id='container'>
           <h2>Login</h2>
           <div className="user-selection-form">
             <form onSubmit={this.handleSubmit}>

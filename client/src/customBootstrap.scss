@@ -11,6 +11,16 @@
 //light green: #5c8c13
 //'white'
 
+//settings for mobile responsiveness
+
+@media screen and (max-width: 1020px) {
+  #container, #header, #content, #footer {
+    float: none;
+    width: auto;
+  }
+}
+
+//general page settings 
 *,
 *:before,
 *:after {
@@ -57,6 +67,10 @@ body {
   width: 100vw;
 }
 
+.nav-item a:hover {
+  color: var(--yellow-green)
+}
+
 //left corner logo
 .logoFont {
   font-family: "Aguafina Script", cursive;
@@ -70,12 +84,8 @@ body {
   text-decoration: none;
 }
 
-.nav-color {
-  color: var(--white) !important;
-}
-
-.nav-color a:hover {
-  color: var(--yellow-green) !important;
+.nav-item {
+  color: var(--white);
 }
 
 .header-container {
@@ -124,6 +134,9 @@ body {
   }
 }
 
+.about-list ul{
+  list-style: none; 
+}
 //sub-page headers
 
 .header-container-action {
@@ -175,11 +188,14 @@ body {
 .card-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
   margin: 5% 2% 5%;
-  width: 18rem;
+  min-width: 18rem;
+  max-width: 30vw;
+  text-align: center; 
 }
 
 .footer-container {
@@ -231,18 +247,6 @@ body {
 .profile-page {
   display: flex;
   flex-direction: column;
-}
-
-.link-button {
-  background-color: seagreen;
-  color: bisque;
-  border-radius: 5px;
-}
-
-.modal-button {
-  background-color: seagreen;
-  color: bisque;
-  border-radius: 5px;
 }
 
 /* Data page - user selection general styling */
@@ -403,17 +407,44 @@ select {
 
 //profile page styling
 
-.actionContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.myAction{
+  display: flex; 
+  flex-direction: row; 
+  margin: 0px; 
+  flex-wrap: wrap; 
+  
 }
-.myActionsBox {
+
+.action-list{
   width: 40vw;
-  border: var(--black);
-  margin: 1rem;
-  padding: 0px;
+  margin: 0px; 
+  align-self: flex-start;
+  flex-wrap: wrap; 
 }
+
+.my-card-container {
+  margin: 1rem; 
+  align-self: center;
+  max-width: 40vw;
+  border: var(--black);
+  box-shadow: 3px 3px 5px 6px #ccc;
+  padding: 0.2rem;
+  list-style: none; 
+  border-radius: 5px; 
+}
+
+.my-card {
+  list-style: none; 
+  padding: 0.7rem; 
+}
+
+.my-item {
+  padding: 1px; 
+  line-height: 30px; 
+}
+
+
+//politics styling
 
 .header-container-politics {
   background-image: url("../src/images/euro-flag.jpeg");
@@ -463,4 +494,14 @@ select {
 .shaded-box h3 {
   margin: 0;
   padding-right: 3rem;
+}
+
+//modal styling
+
+.modal-content{
+  align-items: center; 
+}
+
+.modal-button.modal-style.btn.btn-primary {
+  background-color: blue;
 }
