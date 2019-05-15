@@ -1,0 +1,22 @@
+{
+  "name": "climate-app",
+  "version": "1.0.0",
+  "description": "https://climact.herokuapp.com/",
+  "scripts": {
+    "prestart": "npm run build && npm run copy",
+    "start": "cd server; NODE_ENV=PROD node ./bin/www; cd -",
+    "install": "cd server; npm install; cd -",
+    "build": "cd client; npm run build; cd -",
+    "copy": "cp -r client/build/* server/public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amrwski/climate-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amrwski/climate-app/issues"
+  },
+  "homepage": "https://github.com/amrwski/climate-app#readme"
+}
