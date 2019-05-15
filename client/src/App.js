@@ -45,6 +45,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.loggedIn)
     return (
       <div className="App">
         <Navbar setUser={this.setUser} loggedIn={this.state.loggedIn} />

@@ -409,6 +409,7 @@ select {
   display: flex; 
   flex-direction: row; 
   margin: 0px; 
+  flex-wrap: wrap; 
   
 }
 
@@ -416,6 +417,7 @@ select {
   width: 40vw;
   margin: 0px; 
   align-self: flex-start;
+  flex-wrap: wrap; 
 }
 
 .my-card-container {

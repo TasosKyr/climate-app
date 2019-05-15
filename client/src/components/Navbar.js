@@ -27,13 +27,13 @@ class Navbar extends React.Component {
   subPages = (
     <>
       <li className="nav-item">
-        <Link className="nav-link nav-color" to="/about">
+        <Link className="nav-link nav-color" to="/about" style={{ color: 'white' }}>
           About
       </Link>
       </li>
 
       <li className="nav-item">
-        <Link className="nav-link nav-color" to="/politics">
+        <Link className="nav-link nav-color" to="/politics" style={{ color: 'white' }}>
           Politics
       </Link>
       </li>
@@ -64,12 +64,12 @@ class Navbar extends React.Component {
   welcomeUser = () => (
     <>
       <Dropdown>
-        <Dropdown.Toggle className='' variant="link" id="dropdown-basic" style={{ color: 'white' }}>
+        <Dropdown.Toggle className='' variant="link" id="dropdown-basic" style={{ color: 'white', textDecoration: 'none' }}>
           Hi {this.state.loggedIn && this.state.loggedIn.username}!
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item><Link to="/profile">My Profile </Link> </Dropdown.Item>
-          <Dropdown.Item onClick={this.handleLogout} >Log Out</Dropdown.Item>
+          <Dropdown.Item style={{backgroundColor: '#0d1313'}}><Link to="/profile">My Profile </Link> </Dropdown.Item>
+          <Dropdown.Item style={{backgroundColor: '#0d1313', color:'white'}}onClick={this.handleLogout} >Log Out</Dropdown.Item>
 
         </Dropdown.Menu>
       </Dropdown>;

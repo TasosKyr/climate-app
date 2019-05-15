@@ -23,7 +23,7 @@ class Home extends Component {
 
             <TitleCard
               title='Climate Politics'
-              description='Here you can find climate change realted legislation'
+              description='Here you can find climate change related legislation'
               link='/politics'
               image={image1} />
 

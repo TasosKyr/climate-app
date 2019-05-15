@@ -10,14 +10,25 @@ import EventForm from './EventForm'
 class Action extends Component {
 
   state = {
-    user: this.props.user || { myCollection: {} }
+    // user: this.props.user && { ...this.props.user, myCollection: {} } || { myCollection: {} }
+    user: this.props.user ? this.props.user : { myCollection: {} }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      let user = this.props.user;
+      if (!user) user = { myCollection: {} }
+      this.setState({ user })
+    }
   }
 
   render() {
+    console.log(this.state.user)
+    // const myCollection = this.props.user && this.props.user.myCollection ? this.props.user.myCollection : {}
     return (
       <>
         <ActionHeader />
-        <div className="container page-container">
+        <div className="container page-container" id='container'>
 
           <h1>Action!</h1>
 
