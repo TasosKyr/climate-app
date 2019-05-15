@@ -2,27 +2,34 @@ import React, { Component } from 'react'
 import { Bar } from 'react-chartjs-2'
 import jsonfile from '../../DataFiles/emissions_EU.json'
 
-const yearArr = []
-
-
 export default class EmissionsDataCard extends Component {
 
   render() {
-
+    console.log(this.props)
     const startYear1 = this.props.startYearEU
     const endYear1 = this.props.endYearEU
 
-    const getYearArray = () => {
-      for (let i = startYear1; i <= endYear1;) {
-        yearArr.push(i++)
-      } return yearArr
+    /* if (this.props.country) {
+      console.log('here', Object.values(jsonfile[this.props.country]))
+    } */
+    // 
+    const getDataArray = () => {
+      let dataArr = []
+      this.props.country && (dataArr = Object.values(jsonfile[this.props.country]).slice(startYear1 - 2000, endYear1 - 1999))
+      console.log(dataArr)
+      return dataArr
     }
 
-    console.log('This is the yearArr', getYearArray())
-    console.log(startYear1)
+    const getYearArray = () => {
+      const yearArr = []
+      for (let i = startYear1; i <= endYear1; i++) {
+        yearArr.push(Number(i))
+      }
+      return yearArr.filter(el => el !== 0)
+    }
 
     let graph2Data = {
-      labels: [yearArr],
+      labels: getYearArray(),
       datasets: [{
         label: 'EU average',
         type: 'line',
@@ -37,8 +44,8 @@ export default class EmissionsDataCard extends Component {
         yAxisID: 'y-axis-2'
       }, {
         type: 'bar',
-        label: 'Country',
-        data: [200, 185, 590, 621, 250, 400, 95],
+        label: this.props.country,
+        data: getDataArray(),
         fill: false,
         backgroundColor: '#71B37C',
         borderColor: '#71B37C',
