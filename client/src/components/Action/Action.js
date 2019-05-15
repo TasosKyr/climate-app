@@ -9,6 +9,11 @@ import EventForm from './EventForm'
 
 
 class Action extends Component {
+
+  state = {
+    user: this.props.user || { myCollection: {} }
+  }
+
   render() {
     return (
       <>
@@ -24,7 +29,7 @@ class Action extends Component {
           <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
 
           <DropDown title='Check out These Climate Events'>
-            <Events />
+            <Events userEvents={this.state.user.myCollection.events} />
           </DropDown>
           <br />
 
@@ -37,7 +42,7 @@ class Action extends Component {
           <p>Getting your voice heard can be tough, but together we can make the decision makers listen – sign a petition and let the politicians know you demand change!</p>
 
           <DropDown title='Check out These Petitions'>
-            <Petitions />
+            <Petitions userPetitions={this.state.user.myCollection.petitions} />
           </DropDown>
 
           <hr />

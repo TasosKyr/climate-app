@@ -22,8 +22,8 @@ import "./customBootstrap.scss"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faStar } from '@fortawesome/free-solid-svg-icons'
-library.add(faArrowDown, faStar)
+import { faArrowDown, faStar, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+library.add(faArrowDown, faStar, faTrashAlt)
 
 class App extends React.Component {
   state = { loggedIn: null }

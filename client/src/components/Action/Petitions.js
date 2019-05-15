@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Petition from './Petition'
 
 export default class Petitions extends Component {
   state = {
-    petitions: []
+    petitions: [],
   }
 
   getEvent = async () => {
@@ -16,21 +18,13 @@ export default class Petitions extends Component {
   }
 
   render() {
+
     return (
       <div>
-
         {this.state.petitions.map(petition => {
-          return (
-            <div className="card events-card" key={petition.id ? petition.id : petition._id}>
-              <div className="card-body">
-                <h3 className="card-title events-cart-title">{petition.title}</h3>
-                <div>
-                  <a href={petition.url}>More Information Here</a>
-                </div>
-              </div>
-            </div>
-          )
+          return <Petition petition={petition} />
         })}
+
       </div>
     )
   }
