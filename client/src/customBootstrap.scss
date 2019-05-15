@@ -137,7 +137,7 @@ body {
 .about-list ul{
   list-style: none; 
 }
-//sub-page headers
+//sub-page headers & styling
 
 .header-container-action {
   background-image: url("../src/images/action.jpeg");
@@ -183,6 +183,12 @@ body {
 .heading-action p {
   font-size: 24px;
   letter-spacing: 0.3rem;
+}
+
+.action-page-card-container{
+  display: flex; 
+  flex-wrap: wrap; 
+
 }
 
 .card-container {

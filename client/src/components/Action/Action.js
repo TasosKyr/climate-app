@@ -35,45 +35,47 @@ class Action extends Component {
           <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the climate events in Berlin and sign petitions.</p>
           <hr />
 
-          <div class="card">
-            <div class="card-body">
-              <h1>Climate Events</h1>
-              <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
+          <div className='action-page-card-container'>
+            <div class="card">
+              <div class="card-body">
+                <h1>Climate Events</h1>
+                <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
 
-              <DropDown title='Check out These Climate Events'>
-                <Events userEvents={this.state.user.myCollection.events} />
-              </DropDown>
-              <br />
+                <DropDown title='Check out These Climate Events'>
+                  <Events userEvents={this.state.user.myCollection.events} />
+                </DropDown>
+                <br />
 
-              <DropDown title='Add Your Own Climate Event' user={this.props.user} protected>
-                <EventForm />
-              </DropDown>
+                <DropDown title='Add Your Own Climate Event' user={this.props.user} protected>
+                  <EventForm />
+                </DropDown>
+              </div>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-body">
-              <h1>Climate Petitions</h1>
-              <p>Getting your voice heard can be tough, but together we can make the decision makers listen – sign a petition and let the politicians know you demand change!</p>
+            <div class="card">
+              <div class="card-body">
+                <h1>Climate Petitions</h1>
+                <p>Getting your voice heard can be tough, but together we can make the decision makers listen – sign a petition and let the politicians know you demand change!</p>
 
-              <DropDown title='Check out These Petitions'>
-                <Petitions userPetitions={this.state.user.myCollection.petitions} />
-              </DropDown>
+                <DropDown title='Check out These Petitions'>
+                  <Petitions userPetitions={this.state.user.myCollection.petitions} />
+                </DropDown>
+              </div>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-body">
+            <div class="card">
+              <div class="card-body">
 
-              <h1>Get your Climate Action Opinion Published</h1>
-              <p> A letter to the editor can foster conversations about climate change</p>
+                <h1>Get your Climate Action Opinion Published</h1>
+                <p> A letter to the editor can foster conversations about climate change</p>
 
-              <DropDown title='Get your climate action opinion published'>
-                <Letters />
-              </DropDown>
+                <DropDown title='Get your climate action opinion published'>
+                  <Letters />
+                </DropDown>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </>
     )
