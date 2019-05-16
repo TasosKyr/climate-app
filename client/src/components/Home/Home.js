@@ -22,20 +22,20 @@ class Home extends Component {
           <div className="card-container">
 
             <TitleCard
-              title='Climate Politics'
-              description='Here you can find climate change related legislation'
+              title='Politics'
+              description='Democracy is great as it gives us access to power – on this page you can engage with all politicians in the European Parliament'
               link='/politics'
               image={image1} />
 
             <TitleCard
-              title='Climate Action'
-              description='Here you can find events & petitions to sign'
+              title='Action'
+              description='These actions are here for You to engage with others through events and to sign petitions for decision makers.'
               link='/action'
               image={image2} />
 
             <TitleCard
-              title='Climate Data'
-              description='Here You can see some Climate Change data visulaized'
+              title='Data'
+              description='In order to understand climate change you might need to see how it affects us – this is why we created a data page to visualize climate change data. '
               link='/data'
               image={image3} />
           </div>
