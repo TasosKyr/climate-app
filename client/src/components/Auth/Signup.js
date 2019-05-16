@@ -5,7 +5,8 @@ class Signup extends React.Component {
   state = {
     username: "",
     password: "",
-    imgPath: ""
+    imgPath: "",
+    message: undefined
   };
 
   handleChange = event => {
@@ -24,7 +25,12 @@ class Signup extends React.Component {
     signup(username, password, imgPath).then(user => {
       this.props.setUser(user);
       this.props.history.push('/profile')
-    });
+    })
+      .catch(err => {
+        this.setState({
+          message: err.response.data.message
+        })
+      })
   };
 
   handleUpload = event => {
@@ -42,8 +48,11 @@ class Signup extends React.Component {
     return (
       <>
         <div className="container page-container">
+
+          <h2>Sign Up</h2>
+          {this.state.message && <h2>{this.state.message}</h2>}
           <div className="user-selection-form">
-            <h2>Sign Up</h2>
+
             <form onSubmit={this.handleSubmit}>
               <div className="inp">
                 <label>Username:</label>

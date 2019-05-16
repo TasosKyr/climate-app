@@ -11,26 +11,11 @@ router.get("/politics/twit", (req, res) => {
   })
 
   client
-    .get("search/tweets", { q: "climatechange" })
+    .get("search/tweets", { q: ["climatechange", "globalwarming", "europe"] })
     .then(response => {
       res.json(response.data)
     })
     .catch(err => console.error(err))
 })
-
-//   client.get("search/tweets", { q: "climatechange" }).then(responseOne => {
-//     client
-//       .get("search/tweets", { q: "globalwarming" })
-//       .then(responseTwo => {
-//         const response = {
-//           ...responseOne,
-//           ...responseTwo
-//         }
-//         res.json(response.data)
-//         console.log(response.data)
-//       })
-//       .catch(err => console.error(err))
-//   })
-// })
 
 module.exports = router

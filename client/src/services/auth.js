@@ -7,6 +7,7 @@ const service = axios.create({
 
 const signup = (username, password, imgPath) => {
   return service.post("/signup", { username, password, imgPath }).then(response => response.data)
+    
 }
 
 const login = (username, password) => {
