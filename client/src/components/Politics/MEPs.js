@@ -47,7 +47,7 @@ class MEPs extends Component {
         <div id="content" className="container page-container">
           <div className="intro-text-container">
             <h1>{_get(data, "[0].Groups[0].Organization")}</h1>
-            <p>Here are all the MEPs belonging to the faction</p>
+            <p>Select an MEP to engage with them directly</p>
           </div>
           <hr />
 
@@ -57,9 +57,13 @@ class MEPs extends Component {
             {data &&
               data.map(el => (
                 <Plx parallaxData={parallaxDataLeft}>
-                  <div className="shaded-box">
-                    <Link to={`/politics/${this.props.match.params.partyID}/${el.UserID}`}>
+                  <div className="shaded-box-member">
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to={`/politics/${this.props.match.params.partyID}/${el.UserID}`}
+                    >
                       {el.Name.full}
+                      <hr />
                     </Link>
                   </div>
                 </Plx>
