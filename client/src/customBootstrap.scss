@@ -494,16 +494,6 @@ select {
   justify-content: center;
 }
 
-.party-container a {
-  text-decoration: "none";
-  color: "red";
-  background-color: red;
-}
-
-.party-container a:hover {
-  color: "red";
-}
-
 .shaded-box {
   // margin: 2rem 5rem 2rem;
   // padding: 0.5rem;
@@ -525,7 +515,7 @@ select {
   width: 50vw;
 }
 .party-name:hover {
-  color: red;
+  color: var(--yellow-green);
   text-decoration: none;
 }
 

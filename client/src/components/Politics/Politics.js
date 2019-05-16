@@ -14,17 +14,17 @@ class Politics extends Component {
         <div id="content" className="container page-container">
           <div className="intro-text-container">
             <h1>Climate Politics</h1>
-            <p>Here you can do politics stuff</p>
+            <p>Engage with the Decision Makers</p>
           </div>
           <hr />
           <div className="twit-txt d-flex justify-content-between mb-5">
             <div className="twitter-container ml-3">
               <Twitter />
             </div>
-            <div className="card politics-box mr-3">
-              <h4> Access to Decision Makers</h4>
+            <div className="card politics-box mr-3" style={{ padding: "0.5rem" }}>
+              <h4> Access to your Rep</h4>
               <p>
-                Here you will find members of the European Parliament, and the factions they belong to.
+                This page contains members of the European Parliament, and the factions they belong to.
                 You can engage with the decision makers who impact global climate change policy.
               </p>
               <p>
@@ -35,7 +35,6 @@ class Politics extends Component {
                 <button className="button1">Legislation</button>
               </a>
             </div>
-            {/* <div style={{ height: "10px", margin: "5rem" }} /> */}
             <br />
           </div>
           <Groups />

@@ -42,7 +42,7 @@ class Groups extends Component {
           </Plx>
 
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/S&D`}>
+            <Link to={`/politics/S&D`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/2_File_S&D.png" alt="S&D Logo" />
@@ -56,7 +56,7 @@ class Groups extends Component {
           </Plx>
 
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/ECR`}>
+            <Link to={`/politics/ECR`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img
@@ -72,7 +72,7 @@ class Groups extends Component {
             <hr />
           </Plx>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/ALDE`}>
+            <Link to={`/politics/ALDE`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/4_380px-ALDE_logo.svg.png" alt="ALDE Logo" />
@@ -85,7 +85,7 @@ class Groups extends Component {
             <hr />
           </Plx>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/GUENGL`}>
+            <Link to={`/politics/GUENGL`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/5_246px-GUE-NGL_logo.svg.png" alt="GUE-NGL Logo" />
@@ -98,7 +98,7 @@ class Groups extends Component {
             <hr />
           </Plx>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/VALE`}>
+            <Link to={`/politics/VALE`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/6_Logo_greens-efa.png" alt="Greens–EFA Logo" />
@@ -111,7 +111,7 @@ class Groups extends Component {
             <hr />
           </Plx>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/EFDD`}>
+            <Link to={`/politics/EFDD`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/7_EFDD_group_logo.png" alt="EFDD Logo" />
@@ -124,7 +124,7 @@ class Groups extends Component {
             <hr />
           </Plx>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/ENF`}>
+            <Link to={`/politics/ENF`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/8_Europe_of_Nations_and_Freedom_logo.png" alt="ENF Logo" />
@@ -137,7 +137,7 @@ class Groups extends Component {
             <hr />
           </Plx>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/NA`}>
+            <Link to={`/politics/NA`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/9_eu_flag_logo.png" alt="Placeholder" />
