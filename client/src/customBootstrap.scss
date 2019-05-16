@@ -4,18 +4,21 @@
 @import url("https://fonts.googleapis.com/css?family=Aguafina+Script|Work+Sans:300,700,900");
 //font-family: 'Quicksand';
 //font-family: 'Work Sans', sans-serif;
-@import url("https://fonts.googleapis.com/css?family=Assistant:200");
+@import url("https://fonts.googleapis.com/css?family=Assistant:200|Catamaran:200|Raleway:200|Source+Sans+Pro:200");
 
 //settings for mobile responsiveness
 
 @media screen and (max-width: 1020px) {
-  #container, #header, #content, #footer {
+  #container,
+  #header,
+  #content,
+  #footer {
     float: none;
     width: auto;
   }
 }
 
-//general page settings 
+//general page settings
 *,
 *:before,
 *:after {
@@ -63,12 +66,12 @@ body {
 }
 
 .nav-item a:hover {
-  color: var(--yellow-green)
+  color: var(--yellow-green);
 }
 
 //left corner logo
 .logoFont {
-  font-family: "Helvetica";
+  font-family: "Source Sans Pro";
   font-size: 1.5rem;
   padding-right: 5px;
   color: var(--white);
@@ -129,8 +132,8 @@ body {
   }
 }
 
-.about-list ul{
-  list-style: none; 
+.about-list ul {
+  list-style: none;
 }
 //sub-page headers & styling
 
@@ -146,7 +149,7 @@ body {
 }
 
 .heading {
-  font-family: "Helvetica";
+  font-family: "Source Sans Pro";
   color: var(--white);
 }
 
@@ -156,15 +159,15 @@ body {
 
 .heading h1 {
   font-size: 8rem;
-  font-weight: lighter;
+  font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
-  font-family: "Helvetica";
+  font-family: "Source Sans Pro";
 }
 
 .heading-action h1 {
   font-size: 7rem;
-  font-weight: lighter;
+  font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
 }
@@ -179,16 +182,16 @@ body {
   letter-spacing: 0.3rem;
 }
 
-.action-page-card-container{
-  display: flex; 
-  flex-wrap: wrap; 
-  flex-direction: row; 
+.action-page-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .container {
-  margin: 0px; 
+  margin: 0px;
   margin-top: 2rem;
-  margin-bottom: 2rem; 
+  margin-bottom: 2rem;
 }
 .card-container {
   display: flex;
@@ -200,7 +203,7 @@ body {
   margin: 5% 2% 5%;
   min-width: 18rem;
   max-width: 25vw;
-  text-align: center; 
+  text-align: center;
 }
 
 .footer-container {
@@ -257,13 +260,13 @@ body {
 //profile image size
 .profile-details img {
   max-width: 20vw;
-    height: auto;
+  height: auto;
 }
 
 /* Data page - general styling */
 .data-page {
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 
 .card-body-data {
@@ -285,7 +288,7 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0 !important; 
+  border: 0 !important;
   background: #295135;
   background-image: none;
 }
@@ -425,41 +428,40 @@ select {
   }
 }
 
-
-.my-actions{
-  display: flex; 
-  flex-direction: row; 
-  margin: 0px; 
-  flex-wrap: wrap;   
+.my-actions {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  flex-wrap: wrap;
 }
 
-.action-list{
+.action-list {
   width: 40vw;
-  margin: 0px; 
+  margin: 0px;
   align-self: flex-start;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .my-card-container {
-  margin: 1rem; 
+  margin: 1rem;
   align-self: center;
   max-width: 40vw;
   border: var(--black);
   box-shadow: 3px 3px 5px 6px #ccc;
   padding: 0.2rem;
-  list-style: none; 
-  border-radius: 5px; 
+  list-style: none;
+  border-radius: 5px;
 }
 
 // politics styles
 .my-card {
-  list-style: none; 
-  padding: 0.7rem; 
+  list-style: none;
+  padding: 0.7rem;
 }
 
 .my-item {
-  padding: 1px; 
-  line-height: 30px; 
+  padding: 1px;
+  line-height: 30px;
 }
 
 .header-container-politics {
@@ -511,7 +513,6 @@ select {
   margin: 0;
   padding-right: 3rem;
 }
-
 
 // MEP profile
 html * {
@@ -837,11 +838,10 @@ img.rounded {
 
 //modal styling
 
-.modal-content{
-  align-items: center; 
+.modal-content {
+  align-items: center;
 }
 
 .modal-button.modal-style.btn.btn-primary {
   background-color: blue;
 }
-

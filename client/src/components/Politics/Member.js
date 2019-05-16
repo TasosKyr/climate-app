@@ -1,7 +1,15 @@
 import React, { Component } from "react"
 import { get as _get } from "lodash"
+
+import { library } from "@fortawesome/fontawesome-svg-core"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { getMEP } from "../../services/politics"
+import { TwitterMentionButton } from "react-twitter-embed"
+
+library.add(faTwitter, faEnvelope)
 
 class Member extends Component {
   state = {
@@ -16,7 +24,7 @@ class Member extends Component {
 
   render() {
     const { data } = this.state
-    console.log(data)
+    data && data.Twitter && console.log(data.Twitter[0].substring(20))
     return (
       <>
         <div
@@ -52,33 +60,50 @@ class Member extends Component {
               </div>
               <div className="description text-center">
                 <p>
-                  {data &&
-                    data.Addresses &&
-                    data.Addresses.Postal.map(el => <li style={{ listStyle: "none" }}>{el}</li>)}
+                  {_get(data, "Addresses.Postal", []).map(el => (
+                    <li style={{ listStyle: "none" }}>{el}</li>
+                  ))}
                 </p>
               </div>
               <div className="row">
                 <div className="col-md-6 ml-auto mr-auto">
                   <div className="profile-tabs">
+                    <h4>Contact your representative:</h4>
                     <ul className="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                       <li className="nav-item">
-                        <a className="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                          <i className="material-icons">Email</i>
-                          abc
+                        <a
+                          className="nav-link"
+                          href={"mailto:" + _get(data, "Mail[0]")}
+                          role="tab"
+                          data-toggle="tab"
+                        >
+                          <FontAwesomeIcon
+                            icon={["fas", "envelope"]}
+                            style={{ color: "#000000", fontSize: "3rem", margin: "1rem" }}
+                          />
                         </a>
                       </li>
-                      <li className="nav-item">
-                        <a className="nav-link" href="#works" role="tab" data-toggle="tab">
-                          <FontAwesomeIcon icon={["fab", "facebook-f"]} style={{ color: "lightGrey" }} />
-                          abc
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                          <i className="material-icons">Facebook</i>
-                          abc
-                        </a>
-                      </li>
+                      {data.Twitter && data.Twitter[0] && (
+                        <li className="nav-item">
+                          <a
+                            className="nav-link"
+                            href={
+                              data &&
+                              data.Twitter &&
+                              `https://twitter.com/intent/tweet?screen_name=${data.Twitter[0].substring(
+                                20
+                              )}`
+                            }
+                            role="tab"
+                            data-toggle="tab"
+                          >
+                            <FontAwesomeIcon
+                              icon={["fab", "twitter"]}
+                              style={{ color: "#000000", fontSize: "3rem", margin: "1rem" }}
+                            />
+                          </a>
+                        </li>
+                      )}
                     </ul>
                   </div>
                 </div>
