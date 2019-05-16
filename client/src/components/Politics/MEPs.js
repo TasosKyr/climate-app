@@ -37,11 +37,12 @@ class MEPs extends Component {
       }
     ]
     const { data } = this.state
-    console.log(data)
+    console.log(_get(data, "[0].Groups[0].Organization"))
+
     return (
       <>
         <div className="header-container-politics" />
-        <h2>Party name</h2>
+        <h2>{_get(data, "[0].Groups[0].Organization")}</h2>
         <div style={{ marginBottom: "6rem" }}>
           {data &&
             data.map(el => (
