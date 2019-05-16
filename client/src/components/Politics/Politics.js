@@ -17,11 +17,11 @@ class Politics extends Component {
             <p>Here you can do politics stuff</p>
           </div>
           <hr />
-          <div className="card-container twit-txt">
-            <div className="twitter-container">
+          <div className="twit-txt d-flex justify-content-between mb-5">
+            <div className="twitter-container ml-3">
               <Twitter />
             </div>
-            <div className="card politics-box" style={{ float: "right" }}>
+            <div className="card politics-box mr-3">
               <h4> Access to Decision Makers</h4>
               <p>
                 Here you will find members of the European Parliament, and the factions they belong to.
@@ -35,7 +35,8 @@ class Politics extends Component {
                 <button className="button1">Legislation</button>
               </a>
             </div>
-            <div style={{ height: "10px", margin: "5rem" }} />
+            {/* <div style={{ height: "10px", margin: "5rem" }} /> */}
+            <br />
           </div>
           <Groups />
         </div>

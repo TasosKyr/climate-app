@@ -28,7 +28,7 @@ class Groups extends Component {
       <div className="groups-container">
         <div className="party-container" style={{ marginBottom: "6rem" }}>
           <Plx parallaxData={parallaxDataLeft}>
-            <Link to={`/politics/PPE`}>
+            <Link to={`/politics/PPE`} style={{ textDecoration: "none" }}>
               <div className="shaded-box">
                 <div className="party-logo">
                   <img src="../../../logos/1_EPP_EP_group_logo_2015.png" alt="EPP Logo" />

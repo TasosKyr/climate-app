@@ -196,26 +196,11 @@ body {
   flex-wrap: wrap;
 }
 
-/* .intro-text-container {
-  margin-top: 1vh;
-} */
-
-/* .container {
-  margin: 0px; 
-  margin-top: 2rem;
-  margin-bottom: 2rem; 
-} */
-
 .card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
-
-.card-container.twit-txt {
-  display: flex;
-  justify-content: space-between;
 }
 
 .card {
@@ -480,7 +465,7 @@ select {
 }
 
 .card.politics-box {
-  max-height: 300px;
+  height: 43vh;
 }
 
 .my-card {
@@ -509,6 +494,16 @@ select {
   justify-content: center;
 }
 
+.party-container a {
+  text-decoration: "none";
+  color: "red";
+  background-color: red;
+}
+
+.party-container a:hover {
+  color: "red";
+}
+
 .shaded-box {
   // margin: 2rem 5rem 2rem;
   // padding: 0.5rem;
@@ -528,6 +523,10 @@ select {
   display: flex;
   justify-content: flex-start;
   width: 50vw;
+}
+.party-name:hover {
+  color: red;
+  text-decoration: none;
 }
 
 .party-name p {
