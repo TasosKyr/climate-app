@@ -90,9 +90,11 @@ class Member extends Component {
                             href={
                               data &&
                               data.Twitter &&
-                              `https://twitter.com/intent/tweet?screen_name=${data.Twitter[0].substring(
-                                20
-                              )}`
+                              `https://twitter.com/intent/tweet?screen_name=${
+                                data.Twitter[0][4] === "s"
+                                  ? data.Twitter[0].substring(20)
+                                  : data.Twitter[0].substring(19)
+                              }`
                             }
                             role="tab"
                             data-toggle="tab"
