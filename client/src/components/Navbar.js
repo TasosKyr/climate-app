@@ -22,15 +22,11 @@ class Navbar extends React.Component {
     })
   }
 
-  logo = (<Link className="navbar-brand nav-color" to="/" className='logoFont'> ClimAct</Link>)
+  logo = (<Link className="navbar-brand nav-color logoFont" to="/" > ClimAct</Link>)
 
   subPages = (
     <>
-      <li className="nav-item">
-        <Link className="nav-link nav-color" to="/about">
-          About
-      </Link>
-      </li>
+      
 
       <li className="nav-item">
         <Link className="nav-link nav-color" to="/politics">
@@ -58,7 +54,13 @@ class Navbar extends React.Component {
       <Link className="nav-link nav-color" to="/login">
         Login
 </Link>
-    </li> </>)
+    </li> 
+    <li className="nav-item">
+        <Link className="nav-link nav-color" to="/about">
+          About
+      </Link>
+      </li>
+    </>)
 
 
   welcomeUser = () => (
@@ -68,8 +70,8 @@ class Navbar extends React.Component {
           Hi {this.state.loggedIn && this.state.loggedIn.username}!
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item style={{backgroundColor: '#0d1313'}}><Link to="/profile">My Profile </Link> </Dropdown.Item>
-          <Dropdown.Item style={{backgroundColor: '#0d1313', color:'white'}}onClick={this.handleLogout} >Log Out</Dropdown.Item>
+          <Dropdown.Item style={{ backgroundColor: '#0d1313' }}><Link to="/profile">My Profile </Link> </Dropdown.Item>
+          <Dropdown.Item style={{ backgroundColor: '#0d1313', color: 'white' }} onClick={this.handleLogout} >Log Out</Dropdown.Item>
 
         </Dropdown.Menu>
       </Dropdown>;

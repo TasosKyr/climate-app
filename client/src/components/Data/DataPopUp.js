@@ -58,7 +58,7 @@ export default class DataPopUp extends Component {
               {this.props.title}
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{ width: '50vw', height: 'auto' }}>
             {this.props.children}
             <hr></hr>
           </Modal.Body>

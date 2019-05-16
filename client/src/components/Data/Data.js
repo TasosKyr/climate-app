@@ -54,9 +54,14 @@ export default class Data extends Component {
       <>
         <PageHeader image={image3} />
         <div className="container page-container">
-          <h1>Climate Data</h1>
-          <div className='data-page'>
+          <div className="intro-text-container">
+            <h1>Climate Data</h1>
+            <p>Use our interface to experiment with different models and scenarios for universally-recognized temperature, precipitation indicators and gas emissions.</p>
+            <hr />
+          </div>
 
+          {/* <div className='data-page'> */}
+          <div className="card-container">
             <div class="card">
               <div class="card-body card-body-data">
                 <UserSelection changed=
@@ -70,7 +75,7 @@ export default class Data extends Component {
 
 
             <div class="card">
-              <div class="card-body ">
+              <div class="card-body card-body-data">
                 <EmissionsUserSelection {...this.state} changed={this.handleChange} />
                 <DataPopUp title='Gas emission in EU' >
                   <EmissionsDataCard {...this.state} clicked={this.handleClick} />

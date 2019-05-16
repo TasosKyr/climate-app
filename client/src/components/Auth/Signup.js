@@ -48,9 +48,11 @@ class Signup extends React.Component {
     return (
       <>
         <div className="container page-container">
+
           <h2>Sign Up</h2>
           {this.state.message && <h2>{this.state.message}</h2>}
           <div className="user-selection-form">
+
             <form onSubmit={this.handleSubmit}>
               <div className="inp">
                 <label>Username:</label>

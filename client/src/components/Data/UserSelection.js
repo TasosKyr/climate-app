@@ -11,15 +11,15 @@ export default class UserSelection extends Component {
 
   render() {
     return (
-      <div >
+      <div className="user-input-data-form">
         {console.log(this.props)}
         <h5>Extreme weather incidents in US cities</h5>
-        <p>Use our interface to experiment with different models and scenarios for universally-recognized temperature and precipitation indicators. Source: Azavea Climate API</p>
+        <p>The Climate API includes precipitation data for US cities projected until the end of the century. Users can retrieve results from two datasets (NASA NEX-GDDP, LOCA). Source: Azavea Climate API</p>
 
         <form onSubmit={this.handleSubmit}>
-          <div className="user-input">
+          <div className="card-body-data">
             <select value={this.props.incidentType} onChange={(e) => this.props.changed(e)} className="select" name="incidentType">
-              <option value="">Choose an extreme weather incident</option>
+              <option value="">Choose a weather incident</option>
               <option value="heat_wave_incidents">Heat Wave Incidents</option>
               <option value="extreme_cold_events">Extreme Cold Events</option>
               <option value="extreme_heat_events">Extreme Heat Events</option>
@@ -29,7 +29,7 @@ export default class UserSelection extends Component {
             <br />
 
             <select value={this.props.city} onChange={(e) => this.props.changed(e)} className="select" name="city">
-              <option value="">Choose a city</option>
+              <option value="">Choose city</option>
               <option value="1">New York</option>
               <option value="2">Los Angeles</option>
               <option value="3">Chicago</option>
@@ -40,14 +40,14 @@ export default class UserSelection extends Component {
           </div>
           <br />
           <div>
-            <label /* for="inp" */ className="inp">
+            <label className="inp">
               <input value={this.props.startYear} type="text" id="inp" name='startYear' onChange={(e) => this.props.changed(e)} />
-              <span className="label">Start year</span>
+              <span className="label">Start year after 2006</span>
               <span className="border"></span>
             </label>
           </div>
           <br />
-          <div><label /* for="inp" */ className="inp">
+          <div><label className="inp">
             <input value={this.props.endYear} onChange={(e) => this.props.changed(e)} type="text" id="inp" name='endYear' />
             <span className="label">End year</span>
             <span className="border"></span>

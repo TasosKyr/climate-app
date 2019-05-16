@@ -36,15 +36,20 @@ html {
 
 //this is needed to keep the footer at the bottom
 body {
-  position: relative;
-/*   margin: 0;
- */  padding-bottom: 6rem;
-  min-height: 100%;
+ position: relative;
+ padding-bottom: 6rem;
+ width: 100%;
+ overflow-x: hidden;
+ min-height: 100%;
 }
 
-/* .page-container {
-  margin: 0.5rem;
-} */
+ .page-container {
+  padding-top: 2vh;
+} 
+
+.user-selection-form {
+  padding-top: 20vh;
+}
 
 :root {
   --black: #0d1313;
@@ -55,15 +60,12 @@ body {
   --yellow-green: #cbe980;
 }
 
-body {
-/*   margin: 10px;
- */}
-
 //fix burger icon on resize
 .navbar-main {
   background-color: var(--black);
   position: fixed;
   width: 100vw;
+  z-index: 999;
 }
 
 .nav-item a:hover {
@@ -86,6 +88,8 @@ body {
 .nav-item {
   color: var(--white);
 }
+
+// Home page styling
 
 .header-container {
   background-image: url("../src/images/601229-unsplash.jpg");
@@ -139,10 +143,10 @@ body {
 }
 //sub-page headers & styling
 
-.page-header { 
-/*   width: 100vw;
- */  height: 50vh;
- padding-bottom: 8vh;
+.page-header {
+  height: 80vh;
+  padding-bottom: 8vh;
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
@@ -189,9 +193,9 @@ padding-top: 6vh;
   flex-wrap: wrap; 
 }
 
-.intro-text-container {
-  margin-top: 3vh;
-}
+/* .intro-text-container {
+  margin-top: 1vh;
+} */
 
 /* .container {
   margin: 0px; 
@@ -278,18 +282,19 @@ padding-top: 6vh;
   justify-content: space-around;
 }
 
-.card-body-data {
+ .card-body-data {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} 
 
 /* Data page - select function styling */
-.user-input {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
+  .user-input-data-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -558,7 +563,7 @@ a .material-icons {
   background-position: center;
 }
 
-.page-header {
+/* .page-header {
   height: 100vh;
   background-size: cover;
   margin: 0;
@@ -566,7 +571,7 @@ a .material-icons {
   border: 0;
   display: flex;
   align-items: center;
-}
+} */
 
 .header-filter:after,
 .header-filter:before {
