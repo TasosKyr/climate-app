@@ -14,7 +14,7 @@ class TitleCard extends Component {
             {this.props.description}
           </p>
           <Link to={this.props.link} className='button1'>
-            Learn More!
+            Learn More
         </Link>
         </div>
       </div >
