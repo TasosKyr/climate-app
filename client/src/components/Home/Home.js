@@ -8,7 +8,7 @@ import image3 from '../../images/data.jpeg'
 class Home extends Component {
   render() {
     return (
-      <div>
+      <>
         <Header />
         <div id='content' className="container page-container">
 
@@ -40,7 +40,7 @@ class Home extends Component {
               image={image3} />
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }

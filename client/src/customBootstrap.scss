@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Aguafina+Script|Work+Sans:300,700,900");
 //font-family: 'Quicksand';
 //font-family: 'Work Sans', sans-serif;
+
 @import url("https://fonts.googleapis.com/css?family=Assistant:200|Catamaran:200|Raleway:200|Source+Sans+Pro:200");
 
 //settings for mobile responsiveness
@@ -36,14 +37,14 @@ html {
 //this is needed to keep the footer at the bottom
 body {
   position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
+/*   margin: 0;
+ */  padding-bottom: 6rem;
   min-height: 100%;
 }
 
-.page-container {
+/* .page-container {
   margin: 0.5rem;
-}
+} */
 
 :root {
   --black: #0d1313;
@@ -55,8 +56,8 @@ body {
 }
 
 body {
-  margin: 10px;
-}
+/*   margin: 10px;
+ */}
 
 //fix burger icon on resize
 .navbar-main {
@@ -88,12 +89,13 @@ body {
 
 .header-container {
   background-image: url("../src/images/601229-unsplash.jpg");
-  height: 100vh;
+  width: 100vw;
+  padding-top: 8vh;
+  height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -125,10 +127,10 @@ body {
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-30px);
+    transform: translateY(-10px);
   }
   60% {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
   }
 }
 
@@ -138,72 +140,79 @@ body {
 //sub-page headers & styling
 
 .page-header {
-  color: var(--black);
-  height: 50vh;
+/*   width: 100vw;
+ */  height: 50vh;
+ padding-bottom: 8vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-position: center;  
 }
 
+/* @media screen (max-width)
+ */
 .heading {
   font-family: "Source Sans Pro";
   color: var(--white);
-}
-
-.heading-action {
-  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .heading h1 {
-  font-size: 8rem;
-  font-weight: bold;
+padding-top: 6vh;
+  font-size: 11vw;
+  font-weight: lighter;
+
   line-height: 2;
   letter-spacing: 0.5rem;
   font-family: "Source Sans Pro";
 }
 
-.heading-action h1 {
+/* .heading-action h1 {
   font-size: 7rem;
   font-weight: bold;
   line-height: 2;
   letter-spacing: 0.5rem;
-}
+} */
 
 .heading p {
-  font-size: 24px;
+  font-size: 2.5vw;
   letter-spacing: 0.3rem;
+  font-family: "Source Sans Pro";
 }
 
-.heading-action p {
-  font-size: 24px;
-  letter-spacing: 0.3rem;
+
+.action-page-card-container{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-evenly;
+  flex-wrap: wrap; 
 }
 
-.action-page-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+.intro-text-container {
+  margin-top: 3vh;
 }
 
-.container {
-  margin: 0px;
+/* .container {
+  margin: 0px; 
   margin-top: 2rem;
-  margin-bottom: 2rem;
-}
+  margin-bottom: 2rem; 
+} */
+
 .card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-evenly;
+  flex-wrap: wrap; 
 }
 
 .card {
-  margin: 5% 2% 5%;
   min-width: 18rem;
-  max-width: 25vw;
-  text-align: center;
+
+  max-width: 20vw;
+  margin: 3vh;
+  text-align: center; 
+
 }
 
 .footer-container {
@@ -236,7 +245,7 @@ body {
 .footer-container h2 {
   font-family: Helvetica, sans-serif;
   color: var(--white);
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {

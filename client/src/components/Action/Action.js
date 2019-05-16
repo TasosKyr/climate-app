@@ -29,48 +29,54 @@ class Action extends Component {
     return (
       <>
         <PageHeader image={image2} />
+
         <div className="container page-container" id='container'>
+          <div className="intro-text-container">
+            <h1>Action!</h1>
 
-          <h1>Action!</h1>
-
-          <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the climate events in Berlin and sign petitions.</p>
-          <hr />
+            <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the climate events in Berlin and sign petitions.</p>
+            <hr />
+          </div>
 
           <div className='action-page-card-container'>
-            <div class="card">
-              <div class="card-body">
-                <h1>Climate Events</h1>
-                <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
-
-                <DropDown title='Check out These Climate Events'>
-                  <Events userEvents={this.state.user.myCollection.events} />
-                </DropDown>
-                <br />
-
-                <DropDown title='Add Your Own Climate Event' user={this.props.user} protected>
-                  <EventForm />
-                </DropDown>
-              </div>
-            </div>
 
             <div class="card">
               <div class="card-body">
-                <h1>Climate Petitions</h1>
+                <h1>Petitions</h1>
                 <p>Getting your voice heard can be tough, but together we can make the decision makers listen – sign a petition and let the politicians know you demand change!</p>
 
-                <DropDown title='Check out These Petitions'>
+                <DropDown title='Check out Petitions'>
                   <Petitions userPetitions={this.state.user.myCollection.petitions} />
                 </DropDown>
               </div>
             </div>
 
+
+            <div class="card">
+              <div class="card-body">
+                <h1>Events</h1>
+                <p>Participating in events, demonstrations and taking part of your community is one good way to act. Here we have gathered some great events that you can participate in</p>
+
+                <DropDown title='Check out Events'>
+                  <Events userEvents={this.state.user.myCollection.events} />
+                </DropDown>
+                <br />
+
+                <DropDown title='Add Your Own Event' user={this.props.user} protected>
+                  <EventForm />
+                </DropDown>
+              </div>
+            </div>
+
+
+
             <div class="card">
               <div class="card-body">
 
-                <h1>Get your Climate Action Opinion Published</h1>
+                <h1>Get Published</h1>
                 <p> A letter to the editor can foster conversations about climate change</p>
 
-                <DropDown title='Get your climate action opinion published'>
+                <DropDown title='Get your Opinion Published'>
                   <Letters />
                 </DropDown>
               </div>
