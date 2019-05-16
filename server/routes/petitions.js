@@ -12,7 +12,7 @@ router.get('/petitions', (req, res, next) => {
     }).catch(err => {
       console.error('rendering petitions failed', err)
     });
-});
+}); 
 
 router.post('/petitions/star', (req, res, next) => {
   const user = req.user
