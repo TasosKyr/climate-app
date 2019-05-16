@@ -85,7 +85,8 @@ body {
 
 .header-container {
   background-image: url("../src/images/601229-unsplash.jpg");
-  height: 100vh;
+  width: 100vw;
+  height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -145,6 +146,8 @@ body {
   justify-content: center;
 }
 
+/* @media screen (max-width)
+ */
 .heading {
   font-family: "Source Sans Pro";
   color: var(--white);
@@ -155,7 +158,7 @@ body {
 }
 
 .heading h1 {
-  font-size: 9rem;
+  font-size: 11vw;
   font-weight: lighter;
   line-height: 2;
   letter-spacing: 0.5rem;
@@ -170,7 +173,7 @@ body {
 } */
 
 .heading p {
-  font-size: 1.8rem;
+  font-size: 2.5vw;
   letter-spacing: 0.3rem;
   font-family: "Source Sans Pro";
 }
