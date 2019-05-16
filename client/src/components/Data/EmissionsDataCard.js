@@ -72,7 +72,7 @@ export default class EmissionsDataCard extends Component {
 
     let options = {
       responsive: true,
-      maintainAspectRatio: true,
+      //maintainAspectRatio: false,
       tooltips: {
         mode: 'label'
       },
@@ -128,16 +128,16 @@ export default class EmissionsDataCard extends Component {
 
     return (
       <div >
-        <h1>Emissions graph</h1>
-        <div>
-          <label>
-            Display EU average
+        <div id='graph' className='chart1'>
+          <h1>Emissions graph</h1>
+          <div className='mb-3'>
+            <label>
+              Display EU average
             <input
-              type="checkbox"
-              checked={this.state.checked} onChange={this.handleChange} />
-          </label>
-        </div>
-        <div >
+                type="checkbox"
+                checked={this.state.checked} onChange={this.handleChange} />
+            </label>
+          </div>
           <Bar data={graph2Data} options={options}
           />
         </div>

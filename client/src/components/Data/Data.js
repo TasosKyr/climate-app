@@ -75,7 +75,7 @@ export default class Data extends Component {
 
 
             <div class="card">
-              <div class="card-body ">
+              <div class="card-body card-body-data">
                 <EmissionsUserSelection {...this.state} changed={this.handleChange} />
                 <DataPopUp title='Gas emission in EU' >
                   <EmissionsDataCard {...this.state} clicked={this.handleClick} />

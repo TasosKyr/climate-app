@@ -51,10 +51,6 @@ body {
   --yellow-green: #cbe980;
 }
 
-body {
-/*   margin: 10px;
- */}
-
 //fix burger icon on resize
 .navbar-main {
   background-color: var(--black);
@@ -82,6 +78,8 @@ body {
 .nav-item {
   color: var(--white);
 }
+
+// Home page styling
 
 .header-container {
   background-image: url("../src/images/601229-unsplash.jpg");
