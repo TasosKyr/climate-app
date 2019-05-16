@@ -22,7 +22,6 @@ class Member extends Component {
 
   render() {
     const { data } = this.state
-    data && data.Twitter && console.log(data.Twitter[0].substring(20))
     return (
       <>
         <div
@@ -42,22 +41,20 @@ class Member extends Component {
                 <div className="col-md-6 ml-auto mr-auto">
                   <div className="profile">
                     <div className="avatar">
-                      <img
-                        src={data.Photo}
-                        alt="Circle Image"
-                        className="img-raised rounded-circle img-fluid"
-                      />
+                      <img src={data.Photo} alt="Circle Image" className="img-raised img-fluid mt-3" />
                     </div>
                     <div className="name">
-                      <h3 className="title">{_get(data, "Name.full")}</h3>
+                      <h3 className="title" style={{ fontFamily: "Work Sans" }}>
+                        {_get(data, "Name.full")}
+                      </h3>
 
-                      <h6>{_get(data, "Groups[0].Organization")}</h6>
+                      <h6 style={{ fontFamily: "Work Sans" }}>{_get(data, "Groups[0].Organization")}</h6>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="description text-center">
-                <p>
+                <p style={{ fontFamily: "Work Sans" }}>
                   {_get(data, "Addresses.Postal", []).map(el => (
                     <li style={{ listStyle: "none" }}>{el}</li>
                   ))}
@@ -69,7 +66,11 @@ class Member extends Component {
                     <h4>Contact your representative:</h4>
                     <ul className="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                       <li className="nav-item">
-                        <a className="nav-link" href={"mailto:" + _get(data, "Mail[0]")}>
+                        <a
+                          style={{ fontFamily: "Work Sans" }}
+                          className="nav-link"
+                          href={"mailto:" + _get(data, "Mail[0]")}
+                        >
                           <FontAwesomeIcon
                             icon={["fas", "envelope"]}
                             style={{ color: "#000000", fontSize: "3rem", margin: "1rem" }}
