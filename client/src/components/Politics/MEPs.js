@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import Plx from "react-plx"
 import { getParty } from "../../services/politics"
+import { get as _get } from "lodash"
+import PageHeader from "../PageHeader"
+import image2 from "../../images/euro-flag.jpeg"
 
 class MEPs extends Component {
   state = {
@@ -10,7 +13,6 @@ class MEPs extends Component {
 
   componentDidMount = () => {
     getParty(this.props.match.params.partyID).then(data => {
-      console.log("MEPs", data)
       this.setState({ data: data })
     })
   }
@@ -36,22 +38,33 @@ class MEPs extends Component {
         ]
       }
     ]
-
     const { data } = this.state
+    console.log(_get(data, "[0].Groups[0].Organization"))
+
     return (
       <>
-        <div className="header-container-politics" />
-        <div>
-          {data &&
-            data.map(el => (
-              <Plx parallaxData={parallaxDataLeft}>
-                <div className="shaded-box">
-                  <Link to={`/politics/${this.props.match.params.partyID}/${el.UserID}`}>
-                    {el.Name.full}
-                  </Link>
-                </div>
-              </Plx>
-            ))}
+        <PageHeader image={image2} />
+        <div id="content" className="container page-container">
+          <div className="intro-text-container">
+            <h1>{_get(data, "[0].Groups[0].Organization")}</h1>
+            <p>Here are all the MEPs belonging to the faction</p>
+          </div>
+          <hr />
+
+          <div />
+          <h2 />
+          <div style={{ marginBottom: "6rem" }}>
+            {data &&
+              data.map(el => (
+                <Plx parallaxData={parallaxDataLeft}>
+                  <div className="shaded-box">
+                    <Link to={`/politics/${this.props.match.params.partyID}/${el.UserID}`}>
+                      {el.Name.full}
+                    </Link>
+                  </div>
+                </Plx>
+              ))}
+          </div>
         </div>
       </>
     )

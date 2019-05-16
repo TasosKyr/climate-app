@@ -25,53 +25,60 @@ class Twitter extends Component {
     const tweetIdStr3 = _get(data, "statuses[3].id_str")
     const tweetIdStr4 = _get(data, "statuses[4].id_str")
     return (
-      <Carousel>
-        <Carousel.Item style={{ height: 400 }}>
-          {tweetIdStr && (
-            <TwitterTweetEmbed
-              autoHeight
-              tweetId={tweetIdStr}
-              options={{ cards: "hidden", hideCard: true, hideThread: false }}
-            />
-          )}
-        </Carousel.Item>
-        <Carousel.Item style={{ height: 400 }}>
-          {tweetIdStr1 && (
-            <TwitterTweetEmbed
-              autoHeight
-              tweetId={tweetIdStr1}
-              options={{ cards: "hidden", hideCard: true, hideThread: false }}
-            />
-          )}
-        </Carousel.Item>
-        <Carousel.Item style={{ height: 400 }}>
-          {tweetIdStr2 && (
-            <TwitterTweetEmbed
-              autoHeight
-              tweetId={tweetIdStr2}
-              options={{ cards: "hidden", hideCard: true, hideThread: false }}
-            />
-          )}
-        </Carousel.Item>
-        <Carousel.Item style={{ height: 400 }}>
-          {tweetIdStr3 && (
-            <TwitterTweetEmbed
-              autoHeight
-              tweetId={tweetIdStr3}
-              options={{ cards: "hidden", hideCard: true, hideThread: false }}
-            />
-          )}
-        </Carousel.Item>
-        <Carousel.Item style={{ height: 400 }}>
-          {tweetIdStr4 && (
-            <TwitterTweetEmbed
-              autoHeight
-              tweetId={tweetIdStr4}
-              options={{ cards: "hidden", hideCard: true, hideThread: false }}
-            />
-          )}
-        </Carousel.Item>
-      </Carousel>
+      <div>
+        <Carousel style={{ height: 300, width: 400 }}>
+          <Carousel.Item>
+            {tweetIdStr && (
+              <div style={{ height: "40vh", overflowY: "scroll" }}>
+                <TwitterTweetEmbed
+                  tweetId={tweetIdStr}
+                  options={{ cards: "hidden", hideCard: true, hideThread: false }}
+                />
+              </div>
+            )}
+          </Carousel.Item>
+          <Carousel.Item>
+            {tweetIdStr1 && (
+              <div style={{ height: "40vh", overflowY: "scroll" }}>
+                <TwitterTweetEmbed
+                  tweetId={tweetIdStr1}
+                  options={{ cards: "hidden", hideCard: true, hideThread: false }}
+                />
+              </div>
+            )}
+          </Carousel.Item>
+          <Carousel.Item>
+            {tweetIdStr2 && (
+              <div style={{ height: "40vh", overflowY: "scroll" }}>
+                <TwitterTweetEmbed
+                  tweetId={tweetIdStr2}
+                  options={{ cards: "hidden", hideCard: true, hideThread: false }}
+                />
+              </div>
+            )}
+          </Carousel.Item>
+          <Carousel.Item>
+            {tweetIdStr3 && (
+              <div style={{ height: "40vh", overflowY: "scroll" }}>
+                <TwitterTweetEmbed
+                  tweetId={tweetIdStr3}
+                  options={{ cards: "hidden", hideCard: true, hideThread: false }}
+                />
+              </div>
+            )}
+          </Carousel.Item>
+          <Carousel.Item>
+            <div style={{ height: "30vh", overflowY: "scroll" }}>
+              {tweetIdStr4 && (
+                <TwitterTweetEmbed
+                  tweetId={tweetIdStr4}
+                  options={{ cards: "hidden", hideCard: true, hideThread: false }}
+                />
+              )}
+            </div>
+          </Carousel.Item>
+        </Carousel>
+      </div>
     )
   }
 }

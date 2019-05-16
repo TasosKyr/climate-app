@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import Header from "./Header"
 import TitleCard from "./TitleCard"
-import image1 from '../../images/politics.jpeg'
-import image2 from '../../images/action.jpeg'
-import image3 from '../../images/data.jpeg'
+import image1 from "../../images/euro-flag.jpeg"
+import image2 from "../../images/action.jpeg"
+import image3 from "../../images/data.jpeg"
 
 class Home extends Component {
   render() {
@@ -20,8 +20,8 @@ class Home extends Component {
           <hr />
 
           <div className="card-container">
-
             <TitleCard
+
               title='Politics'
               description='Democracy is great as it gives us access to power – on this page you can engage with all politicians in the European Parliament'
               link='/politics'
@@ -38,6 +38,7 @@ class Home extends Component {
               description='In order to understand climate change you might need to see how it affects us – this is why we created a data page to visualize climate change data. '
               link='/data'
               image={image3} />
+
           </div>
         </div>
       </>

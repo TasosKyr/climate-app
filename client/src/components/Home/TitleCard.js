@@ -1,14 +1,18 @@
-
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
 
 class TitleCard extends Component {
   render() {
     return (
-      <div className="card" >
-        <img className="card-img-top" src={this.props.image} alt="Card image cap" />
+      <div className="card">
+        <img
+          style={{ height: "190.66px" }}
+          className="card-img-top"
+          src={this.props.image}
+          alt="Card image cap"
+        />
         <div className="card-body">
+
           <h4 className="card-title" style={{ fontWeight: 'bold' }}>{this.props.title}</h4>
           <p className="card-text">
             {this.props.description}
@@ -17,7 +21,7 @@ class TitleCard extends Component {
             Learn More
         </Link>
         </div>
-      </div >
+      </div>
     )
   }
 }

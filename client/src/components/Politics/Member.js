@@ -1,13 +1,11 @@
 import React, { Component } from "react"
 import { get as _get } from "lodash"
-
-import { library } from "@fortawesome/fontawesome-svg-core"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { library } from "@fortawesome/fontawesome-svg-core"
 import { getMEP } from "../../services/politics"
-import { TwitterMentionButton } from "react-twitter-embed"
+import parlBg from "../../images/EU-parl.jpg"
 
 library.add(faTwitter, faEnvelope)
 
@@ -24,7 +22,6 @@ class Member extends Component {
 
   render() {
     const { data } = this.state
-    data && data.Twitter && console.log(data.Twitter[0].substring(20))
     return (
       <>
         <div
@@ -32,7 +29,7 @@ class Member extends Component {
           data-parallax="true"
           style={{
             backgroundImage: `url(
-              "https://bankwatch.org/wp-content/uploads/2017/06/EU-parl.jpg"
+              ${parlBg}
             )`,
             height: "70vh"
           }}
@@ -44,22 +41,20 @@ class Member extends Component {
                 <div className="col-md-6 ml-auto mr-auto">
                   <div className="profile">
                     <div className="avatar">
-                      <img
-                        src={data.Photo}
-                        alt="Circle Image"
-                        className="img-raised rounded-circle img-fluid"
-                      />
+                      <img src={data.Photo} alt="Circle Image" className="img-raised img-fluid mt-3" />
                     </div>
                     <div className="name">
-                      <h3 className="title">{_get(data, "Name.full")}</h3>
+                      <h3 className="title" style={{ fontFamily: "Work Sans" }}>
+                        {_get(data, "Name.full")}
+                      </h3>
 
-                      <h6>{_get(data, "Groups[0].Organization")}</h6>
+                      <h6 style={{ fontFamily: "Work Sans" }}>{_get(data, "Groups[0].Organization")}</h6>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="description text-center">
-                <p>
+                <p style={{ fontFamily: "Work Sans" }}>
                   {_get(data, "Addresses.Postal", []).map(el => (
                     <li style={{ listStyle: "none" }}>{el}</li>
                   ))}
@@ -71,7 +66,11 @@ class Member extends Component {
                     <h4>Contact your representative:</h4>
                     <ul className="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                       <li className="nav-item">
-                        <a className="nav-link" href={"mailto:" + _get(data, "Mail[0]")}>
+                        <a
+                          style={{ fontFamily: "Work Sans" }}
+                          className="nav-link"
+                          href={"mailto:" + _get(data, "Mail[0]")}
+                        >
                           <FontAwesomeIcon
                             icon={["fas", "envelope"]}
                             style={{ color: "#000000", fontSize: "3rem", margin: "1rem" }}
@@ -82,14 +81,11 @@ class Member extends Component {
                         <li className="nav-item">
                           <a
                             className="nav-link"
-                            target="_blank"
                             href={
                               data &&
                               data.Twitter &&
                               `https://twitter.com/intent/tweet?screen_name=${
-                                data.Twitter[0][4] === "s"
-                                  ? data.Twitter[0].substring(20)
-                                  : data.Twitter[0].substring(19)
+                                data.Twitter[0].split("twitter.com/")[1]
                               }`
                             }
                           >
