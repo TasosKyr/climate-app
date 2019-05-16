@@ -6,7 +6,7 @@ const User = require("../../models/User");
 const uploader = require("../../configs/cloudinary");
 
 
-router.post("/signup", (req, res) => {
+router.post("/signup", async (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   const imgPath = req.body.imgPath
@@ -24,28 +24,26 @@ router.post("/signup", (req, res) => {
   //     .json({ message: "The password needs to have 8 characters minimum" });
   // }
 
-  User.findOne({ username })
-    .then(user => {
-      if (user)
-        return res.status(409).json({ message: "Username already taken" });
-      
-      const salt = bcrypt.genSaltSync();
-      const hash = bcrypt.hashSync(password, salt);
+  try {
+    const user = await User.findOne({ username });
 
-      return User.create({
-        username: username,
-        password: hash,
-        imgPath
-      });
-    })
-    .then(newUser => {
-      req.login(newUser, () => {
-        return res.status(200).json(newUser);
-      });
-    })
-    .catch(error => {
-      res.status(500).json(error);
+    if (user) {
+      return res.status(409).json({ message: "Username already taken" });
+    }
+    const salt = bcrypt.genSaltSync();
+    const hash = bcrypt.hashSync(password, salt);
+
+    const newUser = await User.create({
+      username: username,
+      password: hash,
+      imgPath
     });
+    req.login(newUser, () => {
+      return res.status(200).json(newUser);
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 router.post("/login", passport.authenticate("local"), (req, res) => {

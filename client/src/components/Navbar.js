@@ -27,13 +27,13 @@ class Navbar extends React.Component {
   subPages = (
     <>
       <li className="nav-item">
-        <Link className="nav-link nav-color" to="/about" style={{ color: 'white' }}>
+        <Link className="nav-link nav-color" to="/about">
           About
       </Link>
       </li>
 
       <li className="nav-item">
-        <Link className="nav-link nav-color" to="/politics" style={{ color: 'white' }}>
+        <Link className="nav-link nav-color" to="/politics">
           Politics
       </Link>
       </li>

@@ -3,8 +3,9 @@ import Events from "./Events"
 import DropDown from '../DropDown'
 import Petitions from './Petitions'
 import Letters from './Letters'
-import ActionHeader from './ActionHeader'
+import PageHeader from '../PageHeader'
 import EventForm from './EventForm'
+import image2 from '../../images/action.jpeg'
 
 
 class Action extends Component {
@@ -27,7 +28,7 @@ class Action extends Component {
     // const myCollection = this.props.user && this.props.user.myCollection ? this.props.user.myCollection : {}
     return (
       <>
-        <ActionHeader />
+        <PageHeader image={image2} />
         <div className="container page-container" id='container'>
 
           <h1>Action!</h1>

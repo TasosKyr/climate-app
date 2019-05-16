@@ -2,9 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const myCollectionSchema = new Schema({
-  events: Array,
-  petitions: Array,
-  politics: Array
+  events: { type: Array, default: [] },
+  petitions: { type: Array, default: [] },
+  politics: { type: Array, default: [] }
 })
 
 const userSchema = new Schema(
@@ -12,7 +12,7 @@ const userSchema = new Schema(
     username: String,
     password: String,
     imgPath: String,
-    myCollection: myCollectionSchema,
+    myCollection: { type: myCollectionSchema, default: {} },
   },
   {
     timestamps: true

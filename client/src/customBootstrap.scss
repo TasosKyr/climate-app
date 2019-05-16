@@ -139,8 +139,7 @@ body {
 }
 //sub-page headers & styling
 
-.header-container-action {
-  background-image: url("../src/images/action.jpeg");
+.page-header {
   color: var(--black);
   height: 50vh;
   background-size: cover;
@@ -427,12 +426,11 @@ select {
 
 //profile page styling
 
-.myAction{
+.my-actions{
   display: flex; 
   flex-direction: row; 
   margin: 0px; 
-  flex-wrap: wrap; 
-  
+  flex-wrap: wrap;   
 }
 
 .action-list{
