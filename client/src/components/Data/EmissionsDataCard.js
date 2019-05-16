@@ -72,6 +72,7 @@ export default class EmissionsDataCard extends Component {
 
     let options = {
       responsive: true,
+      maintainAspectRatio: true,
       tooltips: {
         mode: 'label'
       },

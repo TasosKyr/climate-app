@@ -259,6 +259,12 @@ body {
   flex-direction: column;
 }
 
+//profile image size
+.profile-details img {
+  max-width: 20vw;
+    height: auto;
+}
+
 /* Data page - general styling */
 .data-page {
   display: flex;
@@ -424,7 +430,6 @@ select {
   }
 }
 
-//profile page styling
 
 .my-actions{
   display: flex; 
