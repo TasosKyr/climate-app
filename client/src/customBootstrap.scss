@@ -212,11 +212,13 @@ padding-top: 6vh;
 
 .card {
   min-width: 18rem;
-
   max-width: 20vw;
   margin: 3vh;
   text-align: center; 
+}
 
+.card.about {
+  padding: 1rem; 
 }
 
 .footer-container {
