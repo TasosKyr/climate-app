@@ -27,9 +27,9 @@ export default class Data extends Component {
     let type = this.state.incidentType
     let city = this.state.city
     let years = `${startYear}:${endYear}`
-    let country = this.state.country
+    /* let country = this.state.country
     let startYearEU = this.state.startYearEU
-    let endYearEU = this.state.endYearEU
+    let endYearEU = this.state.endYearEU */
     let data = {
       type,
       city,

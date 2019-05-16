@@ -33,9 +33,9 @@ export default class MyEvents extends Component {
 
         <div className="my-card-container" >
           <ul className="my-card" key={this.props.event._id}>
-            <li className="my-item">{this.props.event.name} <br /> <button className='button1'>
-              <a href={this.props.event.link}>More Info</a></button>
-              <button className='button1' onClick={this.handleTrashClick.bind(null, this.props.event._id)}><FontAwesomeIcon icon="trash-alt" /></button>
+            <li className="my-item">{this.props.event.name} <br /> <button className='button1 '>
+              <a className="text-dark" href={this.props.event.link}>More Info</a></button>
+              <button className='button1 ' onClick={this.handleTrashClick.bind(null, this.props.event._id)}><FontAwesomeIcon icon="trash-alt" /></button>
             </li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Modal, Button, OverlayTrigger } from 'react-bootstrap'
 import EmissionsDataCard from "./EmissionsDataCard"
 
 export default class DataPopUp extends Component {
