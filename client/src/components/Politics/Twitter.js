@@ -24,9 +24,15 @@ class Twitter extends Component {
     const tweetIdStr2 = _get(data, "statuses[2].id_str")
     return (
       <Carousel>
-        <Carousel.Item>{tweetIdStr && <TwitterTweetEmbed tweetId={tweetIdStr} />}</Carousel.Item>
-        <Carousel.Item>{tweetIdStr1 && <TwitterTweetEmbed tweetId={tweetIdStr1} />}</Carousel.Item>
-        <Carousel.Item>{tweetIdStr2 && <TwitterTweetEmbed tweetId={tweetIdStr2} />}</Carousel.Item>
+        <Carousel.Item style={{ height: 500 }}>
+          {tweetIdStr && <TwitterTweetEmbed autoHeight tweetId={tweetIdStr} />}
+        </Carousel.Item>
+        <Carousel.Item style={{ height: 500 }}>
+          {tweetIdStr1 && <TwitterTweetEmbed autoHeight tweetId={tweetIdStr1} />}
+        </Carousel.Item>
+        <Carousel.Item style={{ height: 500 }}>
+          {tweetIdStr2 && <TwitterTweetEmbed autoHeight tweetId={tweetIdStr2} />}
+        </Carousel.Item>
       </Carousel>
     )
   }

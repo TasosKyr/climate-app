@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { get as _get } from "lodash"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { getMEP } from "../../services/politics"
 
 class Member extends Component {
@@ -19,12 +20,13 @@ class Member extends Component {
     return (
       <>
         <div
-          className="page-header header-filter"
+          className="page-header"
           data-parallax="true"
           style={{
             backgroundImage: `url(
-              "http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png"
-            )`
+              "https://bankwatch.org/wp-content/uploads/2017/06/EU-parl.jpg"
+            )`,
+            height: "70vh"
           }}
         />
         <div className="main main-raised">
@@ -43,26 +45,16 @@ class Member extends Component {
                     <div className="name">
                       <h3 className="title">{_get(data, "Name.full")}</h3>
 
-                      <h6>Party name here...</h6>
-                      {/* {_get(data, "Groups.Organization")} */}
-                      <a href="#pablo" className="btn btn-just-icon btn-link btn-dribbble">
-                        <i className="fa fa-dribbble" />
-                      </a>
-                      <a href="#pablo" className="btn btn-just-icon btn-link btn-twitter">
-                        <i className="fa fa-twitter" />
-                      </a>
-                      <a href="#pablo" className="btn btn-just-icon btn-link btn-pinterest">
-                        <i className="fa fa-pinterest" />
-                      </a>
+                      <h6>{_get(data, "Groups[0].Organization")}</h6>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="description text-center">
                 <p>
-                  An artist of considerable range, Chet Faker — the name taken by Melbourne-raised,
-                  Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving
-                  it a warm, intimate feel with a solid groove structure.{" "}
+                  {data &&
+                    data.Addresses &&
+                    data.Addresses.Postal.map(el => <li style={{ listStyle: "none" }}>{el}</li>)}
                 </p>
               </div>
               <div className="row">
@@ -71,20 +63,20 @@ class Member extends Component {
                     <ul className="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                       <li className="nav-item">
                         <a className="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                          <i className="material-icons">camera</i>
-                          Studio
+                          <i className="material-icons">Email</i>
+                          abc
                         </a>
                       </li>
                       <li className="nav-item">
                         <a className="nav-link" href="#works" role="tab" data-toggle="tab">
-                          <i className="material-icons">palette</i>
-                          Work
+                          <FontAwesomeIcon icon={["fab", "facebook-f"]} style={{ color: "lightGrey" }} />
+                          abc
                         </a>
                       </li>
                       <li className="nav-item">
                         <a className="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                          <i className="material-icons">favorite</i>
-                          Favorite
+                          <i className="material-icons">Facebook</i>
+                          abc
                         </a>
                       </li>
                     </ul>

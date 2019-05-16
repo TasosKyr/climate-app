@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Karla:400,400i,700");
 //font-family: 'Eczar', serif;
 @import url("https://fonts.googleapis.com/css?family=Aguafina+Script|Work+Sans:300,700,900");
-//font-family: 'Aguafina Script', cursive;
+//font-family: 'Quicksand';
 //font-family: 'Work Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Assistant:200");
 
 *,
 *:before,
@@ -53,7 +54,7 @@ body {
 
 //left corner logo
 .logoFont {
-  font-family: "Aguafina Script", cursive;
+  font-family: "Helvetica";
   font-size: 1.5rem;
   padding-right: 5px;
   color: var(--white);
@@ -133,7 +134,7 @@ body {
 }
 
 .heading {
-  font-family: "Aguafina Script", cursive;
+  font-family: "Helvetica";
   color: var(--white);
 }
 
@@ -143,15 +144,15 @@ body {
 
 .heading h1 {
   font-size: 8rem;
-  font-weight: bold;
+  font-weight: lighter;
   line-height: 2;
   letter-spacing: 0.5rem;
-  font-family: "Aguafina Script", cursive;
+  font-family: "Helvetica";
 }
 
 .heading-action h1 {
   font-size: 7rem;
-  font-weight: bold;
+  font-weight: lighter;
   line-height: 2;
   letter-spacing: 0.5rem;
 }
@@ -780,28 +781,4 @@ img.rounded {
   top: 1px;
   margin-right: 12px;
   opacity: 0.5;
-}
-
-/* footer */
-
-footer {
-  margin-top: 10px;
-  color: #555;
-  padding: 25px;
-  font-weight: 300;
-}
-.footer p {
-  margin-bottom: 0;
-  font-size: 14px;
-  margin: 0 0 10px;
-  font-weight: 300;
-}
-footer p a {
-  color: #555;
-  font-weight: 400;
-}
-
-footer p a:hover {
-  color: #9f26aa;
-  text-decoration: none;
 }
