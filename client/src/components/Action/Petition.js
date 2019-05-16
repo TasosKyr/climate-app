@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default class Petition extends Component {
 
   state = {
-    starred: false
+    starred: this.props.starred || false
   }
 
   handleStarClick = (id, event) => {
@@ -15,7 +15,7 @@ export default class Petition extends Component {
       .post(
         process.env.REACT_APP_SERVER_URL + "/petitions/star",
         {
-          id: id
+          id: id 
         },
         { withCredentials: true }
       )

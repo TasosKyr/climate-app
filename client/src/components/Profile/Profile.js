@@ -5,6 +5,7 @@ import axios from "axios"
 import bcrypt from "bcryptjs"
 import MyEvents from './MyEvents'
 import MyPetitions from './MyPetitions'
+import { Link } from "react-router-dom"
 
 class Profile extends React.Component {
   state = {
@@ -70,24 +71,35 @@ class Profile extends React.Component {
     return (
       <>
         <div className="container page-container ">
-          <h1>Welcome {this.state.username}!</h1>
-          <img src={this.state.imgPath} alt="profilePic" />
+          <div className="profile-details">
+            <h1>Welcome {this.state.username}!</h1>
+            <img src={this.state.imgPath} alt="profilePic" />
 
-          <h1>My ClimActions:</h1>
-          <p>Here are all the ClimAction you have saved – go get active!</p>
-
-          <div className='myActions'>
-            <h2>Your Climate Events </h2>
-            {this.state.events.map(event => {
-              return <MyEvents event={event} getCollectionData={this.getCollectionData} />
-            })
-            }
-            <h2>Your Climate Petitions</h2>
-            {this.state.petitions && this.state.petitions.map(petition => {
-              return <MyPetitions petition={petition} getCollectionData={this.getCollectionData} />
-            })}
+            <h1>My ClimActions:</h1>
+            <p>Here are all the ClimAction you have saved – go get active!
+            <br />
+              You can check out more activities to do on the  <a href="/action">Action page</a>
+            </p>
           </div>
+          <hr />
 
+          <div className='my-actions'>
+
+            <div className='action-list'>
+              <h2>Your Climate Events </h2>
+              {this.state.events.map(event => {
+                return <MyEvents event={event} getCollectionData={this.getCollectionData} />
+              })
+              }
+            </div>
+            <div className='action-list'>
+              <h2>Your Climate Petitions</h2>
+              {this.state.petitions && this.state.petitions.map(petition => {
+                return <MyPetitions petition={petition} getCollectionData={this.getCollectionData} />
+              })}
+            </div>
+          </div>
+          <hr />
           <br />
           <DropDown title="Change your Username & Password">
             <UserUpdate

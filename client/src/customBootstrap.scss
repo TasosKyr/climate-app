@@ -6,6 +6,16 @@
 //font-family: 'Work Sans', sans-serif;
 @import url("https://fonts.googleapis.com/css?family=Assistant:200");
 
+//settings for mobile responsiveness
+
+@media screen and (max-width: 1020px) {
+  #container, #header, #content, #footer {
+    float: none;
+    width: auto;
+  }
+}
+
+//general page settings 
 *,
 *:before,
 *:after {
@@ -29,7 +39,7 @@ body {
 }
 
 .page-container {
-  margin: 1.5rem;
+  margin: 0.5rem;
 }
 
 :root {
@@ -52,6 +62,10 @@ body {
   width: 100vw;
 }
 
+.nav-item a:hover {
+  color: var(--yellow-green)
+}
+
 //left corner logo
 .logoFont {
   font-family: "Helvetica";
@@ -65,12 +79,8 @@ body {
   text-decoration: none;
 }
 
-.nav-color {
-  color: var(--white) !important;
-}
-
-.nav-color a:hover {
-  color: var(--yellow-green) !important;
+.nav-item {
+  color: var(--white);
 }
 
 .header-container {
@@ -119,10 +129,12 @@ body {
   }
 }
 
-//sub-page headers
+.about-list ul{
+  list-style: none; 
+}
+//sub-page headers & styling
 
-.header-container-action {
-  background-image: url("../src/images/action.jpeg");
+.page-header {
   color: var(--black);
   height: 50vh;
   background-size: cover;
@@ -167,14 +179,28 @@ body {
   letter-spacing: 0.3rem;
 }
 
+.action-page-card-container{
+  display: flex; 
+  flex-wrap: wrap; 
+  flex-direction: row; 
+}
+
+.container {
+  margin: 0px; 
+  margin-top: 2rem;
+  margin-bottom: 2rem; 
+}
 .card-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
   margin: 5% 2% 5%;
-  width: 18rem;
+  min-width: 18rem;
+  max-width: 25vw;
+  text-align: center; 
 }
 
 .footer-container {
@@ -228,27 +254,30 @@ body {
   flex-direction: column;
 }
 
-.link-button {
-  background-color: seagreen;
-  color: bisque;
-  border-radius: 5px;
+//profile image size
+.profile-details img {
+  max-width: 20vw;
+    height: auto;
 }
 
-.modal-button {
-  background-color: seagreen;
-  color: bisque;
-  border-radius: 5px;
+/* Data page - general styling */
+.data-page {
+  display: flex;
+  justify-content: space-around; 
 }
 
-/* Data page - user selection general styling */
-.user-selection-form {
+.card-body-data {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 2vh;
+  justify-content: center;
 }
 
 /* Data page - select function styling */
+.user-input {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -256,7 +285,7 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  /* border: 0 !important; */
+  border: 0 !important; 
   background: #295135;
   background-image: none;
 }
@@ -268,7 +297,7 @@ select::-ms-expand {
 .select {
   position: relative;
   display: flex;
-  width: 20em;
+  width: auto;
   height: 3em;
   line-height: 3;
   background: #295135;
@@ -277,7 +306,7 @@ select::-ms-expand {
 }
 select {
   flex: 1;
-  padding: 0 0.5em;
+  padding: 0 1em;
   color: #fff;
   cursor: pointer;
 }
@@ -396,21 +425,43 @@ select {
   }
 }
 
-//profile page styling
 
-.actionContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.my-actions{
+  display: flex; 
+  flex-direction: row; 
+  margin: 0px; 
+  flex-wrap: wrap;   
 }
-.myActionsBox {
+
+.action-list{
   width: 40vw;
+  margin: 0px; 
+  align-self: flex-start;
+  flex-wrap: wrap; 
+}
+
+.my-card-container {
+  margin: 1rem; 
+  align-self: center;
+  max-width: 40vw;
   border: var(--black);
-  margin: 1rem;
-  padding: 0px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  padding: 0.2rem;
+  list-style: none; 
+  border-radius: 5px; 
 }
 
 // politics styles
+.my-card {
+  list-style: none; 
+  padding: 0.7rem; 
+}
+
+.my-item {
+  padding: 1px; 
+  line-height: 30px; 
+}
+
 .header-container-politics {
   background-image: url("../src/images/euro-flag.jpeg");
   height: 60vh;
@@ -460,6 +511,7 @@ select {
   margin: 0;
   padding-right: 3rem;
 }
+
 
 // MEP profile
 html * {
@@ -782,3 +834,14 @@ img.rounded {
   margin-right: 12px;
   opacity: 0.5;
 }
+
+//modal styling
+
+.modal-content{
+  align-items: center; 
+}
+
+.modal-button.modal-style.btn.btn-primary {
+  background-color: blue;
+}
+

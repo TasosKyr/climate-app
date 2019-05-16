@@ -6,14 +6,7 @@ const { scrapeChangeOrg } = require('./scraping')
 
 
 router.get('/petitions', (req, res, next) => {
-  scrapeChangeOrg()
-    .then(petitions => {
-      return Promise.all(
-        petitions.map(element => {
-          return Petition.findOneAndUpdate({ url: element.url }, element, { upsert: true, new: true })
-        })
-      );
-    })
+  Petition.find({})
     .then((petitions) => {
       res.json(petitions);
     }).catch(err => {
@@ -22,7 +15,6 @@ router.get('/petitions', (req, res, next) => {
 });
 
 router.post('/petitions/star', (req, res, next) => {
-  console.log(req.body)
   const user = req.user
   if (typeof user.myCollection === 'undefined') {
     const myCollection = {

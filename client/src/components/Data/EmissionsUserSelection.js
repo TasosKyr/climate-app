@@ -1,82 +1,32 @@
 import React, { Component } from 'react'
+import jsonfile from '../../DataFiles/emissions_EU.json'
 
 export default class EmissionsUserSelection extends Component {
-  /* state = {
-    userSelectionEU: null
-  } */
-
-  handleSubmit = event => {
-    event.preventDefault();
-  }
 
   render() {
     return (
-      <div className="user-selection-form2">
-        <h4>Greenhouse gas emissions per EU capita</h4>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <select value={this.props.country} onChange={(e) => this.props.changed(e)} className="select" name="country">
-              <option value="">Choose a country</option>
-              <option value="Austria">Austria</option>
-              <option value="Belgium">Belgium</option>
-              <option value="Bulgaria">Bulgaria</option>
-              <option value="Cyprus">Cyprus</option>
-              <option value="Switzerland">Switzerland</option>
-              <option value="Czech Republic">Czech Republic</option>
-              <option value="Germany">Germany</option>
-              <option value="Denmark">Denmark</option>
-              <option value="Estonia">Estonia</option>
-              <option value="Greece">Greece</option>
-              <option value="Spain">Spain</option>
-              <option value="Finland">Finland</option>
-              <option value="France">France</option>
-              <option value="Croatia">Croatia</option>
-              <option value="Hungary">Hungary</option>
-              <option value="Ireland">Ireland</option>
-              <option value="Iceland">Iceland</option>
-              <option value="Italy">Italy</option>
-              <option value="Lithuania">Lithuania</option>
-              <option value="Latvia">Latvia</option>
-              <option value="Malta">Malta</option>
-              <option value="Netherlands">Netherlands</option>
-              <option value="Norway">Norway</option>
-              <option value="Poland">Poland</option>
-              <option value="Portugal">Portugal</option>
-              <option value="Sweden">Sweden</option>
-              <option value="Slovenia">Slovenia</option>
-              <option value="Slovakia">Slovakia</option>
-              <option value="United Kingdom">United Kingdom</option>
-            </select>
+      <div >
+        <h5>Greenhouse gas emissions per EU capita</h5>
+        <p>This indicator shows trends in man-made emissions of the 'Kyoto basket' of greenhouse gases. The 'Kyoto basket' of greenhouse gases includes: carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and the so-called F-gases. Source: Eurostat</p>
+        <div className="card-body-data">
+          <select value={this.props.country} onChange={(e) => this.props.changed(e)} className="select" name="country">
+            <option>Choose a country</option>
+            {Object.keys(jsonfile).map(el => <option value={el}>{el}</option>)}
+          </select>
 
-            <br />
+          <br />
 
-            <label>
-              Display EU average
-          <input
-                name="EUaverage"
-                type="checkbox"
-                /* checked={this.state.EUaverage}
-                onChange={this.handleInputChange} */ />
-            </label>
-
-          </div>
+          <select value={this.props.startYearEU} onChange={(e) => this.props.changed(e)} className="select" name="startYearEU">
+            <option>Choose start year</option>
+            {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
+          </select>
           <br />
-          <div>
-            <label className="inp">
-              <input value={this.props.startYearEU} type="text" id="inp" name='startYearEU' onChange={(e) => this.props.changed(e)} />
-              <span className="label">Start year</span>
-              <span className="border"></span>
-            </label>
-          </div>
-          <br />
-          <div><label className="inp">
-            <input value={this.props.endYearEU} onChange={(e) => this.props.changed(e)} type="text" id="inp" name='endYearEU' />
-            <span className="label">End year</span>
-            <span className="border"></span>
-          </label></div>
-          <br />
-          <button className='modal-button modal-style' style={{ backgroundColor: '#295135' }}>Get the graph</button>
-        </form>
+          <select value={this.props.endYearEU} onChange={(e) => this.props.changed(e)} className="select" name="endYearEU">
+            <option>Choose end year</option>
+            {Object.keys(jsonfile.Austria).map(el => <option value={el}>{el}</option>)}
+          </select>
+        </div>
+        <br />
       </div >
     )
   }

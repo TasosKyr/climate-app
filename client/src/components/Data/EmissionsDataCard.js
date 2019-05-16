@@ -2,34 +2,56 @@ import React, { Component } from 'react'
 import { Bar } from 'react-chartjs-2'
 import jsonfile from '../../DataFiles/emissions_EU.json'
 
-const yearArr = []
-
-
 export default class EmissionsDataCard extends Component {
+
+  state = {
+    startYear1: this.props.startYearEU,
+    endYear1: this.props.endYearEU,
+    dataEUavgArr: [],
+    checked: false
+  }
+
+  handleChange = () => {
+    let values;
+
+    this.props.country && (values = Object.values(jsonfile.EU28).slice(this.state.startYear1 - 2000, this.state.endYear1 - 1999))
+
+    this.setState({
+      checked: !this.state.checked,
+      dataEUavgArr: values
+    })
+  }
 
   render() {
 
-    const startYear1 = this.props.startYearEU
-    const endYear1 = this.props.endYearEU
-
-    const getYearArray = () => {
-      for (let i = startYear1; i <= endYear1;) {
-        yearArr.push(i++)
-      } return yearArr
+    const getDataArray = () => {
+      let dataArr = []
+      this.props.country && (dataArr = Object.values(jsonfile[this.props.country]).slice(this.state.startYear1 - 2000, this.state.endYear1 - 1999))
+      return dataArr
     }
 
-    console.log('This is the yearArr', getYearArray())
-    console.log(startYear1)
+    const getYearArray = () => {
+      const yearArr = []
+      for (let i = this.state.startYear1; i <= this.state.endYear1; i++) {
+        yearArr.push(Number(i))
+      }
+      return yearArr.filter(el => el !== 0)
+    }
+
+    const maxScale = Math.ceil(Math.max(
+      Math.max(...getDataArray()),
+      Math.max(...this.state.dataEUavgArr)
+    ))
 
     let graph2Data = {
-      labels: [yearArr],
+      labels: getYearArray(),
       datasets: [{
-        label: 'EU average',
+        label: this.state.checked ? 'EU average' : '',
         type: 'line',
-        data: [51, 65, 40, 49, 60, 37, 40],
+        data: this.state.checked ? this.state.dataEUavgArr : [],
         fill: false,
-        borderColor: '#EC932F',
-        backgroundColor: '#EC932F',
+        borderColor: this.state.checked ? '#EC932F' : "#FFFFFF",
+        backgroundColor: this.state.checked ? '#EC932F' : "#FFFFFF",
         pointBorderColor: '#EC932F',
         pointBackgroundColor: '#EC932F',
         pointHoverBackgroundColor: '#EC932F',
@@ -37,8 +59,8 @@ export default class EmissionsDataCard extends Component {
         yAxisID: 'y-axis-2'
       }, {
         type: 'bar',
-        label: 'Country',
-        data: [200, 185, 590, 621, 250, 400, 95],
+        label: this.props.country,
+        data: getDataArray(),
         fill: false,
         backgroundColor: '#71B37C',
         borderColor: '#71B37C',
@@ -50,6 +72,7 @@ export default class EmissionsDataCard extends Component {
 
     let options = {
       responsive: true,
+      maintainAspectRatio: true,
       tooltips: {
         mode: 'label'
       },
@@ -74,15 +97,27 @@ export default class EmissionsDataCard extends Component {
             display: true,
             position: 'left',
             id: 'y-axis-1',
+            ticks: {
+              beginAtZero: true,
+              max: maxScale,
+              min: 0,
+              stepSize: 1,
+            },
             gridLines: {
-              display: false
+              display: true
             }
           },
           {
             type: 'linear',
-            display: true,
+            display: false,
             position: 'right',
             id: 'y-axis-2',
+            ticks: {
+              beginAtZero: true,
+              max: maxScale,
+              min: 0,
+              stepSize: 1,
+            },
             gridLines: {
               display: false
             }
@@ -91,21 +126,22 @@ export default class EmissionsDataCard extends Component {
       }
     };
 
-    let plugins = [{
-      afterDraw: (chartInstance, easing) => {
-        const ctx = chartInstance.chart.ctx;
-        ctx.fillText("This text drawn by a plugin", 100, 100);
-      }
-    }];
-
     return (
-      <div>
+      <div >
         <h1>Emissions graph</h1>
-        <div id='graph' className='chart2'>
-          <Bar data={graph2Data} options={options}
-            plugins={plugins} />
+        <div>
+          <label>
+            Display EU average
+            <input
+              type="checkbox"
+              checked={this.state.checked} onChange={this.handleChange} />
+          </label>
         </div>
-      </div>
+        <div >
+          <Bar data={graph2Data} options={options}
+          />
+        </div>
+      </div >
     )
   }
 }
