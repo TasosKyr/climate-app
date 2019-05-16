@@ -29,13 +29,14 @@ class Action extends Component {
     return (
       <>
         <PageHeader image={image2} />
+
         <div className="container page-container" id='container'>
+          <div className="intro-text-container">
+            <h1>Action!</h1>
 
-          <h1>Action!</h1>
-
-          <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the climate events in Berlin and sign petitions.</p>
-          <hr />
-
+            <p>We encourage all interested people to take action towards fighting climate change. Here you can check out the climate events in Berlin and sign petitions.</p>
+            <hr />
+          </div>
           <div className='action-page-card-container'>
             <div class="card">
               <div class="card-body">
