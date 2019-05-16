@@ -13,7 +13,7 @@
   #container,
   #header,
   #content,
-  #footer { 
+  #footer {
     float: none;
     width: auto;
   }
@@ -73,6 +73,9 @@ body {
 }
 
 .nav-item a:hover {
+  color: var(--yellow-green);
+}
+.shaded-box-member a:hover {
   color: var(--yellow-green);
 }
 
@@ -214,13 +217,12 @@ body {
   min-width: 18rem;
   max-width: 20vw;
   margin: 3vh;
-  text-align: center; 
+  text-align: center;
 }
 
 .card.about {
-  padding: 1rem; 
+  padding: 1rem;
   text-align: center;
-
 }
 
 .footer-container {
@@ -268,14 +270,12 @@ body {
   text-align: center;
 }
 
-
-
 .profile-details {
   display: flex;
   flex-direction: column;
   /* padding-top: 10vh; */
   align-items: flex-start;
-  width: 15vw
+  width: 15vw;
 }
 
 //profile image size
@@ -285,15 +285,15 @@ body {
 }
 
 .profile-events-container {
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   margin-top: 5vh;
   /* justify-content: space-evenly;
   flex-wrap: wrap;  */
 }
 
 .climAction {
-  display: flex; 
+  display: flex;
   justify-content: space-evenly;
 }
 
@@ -487,7 +487,7 @@ select {
   padding: 0.2rem;
   list-style: none;
   border-radius: 5px;
-  background-color: rgb(236, 232, 232)
+  background-color: rgb(236, 232, 232);
 }
 
 // politics styles
@@ -529,7 +529,6 @@ select {
   width: auto;
   height: 3.5vh;
   display: flex;
-
   align-items: center;
 }
 
@@ -556,6 +555,9 @@ select {
 .shaded-box img {
   height: 3rem;
   padding-left: 5rem;
+}
+
+.shaded-box-member {
 }
 
 // MEP profile
@@ -685,8 +687,6 @@ p {
 .profile-page .profile-tabs {
   margin-top: 4.284rem;
 }
-
-
 
 .nav-pills,
 .nav-tabs {
@@ -857,10 +857,10 @@ img.rounded {
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.125rem;
-  margin: 0 ; 
+  margin: 0;
   transition: all 0.15s linear;
   min-width: 7rem;
-  padding: 0.625rem 1.25rem; 
+  padding: 0.625rem 1.25rem;
   min-height: 1rem !important;
   overflow: hidden;
   line-height: 1.428571;
