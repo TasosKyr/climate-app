@@ -82,14 +82,12 @@ class Member extends Component {
                         <li className="nav-item">
                           <a
                             className="nav-link"
-                            target="_blank"
+                            // target="_blank"
                             href={
                               data &&
                               data.Twitter &&
                               `https://twitter.com/intent/tweet?screen_name=${
-                                data.Twitter[0][4] === "s"
-                                  ? data.Twitter[0].substring(20)
-                                  : data.Twitter[0].substring(19)
+                                data.Twitter[0].split("twitter.com/")[1]
                               }`
                             }
                           >

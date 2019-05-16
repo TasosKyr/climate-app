@@ -26,7 +26,7 @@ class Groups extends Component {
     ]
     return (
       <div className="groups-container">
-        <div className="party-container">
+        <div className="party-container" style={{ marginBottom: "6rem" }}>
           <Plx parallaxData={parallaxDataLeft}>
             <Link to={`/politics/PPE`}>
               <div className="shaded-box">

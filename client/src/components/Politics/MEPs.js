@@ -41,7 +41,7 @@ class MEPs extends Component {
     return (
       <>
         <div className="header-container-politics" />
-        <div>
+        <div style={{ marginBottom: "6rem" }}>
           {data &&
             data.map(el => (
               <Plx parallaxData={parallaxDataLeft}>
