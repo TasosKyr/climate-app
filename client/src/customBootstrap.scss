@@ -13,7 +13,7 @@
   #container,
   #header,
   #content,
-  #footer {
+  #footer { 
     float: none;
     width: auto;
   }
@@ -211,10 +211,15 @@ body {
 
 .card {
   min-width: 18rem;
-
   max-width: 20vw;
   margin: 3vh;
+  text-align: center; 
+}
+
+.card.about {
+  padding: 1rem; 
   text-align: center;
+
 }
 
 .footer-container {
