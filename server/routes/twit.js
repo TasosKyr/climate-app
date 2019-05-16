@@ -11,7 +11,7 @@ router.get("/politics/twit", (req, res) => {
   })
 
   client
-    .get("search/tweets", { q: ["climatechange", "globalwarming", "europe"] })
+    .get("search/tweets", { q: ["climatechange", "globalwarming"] })
     .then(response => {
       res.json(response.data)
     })

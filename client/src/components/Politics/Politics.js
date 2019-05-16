@@ -17,6 +17,7 @@ class Politics extends Component {
         <div>
           <Twitter />
           {/* <EUOpenData /> */}
+
           <Groups />
         </div>
       </>

@@ -36,16 +36,16 @@ html {
 
 //this is needed to keep the footer at the bottom
 body {
- position: relative;
- padding-bottom: 6rem;
- width: 100%;
- overflow-x: hidden;
- min-height: 100%;
+  position: relative;
+  padding-bottom: 6rem;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100%;
 }
 
- .page-container {
+.page-container {
   padding-top: 2vh;
-} 
+}
 
 .user-selection-form {
   padding-top: 20vh;
@@ -149,7 +149,7 @@ body {
 
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;  
+  background-position: center;
 }
 
 /* @media screen (max-width)
@@ -163,7 +163,7 @@ body {
 }
 
 .heading h1 {
-padding-top: 6vh;
+  padding-top: 6vh;
   font-size: 11vw;
   font-weight: lighter;
 
@@ -185,12 +185,11 @@ padding-top: 6vh;
   font-family: "Source Sans Pro";
 }
 
-
-.action-page-card-container{
-  display: flex; 
-  flex-direction: row; 
+.action-page-card-container {
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 /* .intro-text-container {
@@ -204,10 +203,10 @@ padding-top: 6vh;
 } */
 
 .card-container {
-  display: flex; 
-  flex-direction: row; 
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .card {
@@ -219,6 +218,8 @@ padding-top: 6vh;
 
 .card.about {
   padding: 1rem; 
+  text-align: center;
+
 }
 
 .footer-container {
@@ -284,18 +285,18 @@ padding-top: 6vh;
   justify-content: space-around;
 }
 
- .card-body-data {
+.card-body-data {
   display: flex;
   flex-direction: column;
   justify-content: center;
-} 
+}
 
 /* Data page - select function styling */
-  .user-input-data-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.user-input-data-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 select {
   -webkit-appearance: none;

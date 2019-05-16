@@ -71,12 +71,7 @@ class Member extends Component {
                     <h4>Contact your representative:</h4>
                     <ul className="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                       <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          href={"mailto:" + _get(data, "Mail[0]")}
-                          role="tab"
-                          data-toggle="tab"
-                        >
+                        <a className="nav-link" href={"mailto:" + _get(data, "Mail[0]")}>
                           <FontAwesomeIcon
                             icon={["fas", "envelope"]}
                             style={{ color: "#000000", fontSize: "3rem", margin: "1rem" }}
@@ -87,6 +82,7 @@ class Member extends Component {
                         <li className="nav-item">
                           <a
                             className="nav-link"
+                            target="_blank"
                             href={
                               data &&
                               data.Twitter &&
@@ -96,8 +92,6 @@ class Member extends Component {
                                   : data.Twitter[0].substring(19)
                               }`
                             }
-                            role="tab"
-                            data-toggle="tab"
                           >
                             <FontAwesomeIcon
                               icon={["fab", "twitter"]}
