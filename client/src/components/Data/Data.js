@@ -5,6 +5,8 @@ import DataPopUp from "./DataPopUp";
 import { getData } from "../../services/data";
 import EmissionsDataCard from "./EmissionsDataCard"
 import EmissionsUserSelection from "./EmissionsUserSelection"
+import PageHeader from "../PageHeader"
+import image3 from '../../images/data.jpeg'
 
 
 export default class Data extends Component {
@@ -50,6 +52,7 @@ export default class Data extends Component {
   render() {
     return (
       <>
+        <PageHeader image={image3} />
         <div className="container page-container">
           <h1>Climate Data</h1>
           <div className='data-page'>
