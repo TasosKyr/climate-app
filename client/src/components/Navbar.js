@@ -26,7 +26,6 @@ class Navbar extends React.Component {
 
   subPages = (
     <>
-      
 
       <li className="nav-item">
         <Link className="nav-link nav-color" to="/politics">
@@ -43,6 +42,12 @@ class Navbar extends React.Component {
         <Link className="nav-link nav-color" to="/data">
           Data </Link>
       </li>
+
+      <li className="nav-item">
+        <Link className="nav-link nav-color" to="/about">
+          About
+      </Link>
+      </li>
     </>)
 
   signupLogin = (<> <li className="nav-item">
@@ -54,13 +59,8 @@ class Navbar extends React.Component {
       <Link className="nav-link nav-color" to="/login">
         Login
 </Link>
-    </li> 
-    <li className="nav-item">
-        <Link className="nav-link nav-color" to="/about">
-          About
-      </Link>
-      </li>
-    </>)
+    </li>
+  </>)
 
 
   welcomeUser = () => (

@@ -13,7 +13,7 @@
   #container,
   #header,
   #content,
-  #footer {
+  #footer { 
     float: none;
     width: auto;
   }
@@ -116,6 +116,13 @@ body {
   color: var(--yellow-green);
 }
 
+.anchor {
+  padding-top: 9vh;
+  /* display: block;
+  position: relative;
+  top: 62px; */
+}
+
 .arrow {
   text-align: center;
   margin: 8% 0;
@@ -205,27 +212,31 @@ body {
 
 .card {
   min-width: 18rem;
-
   max-width: 20vw;
   margin: 3vh;
+  text-align: center; 
+}
+
+.card.about {
+  padding: 1rem; 
   text-align: center;
+
 }
 
 .footer-container {
   background-color: var(--black);
-  height: 12vh;
+  height: 9vh;
   width: 100vw;
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
 }
 
 .footer-content {
   color: var(--white);
-  margin-top: 5px;
   font-size: 0.8rem;
   line-height: 1;
 }
@@ -257,17 +268,37 @@ body {
   text-align: center;
 }
 
-.profile-page {
+
+
+.profile-details {
   display: flex;
   flex-direction: column;
+  /* padding-top: 10vh; */
+  align-items: flex-start;
+  width: 15vw
 }
 
 //profile image size
 .profile-details img {
-  max-width: 20vw;
+  max-width: 15vw;
   height: auto;
 }
 
+.profile-events-container {
+  display: flex; 
+  flex-direction: column; 
+  margin-top: 5vh;
+  /* justify-content: space-evenly;
+  flex-wrap: wrap;  */
+}
+
+.climAction {
+  display: flex; 
+  justify-content: space-evenly;
+}
+
+/* div{border: solid 1px red}
+ */
 /* Data page - general styling */
 .data-page {
   display: flex;
@@ -434,29 +465,29 @@ select {
   }
 }
 
-.my-actions {
+/* .my-actions {
   display: flex;
   flex-direction: row;
   margin: 0px;
   flex-wrap: wrap;
-}
+} */
 
-.action-list {
+/* .action-list {
   width: 40vw;
   margin: 0px;
   align-self: flex-start;
   flex-wrap: wrap;
-}
+} */
 
 .my-card-container {
   margin: 1rem;
   align-self: center;
-  max-width: 40vw;
+  max-width: 35vw;
   border: var(--black);
-  box-shadow: 3px 3px 5px 6px #ccc;
   padding: 0.2rem;
   list-style: none;
   border-radius: 5px;
+  background-color: rgb(236, 232, 232)
 }
 
 // politics styles
@@ -495,11 +526,10 @@ select {
 }
 
 .shaded-box {
-  // margin: 2rem 5rem 2rem;
-  // padding: 0.5rem;
   width: auto;
   height: 3.5vh;
   display: flex;
+
   align-items: center;
 }
 
@@ -656,6 +686,8 @@ p {
   margin-top: 4.284rem;
 }
 
+
+
 .nav-pills,
 .nav-tabs {
   border: 0;
@@ -674,8 +706,8 @@ p {
 
 .nav-pills .nav-item .nav-link.active {
   color: #fff;
-  background-color: #9c27b0;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 0, 0, 0.2);
 }
 
 .nav-pills .nav-item .nav-link {
@@ -781,8 +813,8 @@ img.rounded {
   z-index: 1000;
   float: left;
   min-width: 11rem !important;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
+  /* margin: 0.125rem 0 0; */
+  font-size: 2rem;
   color: #212529;
   text-align: left;
   background-color: #fff;
@@ -800,9 +832,9 @@ img.rounded {
 .dropdown-menu a:active,
 .dropdown-menu a:focus,
 .dropdown-menu a:hover {
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
-  background-color: #9c27b0;
-  color: #fff;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(0, 0, 0, 0.14);
+  background-color: rgba(0, 0, 0, 0.14);
+  color: white;
 }
 .show .dropdown-toggle:after {
   transform: rotate(180deg);
@@ -823,12 +855,12 @@ img.rounded {
   color: #333;
   font-weight: 400;
   text-decoration: none;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   border-radius: 0.125rem;
-  margin: 0 0.3125rem;
+  margin: 0 ; 
   transition: all 0.15s linear;
   min-width: 7rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.625rem 1.25rem; 
   min-height: 1rem !important;
   overflow: hidden;
   line-height: 1.428571;
