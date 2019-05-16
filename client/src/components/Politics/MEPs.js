@@ -1,44 +1,57 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import { getJSON } from "../../services/politics"
+import Plx from "react-plx"
+import { getParty } from "../../services/politics"
 
 class MEPs extends Component {
   state = {
-    data: {}
+    data: []
   }
 
   componentDidMount = () => {
-    getJSON().then(data => {
+    getParty(this.props.match.params.partyID).then(data => {
       console.log("MEPs", data)
       this.setState({ data: data })
     })
   }
 
   render() {
-    const { data } = this.state
-    console.log(this.props.match.params.id)
-    let match = undefined
-    if (this.props.match.params.id === "GUENGL") {
-      match = "GUE/NGL"
-    } else if (this.props.match.params.id === "VALE") {
-      match = "Verts/ALE"
-    } else match = this.props.match.params.id
+    const parallaxDataLeft = [
+      {
+        start: "self",
+        end: "self",
+        endOffset: "30vh",
 
+        properties: [
+          {
+            startValue: 0,
+            endValue: 1,
+            property: "opacity"
+          },
+          {
+            startValue: 200,
+            endValue: 0,
+            property: "translateX"
+          }
+        ]
+      }
+    ]
+
+    const { data } = this.state
     return (
       <>
         <div className="header-container-politics" />
-        {console.log(match)}
         <div>
           {data &&
-            data.meps &&
-            data.meps
-              .filter(el => el.Groups[0].groupid === match)
-              // this.props.match.params.id)
-              .map(el => (
+            data.map(el => (
+              <Plx parallaxData={parallaxDataLeft}>
                 <div className="shaded-box">
-                  <Link to="/politics/...party.../{el.UserID}">{el.Name.full}</Link>
+                  <Link to={`/politics/${this.props.match.params.partyID}/${el.UserID}`}>
+                    {el.Name.full}
+                  </Link>
                 </div>
-              ))}
+              </Plx>
+            ))}
         </div>
       </>
     )

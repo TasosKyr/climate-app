@@ -13,8 +13,12 @@ const getPolicies = () => {
   return service.get("/politics/policies").then(response => response.data)
 }
 
-const getJSON = () => {
-  return service.get("/politics/meps").then(response => response.data)
+const getParty = partyID => {
+  return service.get(`/politics/party/${partyID}`).then(response => response.data)
 }
 
-export { getTweets, getPolicies, getJSON }
+const getMEP = mepID => {
+  return service.get(`/politics/mep/${mepID}`).then(response => response.data)
+}
+
+export { getTweets, getPolicies, getParty, getMEP }
