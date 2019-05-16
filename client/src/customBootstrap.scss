@@ -43,6 +43,10 @@ body {
   min-height: 100%;
 }
 
+.page-container a {
+  color: var(--med-green);
+}
+
 .page-container {
   padding-top: 2vh;
 }
@@ -207,6 +211,11 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.card-container.twit-txt {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card {
@@ -466,6 +475,14 @@ select {
 }
 
 // politics styles
+.twitter-container {
+  padding: 0.9rem;
+}
+
+.card.politics-box {
+  max-height: 300px;
+}
+
 .my-card {
   list-style: none;
   padding: 0.7rem;
@@ -493,37 +510,33 @@ select {
 }
 
 .shaded-box {
-  box-shadow: 3px 3px 5px 6px #ccc;
-  margin: 2rem 5rem 2rem;
-  padding: 0.5rem;
-  width: 70vw;
+  // margin: 2rem 5rem 2rem;
+  // padding: 0.5rem;
+  width: auto;
+  height: 3.5vh;
   display: flex;
   align-items: center;
-  display: flex;
-  justify-content: space-between;
-  text-decoration: none;
 }
 
-.party.logo {
-  width: 30%;
+.party-logo {
+  display: flex;
   justify-content: center;
-  background-color: lightgray;
+  width: 40%;
 }
 
 .party-name {
-  width: 70%;
-  justify-content: center;
-  background-color: lightgrey;
+  display: flex;
+  justify-content: flex-start;
+  width: 50vw;
+}
+
+.party-name p {
+  font-size: 1.2rem;
 }
 
 .shaded-box img {
   height: 3rem;
   padding-left: 5rem;
-}
-
-.shaded-box h3 {
-  margin: 0;
-  padding-right: 3rem;
 }
 
 // MEP profile

@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import Plx from "react-plx"
 import { getParty } from "../../services/politics"
+import { get as _get } from "lodash"
 
 class MEPs extends Component {
   state = {
@@ -10,7 +11,6 @@ class MEPs extends Component {
 
   componentDidMount = () => {
     getParty(this.props.match.params.partyID).then(data => {
-      console.log("MEPs", data)
       this.setState({ data: data })
     })
   }
@@ -36,11 +36,12 @@ class MEPs extends Component {
         ]
       }
     ]
-
     const { data } = this.state
+    console.log(data)
     return (
       <>
         <div className="header-container-politics" />
+        <h2>Party name</h2>
         <div style={{ marginBottom: "6rem" }}>
           {data &&
             data.map(el => (

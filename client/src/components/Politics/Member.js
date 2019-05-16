@@ -1,13 +1,11 @@
 import React, { Component } from "react"
 import { get as _get } from "lodash"
-
-import { library } from "@fortawesome/fontawesome-svg-core"
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { library } from "@fortawesome/fontawesome-svg-core"
 import { getMEP } from "../../services/politics"
-import { TwitterMentionButton } from "react-twitter-embed"
+import parlBg from "../../images/EU-parl.jpg"
 
 library.add(faTwitter, faEnvelope)
 
@@ -32,7 +30,7 @@ class Member extends Component {
           data-parallax="true"
           style={{
             backgroundImage: `url(
-              "https://bankwatch.org/wp-content/uploads/2017/06/EU-parl.jpg"
+              ${parlBg}
             )`,
             height: "70vh"
           }}
@@ -82,7 +80,6 @@ class Member extends Component {
                         <li className="nav-item">
                           <a
                             className="nav-link"
-                            // target="_blank"
                             href={
                               data &&
                               data.Twitter &&
