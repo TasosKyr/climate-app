@@ -17,6 +17,8 @@ import About from './components/About'
 
 import "./App.css"
 import "./customBootstrap.scss"
+import 'jquery' 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

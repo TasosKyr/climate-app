@@ -128,16 +128,15 @@ export default class EmissionsDataCard extends Component {
 
     return (
       <div >
-        <div id='graph' className='chart1'>
-          <h1>Emissions graph</h1>
-          <div className='mb-3'>
-            <label>
-              Display EU average
+        <div >
+          <label>
+            Display EU average
             <input
-                type="checkbox"
-                checked={this.state.checked} onChange={this.handleChange} />
-            </label>
-          </div>
+              type="checkbox"
+              checked={this.state.checked} onChange={this.handleChange} />
+          </label>
+        </div>
+        <div id='graph' className='chart1'>
           <Bar data={graph2Data} options={options}
           />
         </div>

@@ -19,7 +19,7 @@ export default class UserSelection extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className="user-input">
             <select value={this.props.incidentType} onChange={(e) => this.props.changed(e)} className="select" name="incidentType">
-              <option value="">Choose an extreme weather incident</option>
+              <option value="">Choose a weather incident</option>
               <option value="heat_wave_incidents">Heat Wave Incidents</option>
               <option value="extreme_cold_events">Extreme Cold Events</option>
               <option value="extreme_heat_events">Extreme Heat Events</option>
@@ -29,7 +29,7 @@ export default class UserSelection extends Component {
             <br />
 
             <select value={this.props.city} onChange={(e) => this.props.changed(e)} className="select" name="city">
-              <option value="">Choose a city</option>
+              <option value="">Choose city</option>
               <option value="1">New York</option>
               <option value="2">Los Angeles</option>
               <option value="3">Chicago</option>
@@ -42,7 +42,7 @@ export default class UserSelection extends Component {
           <div>
             <label /* for="inp" */ className="inp">
               <input value={this.props.startYear} type="text" id="inp" name='startYear' onChange={(e) => this.props.changed(e)} />
-              <span className="label">Start year</span>
+              <span className="label">Start year after 2006</span>
               <span className="border"></span>
             </label>
           </div>

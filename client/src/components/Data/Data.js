@@ -60,8 +60,8 @@ export default class Data extends Component {
             <hr />
           </div>
 
-          <div className='data-page'>
-
+          {/* <div className='data-page'> */}
+          <div className="card-container">
             <div class="card">
               <div class="card-body card-body-data">
                 <UserSelection changed=

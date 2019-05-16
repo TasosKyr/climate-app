@@ -32,15 +32,16 @@ html {
 
 //this is needed to keep the footer at the bottom
 body {
-  position: relative;
-/*   margin: 0;
- */  padding-bottom: 6rem;
-  min-height: 100%;
+ position: relative;
+ padding-bottom: 6rem;
+ width: 100%;
+ overflow-x: hidden;
+ min-height: 100%;
 }
 
-/* .page-container {
-  margin: 0.5rem;
-} */
+ .page-container {
+  padding-top: 70px;
+} 
 
 :root {
   --black: #0d1313;
@@ -56,6 +57,7 @@ body {
   background-color: var(--black);
   position: fixed;
   width: 100vw;
+  z-index: 999;
 }
 
 .nav-item a:hover {
