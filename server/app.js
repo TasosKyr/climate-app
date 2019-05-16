@@ -21,9 +21,9 @@ const scraping = async () => {
     petitions.map(element => {
       return Petition.findOneAndUpdate({ url: element.url }, element, { upsert: true, new: true })
     })
-  );
+  ); 
 }
-
+ 
 new CronJob('0 30 * * * *', scraping
   , null, true, 'Europe/Berlin');
 scraping();
